@@ -1,0 +1,42 @@
+% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
+\documentclass[10pt]{article}
+\input{/Users/mr.hassium/Desktop/Github/Hello-World/hassium.tex}
+\def\htitle{Elementary Differential Geometry}
+\def\hauthor{Hassium}\let\hfauthor\hauthor
+\begin{document}
+\hsetup
+\htoc
+\hmain
+\section{Calculus on Euclidean Space}
+\begin{definition}
+    The \hdef{Euclidean 3-space}, denoted ${\R}^{3}$, is the set of ordered triples of the form $p=({p}_{1},{p}_{2},{p}_{3})$, where ${p}_{i}\in\R$. An element of ${\R}^{3}$ is called a \hdef{point}.
+\end{definition}
+\par
+Let $p=({p}_{1},{p}_{2},{p}_{3}),q=({q}_{1},{q}_{2},{q}_{3})\in{\R}^{3}$ and let $a\in\R$. Define the addition to be $p+q=({p}_{i}+{q}_{i})$ and define the scalar multiplication to be $ap=(a{p}_{i})$. The additive identity $0=(0,0,0)$ is called the \hdef{origin} of ${\R}^{3}$. It is trivial that ${\R}^{3}$ is a vector space over $\R$.
+\begin{definition}
+    Let $x$, $y$, and $z$ be real-valued functions on ${\R}^{3}$ such that for all $p=({p}_{1},{p}_{2},{p}_{3})\in{\R}^{3}$, $x(p)={p}_{1}$. $y(p)={p}_{2}$, and $z(p)={p}_{3}$. We call $x$, $y$, and $z$ the \hdef{natural coordinate functions} of ${\R}^{3}$.
+\end{definition}
+\par
+Let $x$, $y$, and $z$ be the natural coordinate functions, rewrite $x={x}_{1}$, $y={x}_{2}$, and $z={x}_{3}$. Then we have $p=({p}_{i})=({x}_{i}(p))$.
+\begin{definition}
+    A real-valued function $f$ on ${\R}^{3}$ is \hdef{differetiable} if all partial derivatives exist and continuous.
+\end{definition}
+\begin{definition}
+    A subset $O\sub{\R}^{3}$ is \hdef{open} if for all $p\in O$, there exists $\ve>0$ such that $\{x\in{\R}^{3}\mid\norm{x-p}<\ve\}\sub O$. 
+\end{definition}
+\par
+Let $f:O\to\R$ be a function defined on an open set. The differetiability of $f$ at $p$ can be determined entirely from values of $f$ on $O$. This means that differetiation is a local operation. We will give a proof of this later.
+\begin{definition}
+    A \hdef{tangent vector} ${v}_{p}$ is an ordered pair ${v}_{p}=(v,p)$, where $v,p\in{\R}^{3}$. Here $v$ is called the \hdef{vector part} and $p$ is called its \hdef{point of application}. Two tangent vectors are said to be \hdef{parallel} if they have the same vector part and different points of application.
+\end{definition}
+\begin{definition}
+    Let $p\in{\R}^{3}$. The \hdef{tangent space} at $p$, denoted ${T}_{p}({\R}^{3})$, is the set of all tangent vectors that have $p$ as point of application.
+\end{definition}
+
+
+
+
+\input{Ch2.tex}
+\input{ExPf.tex}
+\hindex
+\end{document}

@@ -33,7 +33,29 @@ Let $f:O\to\R$ be a function defined on an open set. The differetiability of $f$
     Let $p\in{\R}^{3}$. The \hdef{tangent space} at $p$, denoted ${T}_{p}({\R}^{3})$, is the set of all tangent vectors that have $p$ as point of application.
 \end{definition}
 \par
-Fix a tangent space ${T}_{p}({\R}^{3})$. 
+Fix a tangent space ${T}_{p}({\R}^{3})$ and let ${T}_{p}({\R}^{3})$ adapt the operations from ${\R}^{3}\times{\R}^{3}$. We have a natural linear map $f:{T}_{p}({\R}^{3})\to{\R}^{3}$ defined by ${v}_{p}\to v$ and it is trivially an isomorphism. 
+\begin{definition}
+    A \hdef{vector field} $V$ on ${\R}^{3}$ is a function $V:{\R}^{3}\to{\R}^{3}$ such that for all $p\in{\R}^{3}$, $V(p)\sub{T}_{p}({\R}^{3})$.
+\end{definition}
+\par
+Let $V$ and $W$ be vector field. Let $f$ be a real-valued function. For all $p\in{\R}^{3}$, define $V+W$ by $(V+W)(p)=V(p)+W(p)$ and $(fV)(p)=f(p)V(p)$.
+\begin{definition}
+    Let ${U}_{1}$, ${U}_{2}$, and ${U}_{3}$ be vector fields on ${\R}^{3}$ such that ${U}_{1}(p)={(1,0,0)}_{p}$, ${U}_{2}(p)={(0,1,0)}_{p}$, and ${U}_{3}(p)={(0,0,1)}_{p}$ for all $p\in{\R}^{3}$. We call $({U}_{1},{U}_{2},{U}_{3})$ the \hdef{natural frame field} on ${\R}^{3}$.
+\end{definition}
+\begin{proposition}
+    Let $V$ be a vector field on ${\R}^{3}$. There are three uniquely determined real-valued functions ${v}_{1}$, ${v}_{2}$, and ${v}_{3}$ on ${\R}^{3}$ such that $V={v}_{1}{U}_{1}+{v}_{2}{U}_{2}+{v}_{3}{U}_{3}$.
+\end{proposition}
+\begin{proof}
+    For all $p\in{\R}^{3}$, $V(p)={({v}_{1}(p),{v}_{2}(p),{v}_{3}(p))}_{p}={v}_{1}(p){(1,0,0)}_{p}+{v}_{2}(p){(0,1,0)}_{p}+{v}_{3}(p){(0,0,1)}_{p}={v}_{1}(p){U}_{1}(p)+{v}_{2}(p){U}_{2}(p)+{v}_{3}{U}_{3}(p)$, hence $V=\sum{v}_{i}{U}_{i}$.
+\end{proof}
+\par
+The functions ${v}_{1}$, ${v}_{2}$, and ${v}_{3}$ are called the \hdef{Euclidean coordinate functions} on $V$.
+\begin{definition}
+    A vecotr field $V$ is \hdef{differetiable} if its Euclidean coordinate functions are differetiable.
+\end{definition}
+
+
+
 
 
 

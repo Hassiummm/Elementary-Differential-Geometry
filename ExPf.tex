@@ -3,9 +3,9 @@
 \begin{exercise}[1.1.1]
     Let $f={x}^{2}y$ and $g=y\sin z$ be functions on ${\R}^{3}$. Express the following functions in terms of $x$, $y$, and $z$.
     \begin{enumerate}
-        \item $f{g}^{2}$;
-        \item $\frac{\pa f}{\pa x}g+\frac{\pa g}{\pa y}f$;
-        \item $\frac{{\pa}^{2}(fg)}{\pa y\pa z}$;
+        \item $f{g}^{2}$.
+        \item $\frac{\pa f}{\pa x}g+\frac{\pa g}{\pa y}f$.
+        \item $\frac{{\pa}^{2}(fg)}{\pa y\pa z}$.
         \item $\frac{\pa}{\pa y}(\sin f)$.
     \end{enumerate}
 \end{exercise}
@@ -20,7 +20,7 @@
     \end{enumerate}
 \end{exercise}
 \begin{proof}
-    (\rom1) We have $\frac{\pa f}{\pa x}=\frac{x\sin(xy)}{\pa x}+\frac{\pa y\cos(xz)}{\pa x}=\sin(xy)+xy\cos(xy)-yz\sin(xz)$. (\rom2) We have $f=\sin({e}^{{x}^{2}+{y}^{2}+{z}^{2}})$, then $\frac{\pa f}{\pa x}=2x\cos({e}^{{x}^{2}+{y}^{2}+{z}^{2}}){e}^{{x}^{2}+{y}^{2}+{z}^{2}}$.
+    (\rom1) We have $\frac{\pa f}{\pa x}=\frac{\pa(x\sin(xy))}{\pa x}+\frac{\pa(y\cos(xz))}{\pa x}=\sin(xy)+xy\cos(xy)-yz\sin(xz)$. (\rom2) We have $f=\sin({e}^{{x}^{2}+{y}^{2}+{z}^{2}})$, then $\frac{\pa f}{\pa x}=2x\cos({e}^{{x}^{2}+{y}^{2}+{z}^{2}}){e}^{{x}^{2}+{y}^{2}+{z}^{2}}$.
 \end{proof}
 \begin{exercise}[1.2.1]
     Let $v=(-2,1,-1)$ and $w=(0,1,3)$. At an arbitrary point $p$, express the tangent vector $3{v}_{p}-2{w}_{p}$ as a linear combination of ${U}_{1}(p)$, ${U}_{2}(p)$, and ${U}_{3}(p)$.
@@ -28,9 +28,53 @@
 \begin{proof}
     We have $3{v}_{p}-2{w}_{p}={(-6,1,-9)}_{p}=-6{U}_{1}(p)+{U}_{2}(p)-9{U}_{3}(p)$.
 \end{proof}
+\begin{exercise}[1.2.3]
+    Let $p=({p}_{1},{p}_{2},{p}_{3})$. In each case, express the given vector field $V$ in the standard form $\sum{v}_{i}{U}_{i}$. 
+    \begin{enumerate}
+        \item $2{z}^{2}{U}_{1}=7V+xy{U}_{3}$.
+        \item $V(p)={({p}_{1},{p}_{3}-{p}_{1},0)}_{p}$ for all $p$.
+        \item $V=2(x{U}_{1}+y{U}_{2})-x({U}_{1}-{y}^{2}{U}_{3})$.
+        \item For all $p\in{\R}^{3}$, $V(p)$ is the vector from $({p}_{1},{p}_{2},{p}_{3})$ to $(1+{p}_{1},{p}_{2}{p}_{3},{p}_{2})$.
+        \item For all $p\in{\R}^{3}$, $V(p)$ is the vector from $p$ to 0.
+    \end{enumerate}
+\end{exercise}
+\begin{proof}
+    (\rom1) We have $V=(2{z}^{2}{U}_{1}-xy{U}_{3})/7$. For all $p\in{\R}^{3}$, $V(p)=((2{z}^{2},0,0)-(0,0,xy))/7=(2{z}^{2}/7,0,-xy/7)$. (\rom2) 
+\end{proof}
 \begin{exercise}[1.2.5]
     Let ${V}_{1}={U}_{1}-x{U}_{3}$, ${V}_{2}={U}_{2}$, and ${V}_{3}=x{U}_{1}+{U}_{3}$. Prove that the vectors ${V}_{1}(p)$, ${V}_{2}(p)$, ${V}_{3}(p)$ are linearly indepnedent at each $p\in{\R}^{3}$. Express the vector field $x{U}_{1}+y{U}_{2}+z{U}_{3}$ as a linear combination of ${V}_{i}$.
 \end{exercise}
 \begin{proof}
-    For all $p\in{\R}^{3}$, we have ${V}_{1}(p)={U}_{1}(p)-x{U}_{3}(p)=(1,0,-x)$. Similarly, ${V}_{2}(p)=(0,1,0)$ and ${V}_{3}=(x,0,1)$. Consider $a{V}_{1}(p)+b{V}_{2}(p)+c{V}_{3}(p)=0$, where $a,b,c\in\R$. Solve for $(a,b,c)$, then $c({x}^{2}+1)=0$, so $c=0$. Now $(a,b,c)=(0,0,0)$, hence ${V}_{i}(p)$ are linearly indepnedent.
+    For all $p\in{\R}^{3}$, we have ${V}_{1}(p)={U}_{1}(p)-x{U}_{3}(p)=(1,0,-x)$. Similarly, ${V}_{2}(p)=(0,1,0)$ and ${V}_{3}=(x,0,1)$. Consider $a{V}_{1}(p)+b{V}_{2}(p)+c{V}_{3}(p)=0$, where $a,b,c\in\R$. Solve for $(a,b,c)$, then $c({x}^{2}+1)=0$, so $c=0$. Now $(a,b,c)=(0,0,0)$, hence ${V}_{i}(p)$ are linearly independent. For all $p\in{\R}^{3}$, $a{V}_{1}(p)+b{V}_{2}(p)+c{V}_{3}(p)=(a+cx,b,c-a)$ and $x{U}_{1}(p)+y{U}_{2}(p)+z{U}_{3}(p)=(x,y,z)$. Solve $(a+cx,b,c-a)=(x,y,z)$, then $(a,b,c)=((x-zx)/(1+{x}^{2}),y,z+({x}^{2}-z{x}^{2})(1+{x}^{2}))$. 
+\end{proof}
+\begin{exercise}[1.3.1]
+    Let ${v}_{p}$ be the tangent vector with $v=(2,-1,3)$ and $p=(2,0,-1)$. Use the definition to compute the directional derivative for the following functions.
+    \begin{enumerate}
+        \item $f={y}^{2}z$.
+        \item $f={x}^{7}$.
+        \item $f={e}^{x}\cos y$.
+    \end{enumerate}
+\end{exercise}
+\begin{proof}
+    We have $p+tv=(2+2t,-t,3t-1)$. (\rom1) Now $f(p+tv)=3{t}^{3}-{t}^{2}$, then ${v}_{p}[f]=9{t}^{2}-2t=0$. (\rom2) Now $f(p+tv)={(2+2t)}^{7}$, then ${v}_{p}[f]=7{(2+2t)}^{6}\cdot 2=14{(2+2t)}^{6}=7\cdot{2}^{7}$. (\rom3) Now $f(p+tv)={e}^{2+2t}\cos(-t)$, then ${v}_{p}[f]={e}^{2+2t}\sin(-t)+2{e}^{2+2t}\cos(-t)=2{e}^{2}$.
+\end{proof}
+\begin{exercise}[1.3.3]
+    Let $V={y}^{2}{U}_{1}-x{U}_{3}$. Let $f=xy$ and let $g={z}^{3}$. Compute the following functions.
+    \begin{enumerate}
+        \item $V[f]$.
+        \item $V[g]$.
+        \item $V[fg]$.
+        \item $fV[g]-gV[f]$.
+        \item $V[{f}^{2}+{g}^{2}]$.
+        \item $V[V[f]]$.
+    \end{enumerate}
+\end{exercise}
+\begin{proof}
+    (\rom1) We have $V[f]={y}^{2}{U}_{1}[xy]-x{U}_{3}[xy]={y}^{3}$. (\rom2) We have $V[g]={y}^{2}{U}_{1}[{z}^{3}]-x{U}_{3}[{z}^{3}]=-3x{z}^{2}$. (\rom3) We have $V[fg]=V[f]g+fV[g]={y}^{3}{z}^{3}-3{x}^{2}y{z}^{2}$. (\rom4) We have $fV[g]-gV[f]=-3{x}^{2}y{z}^{2}-{y}^{3}{z}^{3}$. (\rom5) We have $V[{f}^{2}+{g}^{2}]=V[{f}^{2}]+V[{g}^{2}]=V[f]f+fV[f]+V[g]g+gV[g]=2x{y}^{4}-6x{z}^{5}$. (\rom6) We have $V[V[f]]=V[{y}^{3}]={y}^{2}{U}_{1}[{y}^{3}]-x{U}_{3}[{y}^{3}]=0$.
+\end{proof}
+\begin{exercise}[1.3.5]
+    If $V[f]=W[f]$ for all $f$ on ${\R}^{3}$, prove that $V=W$.
+\end{exercise}
+\begin{proof}
+    Let $V=\sum{a}_{i}{U}_{i}$ and let $W=\sum{b}_{i}{U}_{i}$. Since $V[f]=W[f]$, $(V-W)[f]=\sum({a}_{i}-{b}_{i})\frac{\pa f}{\pa{x}_{i}}=0$. Pick $f=x$, then ${a}_{1}={b}_{1}$. Similarly, if we pick $f=y$ and $f=z$, we have ${a}_{2}={b}_{2}$ and ${a}_{3}={b}_{3}$. Hence $V=W$.
 \end{proof}

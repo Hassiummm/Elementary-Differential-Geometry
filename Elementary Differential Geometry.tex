@@ -83,7 +83,7 @@ The functions ${v}_{1}$, ${v}_{2}$, and ${v}_{3}$ are called the \hdef{Euclidean
     (\rom1) We have $(a{v}_{p}+b{w}_{p})[f]=\sum(a{v}_{i}+b{w}_{i})(\pa f/\pa{x}_{i})(p)=\sum a{v}_{i}(\pa f/\pa{x}_{i})+\sum b{w}_{i}(\pa f/\pa{x}_{i})(p)=a{v}_{p}[f]+b{w}_{p}[f]$. (\rom2) We have ${v}_{p}[af+bg]=\sum{v}_{i}(\pa(af+bg)/\pa{x}_{i})(p)=\sum{v}_{i}(\pa(af)/\pa{x}_{i})(p)+\sum{v}_{i}(\pa(bg)/\pa{x}_{i})(p)=a{v}_{p}[f]+b{v}_{p}[g]$. (\rom3) We have ${v}_{p}[fg]=\sum{v}_{i}(\pa(fg)/\pa{x}_{i})(p)=\sum{v}_{i}(\pa f/\pa{x}_{i})(p)g(p)+f(p)\sum{v}_{i}(\pa g/\pa{x}_{i})(p)={v}_{p}[f]g(p)+f(p){v}_{p}[g]$.
 \end{proof}
 \par
-Let $V$ be a vecotr field, we define $V[f]$ at $p\in{\R}^{3}$ to be $V(p)[f]$. By the convention, ${U}_{i}(p)[f]=\frac{\pa f}{\pa{x}_{i}}(p)$.
+Let $V$ be a vecotr field, we define $V[f]$ at $p\in{\R}^{3}$ to be $V(p)[f]$. By the convention, ${U}_{i}(p)[f]=(\pa f/\pa{x}_{i})(p)$.
 \begin{proposition}
     Let $V$ and $W$ be vector fields. Let $f$, $g$, and $h$ be real-valued functions. For all $a,b\in\R$, the following properties hold.
     \begin{enumerate}
@@ -100,7 +100,7 @@ Let $V$ be a vecotr field, we define $V[f]$ at $p\in{\R}^{3}$ to be $V(p)[f]$. B
 \end{example}
 % 1.4 Curves on R^3
 \par
-Let $I\sub\R$ be an open interval. Let $\al:I\to{\R}^{3}$ be a function. We can rewrite $\al(t)$ as $({\al}_{1}(t),{\al}_{2}(t),{\al}_{3}(t))$, where ${\al}_{i}:I\to\R$. We say $\al$ is differentiable if ${\al}_{i}$ are differetiable.
+Let $I\sub\R$ be an open interval. Let $\al:I\to{\R}^{3}$ be a function. We can rewrite $\al(t)$ as $({\al}_{1}(t),{\al}_{2}(t),{\al}_{3}(t))$, where ${\al}_{i}:I\to\R$. We say $\al$ is \hdef{differentiable} if ${\al}_{i}$ are differetiable.
 \begin{definition}
     A \hdef{curve} in ${\R}^{3}$ is a differetiable function $\al:I\to{\R}^{3}$, where $I\sub\R$ is an open interval.
 \end{definition}
@@ -117,6 +117,25 @@ Let $I\sub\R$ be an open interval. Let $\al:I\to{\R}^{3}$ be a function. We can 
 \begin{definition}
     Let $\al:I\to{\R}^{3}$ be a curve with $\al=({\al}_{1},{\al}_{2},{\al}_{3})$. For all $t\in I$, the \hdef{velocity vector} of $\al$ at $t$ is the tangent vector $\al'(t)={((\d{\al}_{1}/\d t)(t),(\d{\al}_{2}/\d t)(t),(\d{\al}_{3}/\d t)(t))}_{\al(t)}$ at the point $\al(t)\in{\R}^{3}$.
 \end{definition}
+\par
+Consider the velocity vector $\al'(t)$, we can rewrite it by the natural frame fields, so $\al'(t)=\sum(\d{\al}_{i}/\d t)(t){U}_{i}(\al(t))$.
+\begin{definition}
+    Let $\al:I\to{\R}^{3}$ be a curve and let $h:J\to I$ be differetiable, where $J$ is an open interval of $\R$. The \hdef{reparametrization} of $\al$ by $h$ is the composition $\al\comp h:J\to{\R}^{3}$.
+\end{definition}
+\par
+The composition of differentiable functions is differetiable, so any reparametrization is differetiable, which means it is a curve.
+\begin{proposition}
+    Let $\be$ be the reparametrization of $\al$ by $h$, then $\be'(s)=(\d h/\d s)(s)\al'(h(s))$.
+\end{proposition}
+\begin{proof}
+    Rewrite $\be(s)=\al(h(s))$, then we have $\be'(s)={(\d({\al}_{i}{h}_{i})/\d s)(s)}_{\al(h(s))}={(\d{\al}_{i}/\d s)(h(s))\cdot(\d h/\d s)(s)}_{\al(h(s))}=(\d h/\d s)(s)\al'(h(s))$.
+\end{proof}
+\begin{proposition}
+    Let $\al$ be a curve and let $f$ be a differentiable function on ${\R}^{3}$, then $\al'(t)[f]=(\d(f\al)/\d t)(t)$.
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
 
 
 \input{Ch2.tex}

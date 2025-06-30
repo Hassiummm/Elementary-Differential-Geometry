@@ -1,19 +1,13 @@
 \newpage
 \newsection{Exercises and Proofs}
 \begin{exercise}[1.1.1]
-    Let $f={x}^{2}y$ and $g=y\sin z$ be functions on ${\R}^{3}$. Express the following functions in terms of $x$, $y$, and $z$.
-    \begin{enumerate}
-        \item $f{g}^{2}$.
-        \item $\frac{\pa f}{\pa x}g+\frac{\pa g}{\pa y}f$.
-        \item $\frac{{\pa}^{2}(fg)}{\pa y\pa z}$.
-        \item $\frac{\pa}{\pa y}(\sin f)$.
-    \end{enumerate}
+    Let $f={x}^{2}y$ and $g=y\sin z$ be functions on ${\R}^{3}$. Express the following functions in terms of $x$, $y$, and $z$: $f{g}^{2}$, $\frac{\pa f}{\pa x}g+\frac{\pa g}{\pa y}f$, $\frac{{\pa}^{2}(fg)}{\pa y\pa z}$, and $\frac{\pa}{\pa y}(\sin f)$.
 \end{exercise}
 \begin{proof}
-    (\rom1) We have $f{g}^{2}={x}^{2}y{y}^{2}{\sin}^{2}z={x}^{2}{y}^{3}{\sin}^{2}z$. (\rom2) We have $\frac{\pa f}{\pa x}=2xy$ and $\frac{\pa g}{\pa y}=\sin z$, then $\frac{\pa f}{\pa x}g+\frac{\pa g}{\pa y}f=2x{y}^{2}\sin z+{x}^{2}y\sin z$. (\rom3) We have $fg={x}^{2}{y}^{2}\sin z$, then $\frac{{\pa}^{2}(fg)}{\pa y\pa z}=2{x}^{2}y\cos z$. (\rom4) We have $\sin f=\sin({x}^{2}y)$, then $\frac{\pa}{\pa y}(\sin f)={x}^{2}\cos({x}^{2}y)$.
+    (\rom1) We have $f{g}^{2}={x}^{2}y{y}^{2}{\sin}^{2}z={x}^{2}{y}^{3}{\sin}^{2}z$. (\rom2) We have $\pa f/\pa x=2xy$ and $\pa g/\pa y=\sin z$, then $\frac{\pa f}{\pa x}g+\frac{\pa g}{\pa y}f=2x{y}^{2}\sin z+{x}^{2}y\sin z$. (\rom3) We have $fg={x}^{2}{y}^{2}\sin z$, then $\frac{{\pa}^{2}(fg)}{\pa y\pa z}=2{x}^{2}y\cos z$. (\rom4) We have $\sin f=\sin({x}^{2}y)$, then $\frac{\pa}{\pa y}(\sin f)={x}^{2}\cos({x}^{2}y)$.
 \end{proof}
 \begin{exercise}[1.1.3]
-    Express $\frac{\pa f}{\pa x}$ in terms of $x$, $y$, and $z$ for the following functions.
+    Express $\pa f/\pa x$ in terms of $x$, $y$, and $z$ for the following functions.
     \begin{enumerate}
         \item $f=x\sin(xy)+y\cos(xz)$;
         \item $f=\sin g$, $g={e}^{h}$, and $h={x}^{2}+{y}^{2}+{z}^{2}$.
@@ -22,12 +16,17 @@
 \begin{proof}
     (\rom1) We have $\frac{\pa f}{\pa x}=\frac{\pa(x\sin(xy))}{\pa x}+\frac{\pa(y\cos(xz))}{\pa x}=\sin(xy)+xy\cos(xy)-yz\sin(xz)$. (\rom2) We have $f=\sin({e}^{{x}^{2}+{y}^{2}+{z}^{2}})$, then $\frac{\pa f}{\pa x}=2x\cos({e}^{{x}^{2}+{y}^{2}+{z}^{2}}){e}^{{x}^{2}+{y}^{2}+{z}^{2}}$.
 \end{proof}
+
+
+
 \begin{exercise}[1.2.1]
     Let $v=(-2,1,-1)$ and $w=(0,1,3)$. At an arbitrary point $p$, express the tangent vector $3{v}_{p}-2{w}_{p}$ as a linear combination of ${U}_{1}(p)$, ${U}_{2}(p)$, and ${U}_{3}(p)$.
 \end{exercise}
 \begin{proof}
     We have $3{v}_{p}-2{w}_{p}={(-6,1,-9)}_{p}=-6{U}_{1}(p)+{U}_{2}(p)-9{U}_{3}(p)$.
 \end{proof}
+
+
 \begin{exercise}[1.2.3]
     Let $p=({p}_{1},{p}_{2},{p}_{3})$. In each case, express the given vector field $V$ in the standard form $\sum{v}_{i}{U}_{i}$. 
     \begin{enumerate}
@@ -39,13 +38,13 @@
     \end{enumerate}
 \end{exercise}
 \begin{proof}
-    (\rom1) We have $V=(2{z}^{2}{U}_{1}-xy{U}_{3})/7$. For all $p\in{\R}^{3}$, $V(p)=((2{z}^{2},0,0)-(0,0,xy))/7=(2{z}^{2}/7,0,-xy/7)$. (\rom2) 
+    (\rom1) We have $V=(2{z}^{2}{U}_{1}-xy{U}_{3})/7$. For all $p\in{\R}^{3}$, $V(p)=((2{z}^{2},0,0)-(0,0,xy))/7=(2{z}^{2}/7,0,-xy/7)$, so $({v}_{i})=(2{z}^{2}/7,0,-xy/7)$. (\rom2) Here $V(p)=x{U}_{1}+(z-x){U}_{2}+0{U}_{3}$.
 \end{proof}
 \begin{exercise}[1.2.5]
     Let ${V}_{1}={U}_{1}-x{U}_{3}$, ${V}_{2}={U}_{2}$, and ${V}_{3}=x{U}_{1}+{U}_{3}$. Prove that the vectors ${V}_{1}(p)$, ${V}_{2}(p)$, ${V}_{3}(p)$ are linearly indepnedent at each $p\in{\R}^{3}$. Express the vector field $x{U}_{1}+y{U}_{2}+z{U}_{3}$ as a linear combination of ${V}_{i}$.
 \end{exercise}
 \begin{proof}
-    For all $p\in{\R}^{3}$, we have ${V}_{1}(p)={U}_{1}(p)-x{U}_{3}(p)=(1,0,-x)$. Similarly, ${V}_{2}(p)=(0,1,0)$ and ${V}_{3}=(x,0,1)$. Consider $a{V}_{1}(p)+b{V}_{2}(p)+c{V}_{3}(p)=0$, where $a,b,c\in\R$. Solve for $(a,b,c)$, then $c({x}^{2}+1)=0$, so $c=0$. Now $(a,b,c)=(0,0,0)$, hence ${V}_{i}(p)$ are linearly independent. For all $p\in{\R}^{3}$, $a{V}_{1}(p)+b{V}_{2}(p)+c{V}_{3}(p)=(a+cx,b,c-a)$ and $x{U}_{1}(p)+y{U}_{2}(p)+z{U}_{3}(p)=(x,y,z)$. Solve $(a+cx,b,c-a)=(x,y,z)$, then $(a,b,c)=((x-zx)/(1+{x}^{2}),y,z+({x}^{2}-z{x}^{2})(1+{x}^{2}))$. 
+    For all $p\in{\R}^{3}$, we have ${V}_{1}(p)={U}_{1}(p)-x{U}_{3}(p)=(1,0,-x)$. Similarly, ${V}_{2}(p)=(0,1,0)$ and ${V}_{3}=(x,0,1)$. Consider $a{V}_{1}(p)+b{V}_{2}(p)+c{V}_{3}(p)=0$, where $a,b,c\in\R$. Solve for $(a,b,c)$, then $c({x}^{2}+1)=0$, so $c=0$. Now $(a,b,c)=(0,0,0)$, hence ${V}_{i}(p)$ are linearly independent. For all $p\in{\R}^{3}$, $a{V}_{1}(p)+b{V}_{2}(p)+c{V}_{3}(p)=(a+cx,b,c-a)$ and $x{U}_{1}(p)+y{U}_{2}(p)+z{U}_{3}(p)=(x,y,z)$. Solve $(a+cx,b,c-a)=(x,y,z)$, then $(a,b,c)=((x-zx)/(1+{x}^{2}),y,({x}^{2}+z)/(1+{x}^{2}))$. 
 \end{proof}
 \begin{exercise}[1.3.1]
     Let ${v}_{p}$ be the tangent vector with $v=(2,-1,3)$ and $p=(2,0,-1)$. Use the definition to compute the directional derivative for the following functions.

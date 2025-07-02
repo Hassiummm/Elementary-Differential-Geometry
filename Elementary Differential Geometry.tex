@@ -1,5 +1,5 @@
 % chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \input{/Users/mr.hassium/Desktop/Github/Hello-World/hassium.tex}
 \def\htitle{Elementary Differential Geometry}
 \def\hauthor{Hassium}\let\hfauthor\hauthor
@@ -7,6 +7,7 @@
 \hsetup
 \htoc
 \hmain
+\par
 \section{Calculus on Euclidean Space}
 % 1.1
 \begin{definition}
@@ -141,13 +142,40 @@ The composition of differentiable functions is differetiable, so any reparametri
 \par
 Now we show a general idea of parametrizations. The proofs will be included in other sections when we have enough tools. Assume every result is correct for now.
 \begin{definition}
-    Let $f:{\R}^{2}\to\R$ be a differetiable function. The \hdef{level set} ${C}_{f}(a)$ of height $a$ is defined to be the set $\{p\in{\R}^{2}\mid f(p)=a\}$.
+    A \hdef{topology} on a set $X$ is a set $\T$ of subsets of $X$ such that:
+    \begin{enumerate}
+        \item $\es$ and $X$ are in $\T$;
+        \item the union of the elements of any subcollection of $\T$ is in $\T$;
+        \item the intersection of the elements of any finite subcollection of $\T$ is in $\T$.
+    \end{enumerate}
+    If $\T$ is a topology on $X$, we say the pair $(X,\T)$ is a \hdef{topological space}.
+\end{definition}
+\begin{definition}
+    Let $\T$ be a topology on $X$. A subset $U\sub X$ is said to be \hdef{open} if $U\in\T$. A subset $V$ is said to be \hdef{closed} if $X\sm V$ is open. Let $x\in X$. A \hdef{neighborhood} of $x$ is an open set ${U}_{x}$ such that $x\in U$.
 \end{definition}
 \begin{theorem}[implicit function theorem]
     If $f:{\R}^{2}\to\R$ is continuously differetiable in a neighborhood of some point $({x}_{0},{y}_{0})$ and $\nabla f({x}_{0},{y}_{0})\ne 0$, then there exists a unique differentiable function $\vp$ such that $\vp({x}_{0})={y}_{0}$ and $f(x,\vp(x))=0$ in a neighborhood of ${x}_{0}$.
 \end{theorem}
+\par
+If $f:{\R}^{2}\to\R$ is continuously differentiable everywhere and if 
 
+\begin{definition}
+    Let $f:{\R}^{2}\to\R$ be a differetiable function. The \hdef{level set} ${C}_{f}(a)$ of \hdef{height} $a$ is defined to be the set $\{p\in{\R}^{2}\mid f(p)=a\}$.
+\end{definition}
+\begin{definition}
+    Let $C$ be a level curve. If $C=({C}_{1},{C}_{2})$, where ${C}_{1}$ and ${C}_{2}$ are regular, then we call ${C}_{1}$ and ${C}_{2}$ the \hdef{parametrizations} of $C$.
+\end{definition}
 % 1.5
+\begin{definition}
+    A \hdef{1-form} $\vp$ on ${\R}^{3}$ is a function $\vp:\{{T}_{p}({\R}^{3})\mid p\in{\R}^{3}\}\to\R$ such that for all $a,b\in\R$ and $v,w\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$, $\vp(av+bw)=a\vp(v)+b\vp(w)$.
+\end{definition}
+\par
+Given a 1-form $\vp$, for any point $p$, the restriction $\vp{\vert}_{{T}_{p}({\R}^{3})}:{T}_{p}({\R}^{3})\to\R$ is denoted by ${\vp}_{p}$.
+
+
+
+
+
 \input{Ch2.tex}
 \input{ExPf.tex}
 \hindex

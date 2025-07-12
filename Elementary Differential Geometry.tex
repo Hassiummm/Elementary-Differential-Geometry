@@ -24,7 +24,7 @@ Let $x$, $y$, and $z$ be the natural coordinate functions, rewrite $x={x}_{1}$, 
     A real-valued function $f$ on ${\R}^{3}$ is \hdef{differentiable} if all partial derivatives exist and continuous.
 \end{definition}
 \par
-Let $({x}_{1},{x}_{2},{x}_{3})\in{\R}^{3}$, we define the norm to be $\norm{x}=\sqrt{\sum{{x}_{i}}^{2}}$.
+Let $x=({x}_{1},{x}_{2},{x}_{3})\in{\R}^{3}$, we define the norm to be $\norm{x}=\sqrt{\sum{{x}_{i}}^{2}}$.
 \begin{definition}
     A subset $O\sub{\R}^{3}$ is \hdef{open} if for all $p\in O$, there exists $\ve>0$ such that $\{x\in{\R}^{3}\mid\norm{x-p}<\ve\}\sub O$. 
 \end{definition}
@@ -164,10 +164,36 @@ Let ${v}_{p},{w}_{p}\in{T}_{p}({\R}^{3})$ and let $a,b\in\R$, then $\d f(a{v}_{p
     If $\vp$ is a 1-form on ${\R}^{3}$, then $\vp=\sum{f}_{i}\d{x}_{i}$, where ${f}_{i}=\vp({U}_{i})$.
 \end{proposition}
 \begin{proof}
-    
+    Let ${v}_{p}\in{T}_{p}({\R}^{3})$, then $\vp({v}_{p})=\vp(\sum{v}_{i}{U}_{i}(p))=\sum{v}_{i}\vp({U}_{i}(p))=\sum{v}_{i}{f}_{i}(p)=\sum{f}_{i}(p)\d{x}_{i}({v}_{p})=(\sum{f}_{i}\d{x}_{i})({v}_{p})$, hence $\vp=\sum{f}_{i}\d{x}_{i}$.
 \end{proof}
 \par
 The functions ${f}_{1}$, ${f}_{2}$, and ${f}_{3}$ are called the \hdef{Euclidean coordinate functions} of the 1-form $\vp$.
+\begin{proposition}
+    Let $f$ be a differentiable function on ${\R}^{3}$, then $\d f=\sum(\pa f/\pa{x}_{i})\d{x}_{i}$.
+\end{proposition}
+\begin{proof}
+    Let ${v}_{p}\in{T}_{p}({\R}^{3})$, then $\d f({v}_{p})={v}_{p}[f]=\sum{v}_{i}(\pa f/\pa{x}_{i})(p)=\sum(\pa f/\pa{x}_{i})(p)\d{x}_{i}({v}_{p})=(\sum(\pa f/\pa{x}_{i})\d{x}_{i})({v}_{p})$, hence $\d f=\sum(\pa f/\pa{x}_{i})\d{x}_{i}$.
+\end{proof}
+\par
+Let $f$ and $g$ be differentiable functions on ${\R}^{3}$, then $\d(f+g)=\sum(\pa(f+g)/\pa{x}_{i})\d{x}_{i}=\sum(\pa f/\pa{x}_{i})\d{x}_{i}+\sum(\pa g/\pa{x}_{i})\d{x}_{i}=\d f+\d g$. Now we denote the multiplication to be $fg$.
+\begin{proposition}
+    Let $f$ and $g$ be differentiable functions on ${\R}^{3}$, then $\d(fg)=g\d f+f\d g$.
+\end{proposition}
+\begin{proof}
+    We have $\d(fg)=\sum(\pa(fg)/\pa{x}_{i})\d{x}_{i}=\sum((\pa f/\pa{x}_{i})g+(\pa g/\pa{x}_{i})f)\d{x}_{i}=g\d f+f\d g$.
+\end{proof}
+\begin{proposition}
+    Let $f:{\R}^{3}\to\R$ and $h:\R\to\R$ be differentiable, then $\d(h(f))=(\d h(f)/\d x)\d f$.
+\end{proposition}
+\begin{proof}
+    We have $\d(h(f))=\sum(\pa h(f)/\pa{x}_{i})\d{x}_{i}$, by the chain rule, $(\pa h(f)/\pa{x}_{i})\d{x}_{i}=\sum(\d h(f))$
+\end{proof}
+\begin{example}
+    Consider the function $f=({x}^{2}-1)y+({y}^{2}+2)z$. 
+\end{example}
+% 1.6
+
+
 
 
 \input{Ch2.tex}

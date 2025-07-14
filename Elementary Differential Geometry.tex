@@ -186,12 +186,15 @@ Let $f$ and $g$ be differentiable functions on ${\R}^{3}$, then $\d(f+g)=\sum(\p
     Let $f:{\R}^{3}\to\R$ and $h:\R\to\R$ be differentiable, then $\d(h(f))=(\d h(f)/\d x)\d f$.
 \end{proposition}
 \begin{proof}
-    We have $\d(h(f))=\sum(\pa h(f)/\pa{x}_{i})\d{x}_{i}$, by the chain rule, $(\pa h(f)/\pa{x}_{i})\d{x}_{i}=\sum(\d h(f))$
+    We have $\d(h(f))=\sum(\pa h(f)/\pa{x}_{i})\d{x}_{i}$, by the chain rule, $(\pa h(f)/\pa{x}_{i})\d{x}_{i}=(\d h(f)/\d f)(\pa x/\pa{x}_{i})$, so $\d(h(f))=(\d f(h)/\d f)\d f$.
 \end{proof}
 \begin{example}
-    Consider the function $f=({x}^{2}-1)y+({y}^{2}+2)z$. 
+    Consider the function $f=({x}^{2}-1)y+({y}^{2}+2)z$. We have $\d f=\d(({x}^{2}-1)y)+\d(({y}^{2}+2)z)=y\d({x}^{2}-1)+({x}^{2}+1)\d y+z\d({y}^{2}+2)+({y}^{2}+2)\d z=2xy\d x+({x}^{2}+2yz-1)\d y+({y}^{2}+2)\d z$. Since ${v}_{p}[f]=\d f({v}_{p})$, ${v}_{p}[f]=2{p}_{1}{p}_{2}{v}_{1}+({p}_{1}^{2}+2{p}_{2}{p}_{3}-1){v}_{2}+({p}_{2}^{2}+2){v}_{3}$.
 \end{example}
 % 1.6
+\par
+
+
 
 
 

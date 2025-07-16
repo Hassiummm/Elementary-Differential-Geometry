@@ -9,7 +9,7 @@
 \hmain
 \par
 \section{Calculus on Euclidean Space}
-% 1.1
+% 1.1 Euclidean Space
 \begin{definition}
     The \hdef{Euclidean 3-space}, denoted ${\R}^{3}$, is the set of ordered triples of the form $p=({p}_{1},{p}_{2},{p}_{3})$, where ${p}_{i}\in\R$. An element of ${\R}^{3}$ is called a \hdef{point}.
 \end{definition}
@@ -30,7 +30,7 @@ Let $x=({x}_{1},{x}_{2},{x}_{3})\in{\R}^{3}$, we define the norm to be $\norm{x}
 \end{definition}
 \par
 Let $f:O\to\R$ be a function defined on an open set. The differetiability of $f$ at $p$ can be determined entirely from values of $f$ on $O$. This means that differetiation is a local operation. We will discuss this later.
-% 1.2
+% 1.2 Tangent Vectors
 \begin{definition}
     A \hdef{tangent vector} ${v}_{p}$ is an ordered pair ${v}_{p}=(v,p)$, where $v,p\in{\R}^{3}$. Here $v$ is called the \hdef{vector part} and $p$ is called its \hdef{point of application}. Two tangent vectors are said to be \hdef{parallel} if they have the same vector part and different points of application.
 \end{definition}
@@ -58,7 +58,7 @@ The functions ${v}_{1}$, ${v}_{2}$, and ${v}_{3}$ are called the \hdef{Euclidean
 \begin{definition}
     A vector field $V$ is \hdef{differentiable} if its Euclidean coordinate functions are differentiable.
 \end{definition}
-% 1.3
+% 1.3 Directional Derivatives
 \begin{definition}
     Let $f$ be a differentiable real-valued function on ${\R}^{3}$ and let ${v}_{p}$ be a tangent vector on ${\R}^{3}$. The \hdef{directional derivative} of $f$ with respect to ${v}_{p}$, denoted ${v}_{p}[f]$, is defined to be $(\d/\d t)f(p+tv)$ at $t=0$.
 \end{definition}
@@ -101,7 +101,7 @@ Let $V$ be a vector field, we define $V[f]$ at $p\in{\R}^{3}$ to be $V(p)[f]$. B
 \begin{example}
     Let $V=x{U}_{1}-{y}^{2}{U}_{3}$ and let $f={x}^{2}y+{z}^{3}$. Then $V[f]=x{U}_{1}[{x}^{2}y]+x{U}_{1}[{z}^{3}]-{y}^{2}{U}_{3}[{x}^{2}y]-{y}^{2}{U}_{3}[{z}^{3}]=2{x}^{2}y-3{y}^{2}{z}^{2}$.
 \end{example}
-% 1.4
+% 1.4 Curves in {\R}^{3}
 \par
 Let $I\sub\R$ be an open interval. Let $\al:I\to{\R}^{3}$ be a function. We can rewrite $\al(t)$ as $({\al}_{1}(t),{\al}_{2}(t),{\al}_{3}(t))$, where ${\al}_{i}:I\to\R$. We say $\al$ is \hdef{differentiable} if ${\al}_{i}$ are differentiable.
 \begin{definition}
@@ -141,7 +141,7 @@ The composition of differentiable functions is differentiable, so any reparametr
 \end{proof}
 \par
 Now we show a general idea of parametrizations. The proofs will be included in other sections when we have enough tools. Assume every result is correct for now.
-% 1.5
+% 1.5 1-Forms
 \begin{definition}
     A \hdef{1-form} $\vp$ on ${\R}^{3}$ is a function $\vp:{\Cp}_{p\in{\R}^{3}}{T}_{p}({\R}^{3})\to\R$ such that for all $a,b\in\R$ and $v,w\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$, $\vp(av+bw)=a\vp(v)+b\vp(w)$.
 \end{definition}
@@ -191,14 +191,53 @@ Let $f$ and $g$ be differentiable functions on ${\R}^{3}$, then $\d(f+g)=\sum(\p
 \begin{example}
     Consider the function $f=({x}^{2}-1)y+({y}^{2}+2)z$. We have $\d f=\d(({x}^{2}-1)y)+\d(({y}^{2}+2)z)=y\d({x}^{2}-1)+({x}^{2}+1)\d y+z\d({y}^{2}+2)+({y}^{2}+2)\d z=2xy\d x+({x}^{2}+2yz-1)\d y+({y}^{2}+2)\d z$. Since ${v}_{p}[f]=\d f({v}_{p})$, ${v}_{p}[f]=2{p}_{1}{p}_{2}{v}_{1}+({p}_{1}^{2}+2{p}_{2}{p}_{3}-1){v}_{2}+({p}_{2}^{2}+2){v}_{3}$.
 \end{example}
-% 1.6
+% 1.6 Differential Forms
+\begin{definition}
+    Let $V$ be the vector space ${\R}^{3}$ and denote the space of all $p$-linear forms on $V$ by ${\LA}^{p}({V}^{*})$. Every element of ${\LA}^{p}$ is called a \hdef{p-form}. Define the \hdef{wedge product} to be a function $\wedge:{\LA}^{a}({V}^{*})\times{\LA}^{b}({V}^{*})\to{\LA}^{a+b}({V}^{*})$ such that for $\om\in{\LA}^{m}({V}^{*})$, $\eta\in{\LA}^{n}({V}^{*})$, and ${v}_{1},\dots,{v}_{m+n}\in V$, the following properties hold.
+    \begin{enumerate}
+        \item $(\om\wedge\eta)({v}_{1},\dots,{v}_{m+n})=({\sum}_{\si\in{\Sg}_{m+n}}\sgn(\si)\om({v}_{\si(1)},\dots,{v}_{\si(m)})\eta({v}_{\si(m+1)},\dots,{v}_{\si(m+n)}))/(m!n!)$.
+        \item $\om\wedge\eta={(-1)}^{mn}\eta\wedge\om$.
+    \end{enumerate}
+\end{definition}
 \par
-Let $V$ be the vector space ${\R}^{3}$ and denote the space of all $k$-linear forms on $V$ by ${\LA}^{k}({V}^{*})$. Every element of ${\LA}^{k}$
-
-
-We define the wedge product to be the function $\wedge:{\LA}^{a}({V}^{*})\times{\LA}^{b}({V}^{*})$ such that 
-
-
+Generally, a $p$-form is of the form $\sum f(x,y,z)\d{x}^{i}\wedge\cdots\d{y}^{j}\wedge\cdots\d{z}^{k}\wedge\cdots$. We have $\d{x}_{i}\wedge\d{x}_{j}=-\d{x}_{j}\wedge\d{x}_{i}$. If $i=j$, then $\d{x}_{i}\wedge\d{x}_{i}=-\d{x}_{i}\wedge\d{x}_{i}$, so $\d{x}_{i}\wedge\d{x}_{i}=0$. It is trivial that $\wedge$ is bilinear and associative, that is,
+\begin{enumerate}
+    \item for ${\om}_{1},{\om}_{2}\in{\LA}^{m}({V}^{*})$, $\eta\in{\LA}^{n}({V}^{*})$, and $a,b\in\R$,$(a{\om}_{1}+b{\om}_{2})\wedge\eta=a({\om}_{1}\wedge\eta)+b({\om}_{2}\wedge\eta)$ and $\eta\wedge(a{\om}_{1}+b{\om}_{2})=a(\eta\wedge{\om}_{1})+b(\eta\wedge{\om}_{2})$;
+    \item for $\om\in{\LA}^{m}({V}^{*})$, $\eta\in{\LA}^{n}({V}^{*})$, and $\theta\in{\LA}^{l}({V}^{*})$, $\om\wedge(\eta\wedge\theta)=(\om\wedge\eta)\wedge\theta$.
+\end{enumerate}
+Now given a space of $p$-forms ${\LA}^{p}({V}^{*})$ with basis $\{{e}_{1},{e}_{2},{e}_{3}\}$, the basis of its dual space is denoted by $\{{e}^{1},{e}^{2},{e}^{3}\}$. The basis of ${\LA}^{k}({V}^{*})$ is of the form ${e}^{{i}_{1}}\wedge\cdots\wedge{e}^{{i}_{k}}$, where $1\le{i}_{1}\le\cdots\le{i}_{k}\le 3$. In this case, the dimension of ${\LA}^{p}({V}^{*})$ is $3!/(p!(3-p)!)$. If $p>4$, then $\dim({\LA}^{p}({V}^{*}))=0$, so there are no $p$-forms on ${\R}^{3}$ if $p\ge 4$.
+\begin{example}
+    Let $\vp=x\d x-y\d y$, $\psi=z\d x+x\d z$, $\theta=z\d y$, and $\eta=y\d x\wedge\d z+x\d y\wedge\d z$.
+    \begin{enumerate}
+        \item $\vp\wedge\psi=xz\d x\wedge\d x+{x}^{2}\d x\wedge\d z-yz\d y\wedge\d x-yx\d y\wedge\d z=yz\d x\wedge\d y+{x}^{2}\d x\wedge\d z-yx\d y\wedge\d z$
+        \item $\theta\wedge(\vp\wedge\psi)=y{z}^{2}\d x\wedge(\d y\wedge\d y)+{x}^{2}z\d x\wedge\d z\wedge\d y-xyz\d y\wedge\d z\wedge\d y=-{x}^{2}z\d x\wedge\d y\wedge\d z$
+        \item $\vp\wedge\eta=xy\d x\wedge\d x\wedge\d z+{x}^{2}\d x\wedge\d y\wedge\d z-{y}^{2}\d y\wedge\d x\wedge\d z-xy\d y\wedge\d y\wedge\d z=({x}^{2}+{y}^{2})\d x\wedge\d y\wedge\d z$
+    \end{enumerate}
+\end{example}
+\begin{proposition}
+    Let $\vp$ and $\psi$ be 1-forms, then $\vp\wedge\psi=-\psi\wedge\vp$.
+\end{proposition}
+\begin{proof}
+    Rewrite $\vp=\sum{f}_{i}\d{x}_{i}$ and $\psi=\sum{g}_{i}\d{x}_{i}$, then $\vp\wedge\psi=\sum{f}_{i}{g}_{i}\d{x}_{i}\d{x}_{j}=\sum-{g}_{i}{f}_{i}\d{x}_{j}\d{x}_{i}=-\psi\wedge\vp$.
+\end{proof}
+\begin{definition}
+    Let $\vp=\sum{f}_{i}\d{x}_{i}$ be a 1-form on ${\R}^{3}$. The \hdef{exterior derivative} of $\vp$ is the 2-form $\d\vp=\sum\d{f}_{i}\wedge\d{x}_{i}$. Let $\psi=\sum{f}_{i,j}\d{x}_{i}\wedge\d{x}_{j}$ be a 2-form. The \hdef{exterior derivative} of $\psi$ is the 3-form $\d\psi=\sum\d{f}_{i,j}\wedge\d{x}_{i}\wedge\d{x}_{j}$. 
+\end{definition}
+\par
+Let $a,b\in\R$. Let $\vp=\sum{f}_{i}\d{x}_{i}$ and $\psi=\sum{g}_{i}\d{x}_{i}$ be 1-forms. Then $\d(a\vp+b\psi)=\d(\sum(a{f}_{i}+b{g}_{i})\d{x}_{i})=\sum\d(a{f}_{i}+b{g}_{i})\wedge\d{x}_{i}$, since the differential is linear, the exterior derivative is linear.
+\begin{proposition}
+    Let $f,g:{\R}^{3}\to\R$ be functions and let $\vp$ and $\psi$ be 1-forms. Then $\d(f\vp)=\d f\wedge\vp+f\d\vp$ and $\d(\vp\wedge\psi)=\d\vp\wedge\psi-\vp\wedge\d\psi$.
+\end{proposition}
+\begin{proof}
+    (\rom1) Let $\vp=\sum{g}_{i}\d{x}_{i}$, then $f\vp=\sum f{g}_{i}\d{x}_{i}$, so $\d(f\vp)=\sum(f\d{g}_{i}+{g}_{i}\d f)\wedge\d{x}_{i}=\sum f\d{g}_{i}\wedge\d{x}_{i}+\sum{g}_{i}\d f\wedge\d{x}_{i}=f\d\vp+\d f\wedge\vp$. (\rom2) Since $\d{x}_{i}\wedge\d{x}_{i}=0$, without lose of generality, let $\vp=f\d x$ and let $\psi=g\d y$. Then $\d(\vp\wedge\psi)=\d(fg\d x\wedge\d y)=\d(fg)\wedge\d x\wedge\d y=(f\d g+g\d f)\wedge\d x\wedge\d y=f\d g\wedge\d x\wedge\d y+g\d f\wedge\d x\wedge\d y$. For the right hand side, $\d\vp\wedge\psi=\d f\wedge\d x\wedge g\d y=g\d f\wedge\d x\wedge\d y$ and $\vp\wedge\d\psi=f\d x\wedge\d g\wedge\d y=-f\d g\wedge\d x\wedge\d y$, hence $\d(\vp\wedge\psi)=\d\vp\wedge\psi-\vp\wedge\d\psi$.
+\end{proof}
+% 1.7 Mappings
+\begin{definition}
+    Let $F:{\R}^{n}\to{\R}^{m}$ and let ${f}_{1},\dots,{f}_{m}:{\R}^{n}\to\R$ such that $F(p)=({f}_{1}(p),\dots,{f}_{m}(p))$ for all $p\in{\R}^{n}$. The functions ${f}_{i}$ are called the \hdef{Euclidean coordinate functions} of $F$ and we denote $F=({f}_{1},\dots,{f}_{m})$.
+\end{definition}
+\begin{definition}
+    Let $F:{\R}^{n}\to{\R}^{m}$ and $F=({f}_{1},\dots,{f}_{m})$, we say $F$ is \hdef{differentiable} if all ${f}_{i}$ are differentiable. If $F$ is differentiable, we say $F$ is a \hdef{mapping} from ${\R}^{n}$ to ${\R}^{m}$.
+\end{definition}
 
 
 

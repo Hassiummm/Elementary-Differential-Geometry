@@ -108,9 +108,11 @@ Let $I\sub\R$ be an open interval. Let $\al:I\to{\R}^{3}$ be a function. We can 
     A \hdef{curve} in ${\R}^{3}$ is a differentiable function $\al:I\to{\R}^{3}$, where $I\sub\R$ is an open interval.
 \end{definition}
 \begin{example}
+    A curve $\al:\R\to{\R}^{3}$ defined by $\al(t)=p+tq$, where $\al(0)=p$ and $q\ne 0$, is called a \hdef{straight line}.
+\end{example}
+\begin{example}
     Here are some examples of curves.
     \begin{enumerate}
-        \item A curve $\al:\R\to{\R}^{3}$ defined by $\al(t)=p+tq$, where $\al(0)=p$ and $q\ne 0$, is called a \hdef{straight line}.
         \item The cruve $\al:\R\to{\R}^{3}$ defined by $\al(t)=(a\cos t,a\sin t,bt)$.
         \item The cruve $\al:\R\to{\R}^{3}$ defined by $\al(t)=(1+\cos t,\sin t,2\sin(t/2))$.
         \item The cruve $\al:\R\to{\R}^{3}$ defined by $\al(t)=({e}^{t},{e}^{-t},\sqrt{2}t)$.
@@ -239,11 +241,20 @@ Let $a,b\in\R$. Let $\vp=\sum{f}_{i}\d{x}_{i}$ and $\psi=\sum{g}_{i}\d{x}_{i}$ b
     Let $F:{\R}^{n}\to{\R}^{m}$ and $F=({f}_{1},\dots,{f}_{m})$, we say $F$ is \hdef{differentiable} if all ${f}_{i}$ are differentiable. If $F$ is differentiable, we say $F$ is a \hdef{mapping} from ${\R}^{n}$ to ${\R}^{m}$.
 \end{definition}
 \begin{definition}
-    Let $\al:I\to{\R}^{n}$ be a curve and let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. Then the composite function $\be=F(\al):I\to{\R}^{m}$ is a curve in ${\R}^{m}$ called the \hdef{image} of $\al$ under $F$.
+    Let $\al:I\to{\R}^{n}$ be a curve and let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. Then the composite function $\be=F(\al):I\to{\R}^{m}$ is a     curve in ${\R}^{m}$ called the \hdef{image} of $\al$ under $F$.
 \end{definition}
-
-
-
+\begin{example}
+    
+\end{example}
+\begin{definition}
+    Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping and let ${v}_{p}\in{T}_{p}({\R}^{n})$. The \hdef{tangent map} of $F$, denoted ${F}_{*}(v)$, is defined to be $(\d/\d t)F(p+tv)$ at $t=0$.
+\end{definition}
+\begin{proposition}
+    Let $F=({f}_{1},\dots,{f}_{m}):{\R}^{n}\to{\R}^{m}$ be a mapping. If ${v}_{p}\in{T}_{p}({\R}^{n})$, then ${F}_{*}({v}_{p})=(v[{f}_{1}],\dots,v[{f}_{m}])$ at $F(p)$.
+\end{proposition}
+\begin{proof}
+    Let 
+\end{proof}
 \input{Ch2.tex}
 \input{ExPf.tex}
 \hindex

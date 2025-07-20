@@ -243,22 +243,65 @@ Let $a,b\in\R$. Let $\vp=\sum{f}_{i}\d{x}_{i}$ and $\psi=\sum{g}_{i}\d{x}_{i}$ b
 \begin{definition}
     Let $\al:I\to{\R}^{n}$ be a curve and let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. Then the composite function $\be=F(\al):I\to{\R}^{m}$ is a curve in ${\R}^{m}$ called the \hdef{image} of $\al$ under $F$.
 \end{definition}
+\par
+To examine the effect of a mapping, it suffices to take a proper $\al$ and check the image of it.
 \begin{example}
-    
+    The function $F:{\R}^{3}\to{\R}^{3}$ defined by $F=(x-y,x+y,2z)$ is a mapping. Trivially, $F$ is a linear map, so $F$ is determined by $F({u}_{i})$.
+\end{example}
+\begin{example}
+    Consider the mapping $F:{\R}^{2}\to{\R}^{2}$ defined by $F=({u}^{2}-{v}^{2},2uv)$. Let $\al:I\to{\R}^{2}$ defined by $\al(t)=(r\cos t,r\sin t)$, where $0\le t\le 2\pi$. The image is $\be(t)=({r}^{2}\cos 2t,{r}^{2}\sin 2t)$. This curve takes two counterclockwise trips around the circle of radius ${r}^{2}$ centered at the origin. Therefore, $F$ wraps ${\R}^{2}$ around itself twice.
 \end{example}
 \begin{definition}
     Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping and let ${v}_{p}\in{T}_{p}({\R}^{n})$. The \hdef{tangent map} of $F$, denoted ${F}_{*}(v)$, is defined to be $(\d/\d t)F(p+tv)$ at $t=0$.
 \end{definition}
+\par
+Fix some mapping $F:{\R}^{n}\to{\R}^{m}$. For every $p\in{\R}^{n}$, it induces a tangent map of $F$ at $p$, denoted ${F}_{*p}$.
 \begin{proposition}
-    Let $F=({f}_{1},\dots,{f}_{m}):{\R}^{n}\to{\R}^{m}$ be a mapping. If ${v}_{p}\in{T}_{p}({\R}^{n})$, then ${F}_{*}({v}_{p})=(v[{f}_{1}],\dots,v[{f}_{m}])$ at $F(p)$.
+    Let $F=({f}_{1},\dots,{f}_{m}):{\R}^{n}\to{\R}^{m}$ be a mapping. If ${v}_{p}\in{T}_{p}({\R}^{n})$, then ${F}_{*p}({v}_{p})={(v[{f}_{1}],\dots,v[{f}_{m}])}_{F(p)}$.
 \end{proposition}
 \begin{proof}
     Let 
 \end{proof}
-\begin{theorem}
-    Let $F:{\R}^{n}\to{\R}^{n}$ be a mapping. If ${F}_{*p}$ is injective at some $p\in{\R}^{n}$, then there exists an open set ${U}_{p}$ containing $p$ such that $F{\vert}_{{U}_{p}}:{U}_{p}\to V$, where $V$ is open,  
+\begin{proposition}
+    Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. For all $p\in{T}_{p}({\R}^{n})$,  the tangent map ${F}_{*p}:{T}_{p}({\R}^{n})\to{T}_{F(p)}({\R}^{m})$ is a linear map.
+\end{proposition}
+\begin{proof}
+    Rewrite ${F}_{*p}={(v[{f}_{1}],\dots,v[{f}_{m}])}_{F(p)}$, this proposition immediately follows from 
+\end{proof}
+
+
+
+\begin{definition}
+    Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. We say $F$ is \hdef{regular} if for all $p\in{\R}^{n}$, ${F}_{*p}$ is injective.
+\end{definition}
+\par
+Recall that ${F}_{*p}$ is a linear map.
+
+
+
+
+\begin{definition}
+    A mapping is a \hdef{diffeomorphism} if it has a differentiable inverse mapping.
+\end{definition}
+\begin{definition}
+    A \hdef{topological space} $(X,\T)$ consists of two sets $X$ and $\T$, where $\T\sub\ps(X)$, that satisfies the following properties:
+    \begin{enumerate}
+        \item $\es,X\in\T$;
+        \item any union of elements in $\T$ is also in $\T$;
+        \item any finite intersection of elements in $\T$ is also in $\T$.
+    \end{enumerate}
+    The collection $\T$ is called a \hdef{topology} on $X$.
+\end{definition}
+\begin{definition}
+    Let $(X,\T)$ be a topological space. A subset $U\sub X$ is said to be \hdef{open} if $U\in\T$. Let $x\in X$, a \hdef{neighborhood} of $x$ is an open set ${U}_{x}$ that contains $x$.
+\end{definition}
+\begin{theorem}[inverse function theorem]
+    Let $F:{\R}^{n}\to{\R}^{n}$ be a mapping. If ${F}_{*p}$ is injective at some $p\in{\R}^{n}$, then there exists a neighborhood $U$ of $p$ such that $F{\vert}_{U}:U\to V$, where $V$ is open, is a diffeomorphism.
 \end{theorem}
-\input{Ch2.tex}
+
+
+\section{Frame Fields}
+\input{Ch3.tex}
 \input{ExPf.tex}
 \hindex
 \end{document}

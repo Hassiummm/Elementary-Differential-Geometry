@@ -285,7 +285,7 @@ Let $\{{U}_{j}\}$ and $\{\wb{{U}_{i}}\}$ be the natural frame fields of ${\R}^{n
 \begin{definition}
     Let $F=({f}_{1},\dots,{f}_{m}):{\R}^{n}\to{\R}^{m}$ be a mapping. The \hdef{Jacobian matrix} of $F$ at $x\in{\R}^{n}$ is the matrix
     \begin{center}
-        $\begin{pmatrix}
+        ${J}_{F}(x)=\begin{pmatrix}
             \pa{f}_{1}/\pa{x}_{1}(x) & \cdots & \pa{f}_{1}/\pa{x}_{n}(x) \\
             \vdots & \ddots & \vdots \\
             \pa{f}_{m}/\pa{x}_{1}(x) & \cdots & \pa{f}_{m}/\pa{x}_{n}(x)
@@ -296,11 +296,7 @@ Let $\{{U}_{j}\}$ and $\{\wb{{U}_{i}}\}$ be the natural frame fields of ${\R}^{n
     Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. We say $F$ is \hdef{regular} if for all $p\in{\R}^{n}$, ${F}_{*p}$ is injective.
 \end{definition}
 \par
-Recall that ${F}_{*p}$ is a linear map.
-
-
-
-
+Notice that ${J}_{F}(p)\cdot v={F}_{*p}$, so ${J}_{F}(p)$ is the matrix representation of ${F}_{*p}$.
 \begin{definition}
     A mapping is a \hdef{diffeomorphism} if it has a differentiable inverse mapping.
 \end{definition}
@@ -319,8 +315,7 @@ Recall that ${F}_{*p}$ is a linear map.
 \begin{theorem}[inverse function theorem]
     Let $F:{\R}^{n}\to{\R}^{n}$ be a mapping. If ${F}_{*p}$ is injective at some $p\in{\R}^{n}$, then there exists a neighborhood $U$ of $p$ such that $F{\vert}_{U}:U\to V$, where $V$ is open, is a diffeomorphism.
 \end{theorem}
-\par
-Now we shall describe the analogy of parametrizations.
+
 
 \section{Frame Fields}
 \input{Ch3.tex}

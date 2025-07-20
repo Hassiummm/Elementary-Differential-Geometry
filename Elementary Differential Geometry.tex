@@ -252,7 +252,7 @@ To examine the effect of a mapping, it suffices to take a proper $\al$ and check
     Consider the mapping $F:{\R}^{2}\to{\R}^{2}$ defined by $F=({u}^{2}-{v}^{2},2uv)$. Let $\al:I\to{\R}^{2}$ defined by $\al(t)=(r\cos t,r\sin t)$, where $0\le t\le 2\pi$. The image is $\be(t)=({r}^{2}\cos 2t,{r}^{2}\sin 2t)$. This curve takes two counterclockwise trips around the circle of radius ${r}^{2}$ centered at the origin. Therefore, $F$ wraps ${\R}^{2}$ around itself twice.
 \end{example}
 \begin{definition}
-    Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping and let ${v}_{p}\in{T}_{p}({\R}^{n})$. The \hdef{tangent map} of $F$, denoted ${F}_{*}(v)$, is defined to be $(\d/\d t)F(p+tv)$ at $t=0$.
+    Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping and let ${v}_{p}\in{T}_{p}({\R}^{n})$. The \hdef{tangent map} of $F$, denoted ${F}_{*}({v}_{p})$, is defined to be $(\d/\d t)F(p+tv)$ at $t=0$.
 \end{definition}
 \par
 Fix some mapping $F:{\R}^{n}\to{\R}^{m}$. For every $p\in{\R}^{n}$, it induces a tangent map of $F$ at $p$, denoted ${F}_{*p}$.
@@ -260,17 +260,38 @@ Fix some mapping $F:{\R}^{n}\to{\R}^{m}$. For every $p\in{\R}^{n}$, it induces a
     Let $F=({f}_{1},\dots,{f}_{m}):{\R}^{n}\to{\R}^{m}$ be a mapping. If ${v}_{p}\in{T}_{p}({\R}^{n})$, then ${F}_{*p}({v}_{p})={(v[{f}_{1}],\dots,v[{f}_{m}])}_{F(p)}$.
 \end{proposition}
 \begin{proof}
-    Let 
+    Fix ${v}_{p}\in{T}_{p}({\R}^{n})$. We have ${F}_{*p}=(\d/\d t)F(p+tv){\vert}_{t=0}=(\d/\d t)({f}_{i}(p+tv)){\vert}_{t=0}={({v}_{p}[{f}_{1}],\dots,{v}_{p}[{f}_{m}])}_{F(p)}$.
 \end{proof}
 \begin{proposition}
-    Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. For all $p\in{T}_{p}({\R}^{n})$,  the tangent map ${F}_{*p}:{T}_{p}({\R}^{n})\to{T}_{F(p)}({\R}^{m})$ is a linear map.
+    Let $F=({f}_{1},\dots,{f}_{m}):{\R}^{n}\to{\R}^{m}$ be a mapping. For all $p\in{T}_{p}({\R}^{n})$,  the tangent map ${F}_{*p}:{T}_{p}({\R}^{n})\to{T}_{F(p)}({\R}^{m})$ is a linear map.
 \end{proposition}
 \begin{proof}
-    Rewrite ${F}_{*p}={(v[{f}_{1}],\dots,v[{f}_{m}])}_{F(p)}$, this proposition immediately follows from 
+    Fix $p\in{\R}^{n}$. Let $a,b\in\R$ and let ${v}_{p},{w}_{p}\in{T}_{p}({\R}^{n})$. We have ${F}_{*p}(a{v}_{p}+b{w}_{p})={((a{v}_{p}+b{w}_{p})[{f}_{i}])}_{F(p)}={(a{v}_{p}[{f}_{i}])}_{F(p)}+{(b{w}_{p}[{f}_{i}])}_{F(p)}=a{F}_{*p}({v}_{p})+b{F}_{*p}({w}_{p})$.
 \end{proof}
-
-
-
+\begin{proposition}
+    Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping and let $\be$ be the image of some curve $\al$ in ${\R}^{n}$, then $\be'={F}_{*}(\al')$.
+\end{proposition}
+\begin{proof}
+    Let $F=({f}_{1},\dots,{f}_{m})$. We have ${F}_{*}(\al'(t))={(\al'(t)[{f}_{i}])}_{F(\al(t))}={(\d{f}_{i}(\al(t))/\d t)}_{F(\al(t))}=\be'(t)$.
+\end{proof}
+\par
+Let $\{{U}_{j}\}$ and $\{\wb{{U}_{i}}\}$ be the natural frame fields of ${\R}^{n}$ and ${\R}^{m}$, respectively.
+\begin{proposition}
+    Let $F=({f}_{1},\dots,{f}_{m}):{\R}^{n}\to{\R}^{m}$ be a mapping. Then ${F}_{*}({U}_{j}(p))={\sum}_{i=1}^{m}(\pa{f}_{i}/\pa{x}_{j})(p)\wb{{U}_{i}}(F(p))$, where $1\le j\le n$.
+\end{proposition}
+\begin{proof}
+    Recall that ${U}_{j}[{f}_{i}]=\pa{f}_{i}/\pa{x}_{j}$, so the proposition trivially holds.
+\end{proof}
+\begin{definition}
+    Let $F=({f}_{1},\dots,{f}_{m}):{\R}^{n}\to{\R}^{m}$ be a mapping. The \hdef{Jacobian matrix} of $F$ at $x\in{\R}^{n}$ is the matrix
+    \begin{center}
+        $\begin{pmatrix}
+            \pa{f}_{1}/\pa{x}_{1}(x) & \cdots & \pa{f}_{1}/\pa{x}_{n}(x) \\
+            \vdots & \ddots & \vdots \\
+            \pa{f}_{m}/\pa{x}_{1}(x) & \cdots & \pa{f}_{m}/\pa{x}_{n}(x)
+        \end{pmatrix}$.
+    \end{center}
+\end{definition}
 \begin{definition}
     Let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. We say $F$ is \hdef{regular} if for all $p\in{\R}^{n}$, ${F}_{*p}$ is injective.
 \end{definition}
@@ -298,7 +319,8 @@ Recall that ${F}_{*p}$ is a linear map.
 \begin{theorem}[inverse function theorem]
     Let $F:{\R}^{n}\to{\R}^{n}$ be a mapping. If ${F}_{*p}$ is injective at some $p\in{\R}^{n}$, then there exists a neighborhood $U$ of $p$ such that $F{\vert}_{U}:U\to V$, where $V$ is open, is a diffeomorphism.
 \end{theorem}
-
+\par
+Now we shall describe the analogy of parametrizations.
 
 \section{Frame Fields}
 \input{Ch3.tex}

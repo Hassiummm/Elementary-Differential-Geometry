@@ -24,7 +24,7 @@ Let $x$, $y$, and $z$ be the natural coordinate functions, rewrite $x={x}_{1}$, 
     A real-valued function $f$ on ${\R}^{3}$ is \hdef{differentiable} if all partial derivatives exist and continuous.
 \end{definition}
 \par
-Let $x=({x}_{1},{x}_{2},{x}_{3})\in{\R}^{3}$, we define the norm to be $\norm{x}=\sqrt{\sum{{x}_{i}}^{2}}$.
+Let $p=({p}_{1},{p}_{2},{p}_{3}),q=({q}_{1},{q}_{2},{q}_{3})\in{\R}^{3}$. Recall that the dot product is defined to be $p\cdot q=\sum{p}_{i}{q}_{i}$ and the norm is defined to be $\norm{p}=\sqrt{p\cdot p}=\sqrt{\sum{p}_{i}^{2}}$. 
 \begin{definition}
     A subset $O\sub{\R}^{3}$ is \hdef{open} if for all $p\in O$, there exists $\ve>0$ such that $\{x\in{\R}^{3}\mid\norm{x-p}<\ve\}\sub O$. 
 \end{definition}
@@ -315,9 +315,27 @@ Notice that ${J}_{F}(p)\cdot v={F}_{*p}$, so ${J}_{F}(p)$ is the matrix represen
 \begin{theorem}[inverse function theorem]
     Let $F:{\R}^{n}\to{\R}^{n}$ be a mapping. If ${F}_{*p}$ is injective at some $p\in{\R}^{n}$, then there exists a neighborhood $U$ of $p$ such that $F{\vert}_{U}:U\to V$, where $V$ is open, is a diffeomorphism.
 \end{theorem}
-
-
 \section{Frame Fields}
+% 2.1 Dot Product
+\begin{definition}
+    Let $p,q\in{\R}^{3}$. The \hdef{Euclidean distance} from $p$ to $q$ is the number $d(p,q)=\norm{p-q}$.
+\end{definition}
+\begin{definition}
+    Let ${v}_{p},{w}_{p}\in{T}_{p}({\R}^{3})$ be tangent vectors. The \hdef{dot product} of ${v}_{p}$ and ${w}_{p}$ is defined to be ${v}_{p}\cdot{w}_{p}=v\cdot w$.
+\end{definition}
+\par
+Equivalently, the norm on every tangent space ${T}_{p}({\R}^{3})$ is the composition of the canonical isomorphism ${T}_{p}({\R}^{3})\to{\R}^{3}$ with the norm on ${\R}^{3}$.
+\begin{definition}
+    A set of three pairwise orthogonal unit vectors tangent to ${\R}^{3}$ at $p$ is called a \hdef{frame} at $p$.
+\end{definition}
+\par
+By the definition, $\{{e}_{1},{e}_{2},{e}_{3}\}$ is a frame at $p$ if and only if ${e}_{i}\in{T}_{p}({\R}^{3})$ and ${e}_{i}\cdot{e}_{j}={\delta}_{i,j}$.
+\begin{proposition}
+    Let $\{{e}_{1},{e}_{2},{e}_{3}\}$ be a frame at $p\in{\R}^{3}$. If $v\in{T}_{p}({\R}^{3})$, then $v=\sum(v\cdot{e}_{i}){e}_{i}$.
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
 \input{Ch3.tex}
 \input{ExPf.tex}
 \hindex

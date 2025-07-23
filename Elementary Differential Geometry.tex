@@ -331,11 +331,40 @@ Equivalently, the norm on every tangent space ${T}_{p}({\R}^{3})$ is the composi
 \par
 By the definition, $\{{e}_{1},{e}_{2},{e}_{3}\}$ is a frame at $p$ if and only if ${e}_{i}\in{T}_{p}({\R}^{3})$ and ${e}_{i}\cdot{e}_{j}={\delta}_{i,j}$.
 \begin{proposition}
-    Let $\{{e}_{1},{e}_{2},{e}_{3}\}$ be a frame at $p\in{\R}^{3}$. If $v\in{T}_{p}({\R}^{3})$, then $v=\sum(v\cdot{e}_{i}){e}_{i}$.
+    Let $\{{e}_{1},{e}_{2},{e}_{3}\}$ be a frame at $p\in{\R}^{3}$. If ${v}_{p}\in{T}_{p}({\R}^{3})$, then ${v}_{p}=\sum(v\cdot{e}_{i}){e}_{i}$.
 \end{proposition}
 \begin{proof}
-    
+    Let ${c}_{1},{c}_{2},{c}_{3}\in\R$ such that $\sum{c}_{i}{e}_{i}=0$. For all $1\le j\le 3$, $0=(\sum{c}_{i}{e}_{i})\cdot{e}_{j}=\sum{c}_{i}({e}_{i}\cdot{e}_{j})={c}_{j}$, so $\{{e}_{1},{e}_{2},{e}_{3}\}$ is a basis of ${T}_{p}({\R}^{3})$. Rewrite ${v}_{p}=\sum{a}_{i}{e}_{i}$. For all $1\le j\le 3$, ${v}_{p}\cdot{e}_{j}=\sum{a}_{i}{e}_{i}\cdot{e}_{j}={a}_{j}$. Hence ${v}_{p}=\sum({v}_{p}\cdot{e}_{i})\cdot{e}_{i}$.
 \end{proof}
+\par
+For any frame $\{{e}_{1},{e}_{2},{e}_{3}\}$ at $p$ and $a,b\in{T}_{p}({\R}^{3})$, if $a=\sum{a}_{i}{e}_{i}$ and $b=\sum{b}_{i}{e}_{i}$, we always have $a\cdot b=\sum{a}_{i}{b}_{i}$.
+\begin{definition}
+    Let $\{{e}_{1},{e}_{2},{e}_{3}\}$ be a frame at $p\in{\R}^{3}$ with ${e}_{i}={({a}_{i,1},{a}_{i,2},{a}_{i,3})}_{p}$, then the \hdef{attitude matrix} of the frame is defined to be the matrix
+    \begin{center}
+        $A=\begin{pmatrix}
+            {a}_{1,1} & {a}_{1,2} & {a}_{1,3} \\
+            {a}_{2,1} & {a}_{2,2} & {a}_{2,3} \\
+            {a}_{3,1} & {a}_{3,2} & {a}_{3,3}
+        \end{pmatrix}$.
+    \end{center}
+\end{definition}
+\par
+Trivially, $A$ is orthogonal.
+\begin{definition}
+    Let ${v}_{p}={({v}_{1},{v}_{2},{v}_{3})}_{p},{w}_{p}={({w}_{1},{w}_{2},{w}_{3})}_{p}\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. The \hdef{cross product} of ${v}_{p}$ and ${w}_{p}$, denoted ${v}_{p}\times{w}_{p}$, is the tangent vector
+    \begin{center}
+        ${v}_{p}\times{w}_{p}={\begin{vmatrix}
+            {U}_{1}(p) & {U}_{2}(p) & {U}_{3}(p) \\
+            {v}_{1} & {v}_{2} & {v}_{3} \\
+            {w}_{1} & {w}_{2} & {w}_{3} 
+        \end{vmatrix}}_{p}$.
+    \end{center}
+\end{definition}
+\begin{example}
+    Let ${v}_{p}={(1,0,-1)}_{p}$ and let ${w}_{p}={(2,2,-7)}_{p}$, then ${v}_{p}\times{w}_{p}=2{U}_{1}(p)+5{U}_{2}(p)+2{U}_{3}(p)={(2,5,2)}_{p}$.
+\end{example}
+\par
+Let 
 \input{Ch3.tex}
 \input{ExPf.tex}
 \hindex

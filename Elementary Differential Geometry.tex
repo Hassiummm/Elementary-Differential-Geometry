@@ -315,6 +315,8 @@ Notice that ${J}_{F}(p)\cdot v={F}_{*p}$, so ${J}_{F}(p)$ is the matrix represen
 \begin{theorem}[inverse function theorem]
     Let $F:{\R}^{n}\to{\R}^{n}$ be a mapping. If ${F}_{*p}$ is injective at some $p\in{\R}^{n}$, then there exists a neighborhood $U$ of $p$ such that $F{\vert}_{U}:U\to V$, where $V$ is open, is a diffeomorphism.
 \end{theorem}
+\par
+We will discuss more on the proof of this theorem and its application later.
 \section{Frame Fields}
 % 2.1 Dot Product
 \begin{definition}
@@ -364,7 +366,20 @@ Trivially, $A$ is orthogonal.
     Let ${v}_{p}={(1,0,-1)}_{p}$ and let ${w}_{p}={(2,2,-7)}_{p}$, then ${v}_{p}\times{w}_{p}=2{U}_{1}(p)+5{U}_{2}(p)+2{U}_{3}(p)={(2,5,2)}_{p}$.
 \end{example}
 \par
-Let 
+It is trivial that $\times$ is linear and ${v}_{p}\times{w}_{p}=-{w}_{p}\times{v}_{p}$.
+\begin{proposition}
+    Let ${v}_{p},{w}_{p}\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Then ${v}_{p}\times{w}_{p}$ is orthogonal to both ${v}_{p}$ and ${w}_{p}$. Moreover, ${\norm{{v}_{p}\times{w}_{p}}}^{2}=({v}_{p}\cdot{v}_{p})({w}_{p}\cdot{w}_{p})-{({v}_{p}\cdot{w}_{p})}^{2}$.
+\end{proposition}
+\begin{proof}
+    Let ${v}_{p}={({v}_{1},{v}_{2},{v}_{3})}_{p},{w}_{p}={({w}_{1},{w}_{2},{w}_{3})}_{p}$. Then $({v}_{p}\times{w}_{p})\cdot{v}_{p}={v}_{1}({v}_{2}{w}_{3}-{v}_{2}{w}_{2})+{v}_{2}({v}_{3}{w}_{1}-{v}_{1}{w}_{3})+{v}_{3}({v}_{1}{w}_{2}-{v}_{2}{w}_{1})=0$. Similarly, $({v}_{p}\times{w}_{p})\cdot{w}_{p}=0$. We have $({v}_{p}\cdot{v}_{p})({w}_{p}\cdot{w}_{p})-{({v}_{p}\cdot{w}_{p})}^{2}=(\sum{v}_{i}^{2})(\sum{w}_{i}^{2})-{(\sum{v}_{i}{w}_{i})}^{2}=\sum{v}_{i}^{2}{w}_{j}^{2}-\sum{v}_{i}^{2}{w}_{i}^{2}-2{\sum}_{i<j}{v}_{i}{w}_{i}{v}_{j}-{w}_{j}={({v}_{2}{w}_{3}-{v}_{2}{w}_{2})}^{2}+{({v}_{3}{w}_{1}-{v}_{1}{w}_{3})}^{2}+{({v}_{1}{w}_{2}-{v}_{2}{w}_{1})}^{2}={\norm{{v}_{p}\times{w}_{p}}}^{2}$.
+\end{proof}
+% 2.2 Curves
+\begin{definition}
+    Let $\al:I\to{\R}^{3}$ be a curve. The \hdef{speed} of $\al$ at $t$ is the tangent vector $\norm{}$
+\end{definition}
+
+
+
 \input{Ch3.tex}
 \input{ExPf.tex}
 \hindex

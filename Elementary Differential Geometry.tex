@@ -4,9 +4,7 @@
 \def\htitle{Elementary Differential Geometry}
 \def\hauthor{Hassium}\let\hfauthor\hauthor
 \begin{document}
-\hsetup
-\htoc
-\hmain
+\hstart
 \par
 \section{Calculus on Euclidean Space}
 % 1.1 Euclidean Space
@@ -312,6 +310,13 @@ Notice that ${J}_{F}(p)\cdot v={F}_{*p}$, so ${J}_{F}(p)$ is the matrix represen
 \begin{definition}
     Let $(X,\T)$ be a topological space. A subset $U\sub X$ is said to be \hdef{open} if $U\in\T$. Let $x\in X$, a \hdef{neighborhood} of $x$ is an open set ${U}_{x}$ that contains $x$.
 \end{definition}
+\par
+Consider 
+
+
+
+
+
 \begin{theorem}[inverse function theorem]
     Let $F:{\R}^{n}\to{\R}^{n}$ be a mapping. If ${F}_{*p}$ is injective at some $p\in{\R}^{n}$, then there exists a neighborhood $U$ of $p$ such that $F{\vert}_{U}:U\to V$, where $V$ is open, is a diffeomorphism.
 \end{theorem}
@@ -351,7 +356,7 @@ For any frame $\{{e}_{1},{e}_{2},{e}_{3}\}$ at $p$ and $a,b\in{T}_{p}({\R}^{3})$
     \end{center}
 \end{definition}
 \par
-Trivially, $A$ is orthogonal.
+Consider the transpose $\tp{A}$ of $A$, for each column of $\tp{A}A$, we have ${e}_{i}{e}_{i}=1$, so $\tp{A}A=I$ and $A$ is orthogonal.
 \begin{definition}
     Let ${v}_{p}={({v}_{1},{v}_{2},{v}_{3})}_{p},{w}_{p}={({w}_{1},{w}_{2},{w}_{3})}_{p}\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. The \hdef{cross product} of ${v}_{p}$ and ${w}_{p}$, denoted ${v}_{p}\times{w}_{p}$, is the tangent vector
     \begin{center}
@@ -375,11 +380,23 @@ It is trivial that $\times$ is linear and ${v}_{p}\times{w}_{p}=-{w}_{p}\times{v
 \end{proof}
 % 2.2 Curves
 \begin{definition}
-    Let $\al:I\to{\R}^{3}$ be a curve. The \hdef{speed} of $\al$ at $t$ is the tangent vector $\norm{}$
+    Let $\al:I\to{\R}^{3}$ be a curve. The \hdef{speed} of $\al$ at $t$ is the tangent vector $\norm{\al'(t)}$. The \hdef{arc length} of $\al$ from $t=a$ to $t=b$ is defined to be ${\int}_{a}^{b}\norm{\al'(t)}\d t$.
 \end{definition}
-
-
-
+\begin{proposition}
+    Let $\al:I\to{\R}^{3}$ be a regular curve, then there exists a reparametrization $\be$ of $\al$ such that $\norm{\be'}=1$.
+\end{proposition}
+\begin{proof}
+    Fix some $\al\in\R$ and consider the function $s(t)={\int}_{a}^{t}\norm{\al'(x)}\d x$. Since $\al$ is regular, $\norm{\al'(x)}>0$ for all $x$. By the inverse function theorem, $s(t)$ has an inverse $t(s)$. Define $\be(s)=\al(t(s))$, then $\norm{\be'}=\norm{(\d t/\d s)(s)\al'(t(s))}=(\d t/\d s)(s)\norm{\al'(t(s))}=(\d t/\d s)(s)\cdot(\d s/\d t)(t(s))=1$.
+\end{proof}
+\par
+Such reparametrization $\be$ of $\al$ is called the \hdef{arc-length reparametrization} of $\al$.
+\begin{example}
+    Consider the curve $\al:I\to{\R}^{3}$ defined by $\al(t)=(a\cos t,a\sin t,bt)$ for some $a,b\in\R$. We have $\norm{\al'}=\sqrt{{a}^{2}{\sin}^{2}t+{a}^{2}{\sin}^{2}t+{b}^{2}}=c$, where ${c}^{2}={a}^{2}+{b}^{2}$. Now measure the arc length from $t=0$, then $s(t)={\int}_{0}^{c}c\d u=ct$, so $t(s)=s/c$, the arc-length reparametrization is therefore $\be(s)=\al(t(s))=(a\cos(s/c),a\sin(s/c),bs/c)$.
+\end{example}
+\begin{definition}
+    Let $\al$ be a curve. We say a reparametrization $\al\comp h$ is \hdef{orientation-preserving} if $h'\ge 0$ 
+\end{definition}
+% 2.3 The Frenet Formulas
 \input{Ch3.tex}
 \input{ExPf.tex}
 \hindex

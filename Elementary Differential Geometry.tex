@@ -311,7 +311,7 @@ Notice that ${J}_{F}(p)\cdot v={F}_{*p}$, so ${J}_{F}(p)$ is the matrix represen
     Let $(X,\T)$ be a topological space. A subset $U\sub X$ is said to be \hdef{open} if $U\in\T$. Let $x\in X$, a \hdef{neighborhood} of $x$ is an open set ${U}_{x}$ that contains $x$.
 \end{definition}
 \par
-Consider 
+Let $U\sub\R$. We say $U$ is open in the standard topology $\T$ on $\R$ if for every $x\in U$, there exists $\ep>0$ such that $(x-\ep,x+\ep)\sub U$. Trivially, $\es,\R\in\T$. Let ${\{{U}_{i}\}}_{i\in I}$ be open sets, then 
 
 
 
@@ -360,11 +360,11 @@ Consider the transpose $\tp{A}$ of $A$, for each column of $\tp{A}A$, we have ${
 \begin{definition}
     Let ${v}_{p}={({v}_{1},{v}_{2},{v}_{3})}_{p},{w}_{p}={({w}_{1},{w}_{2},{w}_{3})}_{p}\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. The \hdef{cross product} of ${v}_{p}$ and ${w}_{p}$, denoted ${v}_{p}\times{w}_{p}$, is the tangent vector
     \begin{center}
-        ${v}_{p}\times{w}_{p}={\begin{vmatrix}
+        ${v}_{p}\times{w}_{p}=\begin{vmatrix}
             {U}_{1}(p) & {U}_{2}(p) & {U}_{3}(p) \\
             {v}_{1} & {v}_{2} & {v}_{3} \\
             {w}_{1} & {w}_{2} & {w}_{3} 
-        \end{vmatrix}}_{p}$.
+        \end{vmatrix}$.
     \end{center}
 \end{definition}
 \begin{example}
@@ -394,7 +394,7 @@ Such reparametrization $\be$ of $\al$ is called the \hdef{arc-length reparametri
     Consider the curve $\al:I\to{\R}^{3}$ defined by $\al(t)=(a\cos t,a\sin t,bt)$ for some $a,b\in\R$. We have $\norm{\al'}=\sqrt{{a}^{2}{\sin}^{2}t+{a}^{2}{\sin}^{2}t+{b}^{2}}=c$, where ${c}^{2}={a}^{2}+{b}^{2}$. Now measure the arc length from $t=0$, then $s(t)={\int}_{0}^{c}c\d u=ct$, so $t(s)=s/c$, the arc-length reparametrization is therefore $\be(s)=\al(t(s))=(a\cos(s/c),a\sin(s/c),bs/c)$.
 \end{example}
 \begin{definition}
-    Let $\al$ be a curve. We say a reparametrization $\al\comp h$ is \hdef{orientation-preserving} if $h'\ge 0$ 
+    A \hdef{vector field} $Y$ on a curve $\al:I\to{\R}^{3}$ is a function $Y:I\to{R}^{3}$, such that for all $t\in I$, $Y(t)\in{T}_{\al(t)}({\R}^{3})\iso{\R}^{3}$.
 \end{definition}
 % 2.3 The Frenet Formulas
 \input{Ch3.tex}

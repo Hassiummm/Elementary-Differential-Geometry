@@ -394,8 +394,21 @@ Such reparametrization $\be$ of $\al$ is called the \hdef{arc-length reparametri
     Consider the curve $\al:I\to{\R}^{3}$ defined by $\al(t)=(a\cos t,a\sin t,bt)$ for some $a,b\in\R$. We have $\norm{\al'}=\sqrt{{a}^{2}{\sin}^{2}t+{a}^{2}{\sin}^{2}t+{b}^{2}}=c$, where ${c}^{2}={a}^{2}+{b}^{2}$. Now measure the arc length from $t=0$, then $s(t)={\int}_{0}^{c}c\d u=ct$, so $t(s)=s/c$, the arc-length reparametrization is therefore $\be(s)=\al(t(s))=(a\cos(s/c),a\sin(s/c),bs/c)$.
 \end{example}
 \begin{definition}
-    A \hdef{vector field} $Y$ on a curve $\al:I\to{\R}^{3}$ is a function $Y:I\to{R}^{3}$, such that for all $t\in I$, $Y(t)\in{T}_{\al(t)}({\R}^{3})\iso{\R}^{3}$.
+    A \hdef{vector field} $Y$ on a curve $\al:I\to{\R}^{3}$ is a function $Y:I\to{\Du}_{p\in\ran(\al)}{T}_{p}({\R}^{3})$ such that for all $t\in I$, $Y(t)\in{T}_{\al(t)}({\R}^{3})$.
 \end{definition}
+\par
+Rewrite $Y$  
+
+
+\begin{definition}
+    
+\end{definition}
+\begin{proposition}
+    A curve $\al$ is constant if and only if $\al'=0$. A nonconstant curve $\al$ is a straight line if and only if $\al''=0$. A vector field $Y$ on $\al$ is parallel if and only if $Y'=0$.
+\end{proposition}
+\begin{proof}
+
+\end{proof}
 % 2.3 The Frenet Formulas
 \input{Ch3.tex}
 \input{ExPf.tex}

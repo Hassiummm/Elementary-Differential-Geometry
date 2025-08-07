@@ -299,11 +299,11 @@ Notice that ${J}_{F}(p)\cdot v={F}_{*p}$, so ${J}_{F}(p)$ is the matrix represen
     A mapping is a \hdef{diffeomorphism} if it has a differentiable inverse mapping.
 \end{definition}
 \begin{definition}
-    A \hdef{topological space} $(X,\T)$ consists of two sets $X$ and $\T$, where $\T\sub\ps(X)$, that satisfies the following properties:
+    A \hdef{topological space} $(X,\T)$ consists of two sets $X$ and $\T$, where $\T\sub\ps(X)$, that satisfies the following properties.
     \begin{enumerate}
-        \item $\es,X\in\T$;
-        \item any union of elements in $\T$ is also in $\T$;
-        \item any finite intersection of elements in $\T$ is also in $\T$.
+        \item $\es,X\in\T$.
+        \item Any union of elements in $\T$ is also in $\T$.
+        \item Any finite intersection of elements in $\T$ is also in $\T$.
     \end{enumerate}
     The collection $\T$ is called a \hdef{topology} on $X$.
 \end{definition}
@@ -311,12 +311,12 @@ Notice that ${J}_{F}(p)\cdot v={F}_{*p}$, so ${J}_{F}(p)$ is the matrix represen
     Let $(X,\T)$ be a topological space. A subset $U\sub X$ is said to be \hdef{open} if $U\in\T$. Let $x\in X$, a \hdef{neighborhood} of $x$ is an open set ${U}_{x}$ that contains $x$.
 \end{definition}
 \par
-Let $U\sub\R$. We say $U$ is open in the standard topology $\T$ on $\R$ if for every $x\in U$, there exists $\ep>0$ such that $(x-\ep,x+\ep)\sub U$. Trivially, $\es,\R\in\T$. Let ${\{{U}_{i}\}}_{i\in I}$ be open sets, then 
-
-
-
-
-
+Let $U\sub\R$. We say $U$ is open in the standard topology $\T$ on $\R$ if for every $x\in U$, there exists $\ve>0$ such that $(x-\ve,x+\ve)\sub U$. Trivially, $\es,\R\in\T$. Let ${\{{U}_{i}\}}_{i\in I}$ be open sets, then for each ${U}_{i}$ and $x\in{U}_{i}$, there exists a corresponding ${\ve}_{i,x}$. For any $x\in{\Un}_{i\in I}{U}_{i}$, $x\in{U}_{i}$ for some $i\in I$. Pick $\ve={\ve}_{i,x}$, then $(x-\ve,x+\ve)\sub {U}_{i}\sub{\Un}_{i\in I}{U}_{i}$. For any $x\in{\In}_{i=1}^{n}{U}_{i}$, pick $\ve=\min\{{\ve}_{i,x}\}$, then $(x-\ve,x+\ve)\sub{U}_{i}$ for $1\le i\le n$, so $(x-\ve,x+\ve)\sub{\In}_{i=1}^{n}{U}_{i}$. The standard topology on $\R$ is indeed a topology.
+\begin{definition}
+    Let $(X,{\T}_{X})$ and $(Y,{\T}_{Y})$ be topological spaces. A subset $W\sub X\times Y$ is open in the \hdef{product topology} on $X\times Y$ if for all $(x,y)\in W$, there exist neighborhoods ${U}_{x}\in{\T}_{X}$ and ${V}_{y}\in{\T}_{Y}$ such that ${U}_{x}\times{V}_{y}\sub W$.
+\end{definition}
+\par
+Denote the product topology by $\T$. We have $\es\in\T$ vacuously. For all $(x,y)\in X\times Y$, ${U}_{x}\sub X$, and ${V}_{Y}\sub Y$, ${U}_{X}\times{V}_{Y}\sub X\times Y$, so $X\times Y\in\T$. Let ${\{{W}_{i}\}}_{i\in I}$ be open sets. For all $(x,y)\in{\Un}_{i\in I}{W}_{i}$, there exist ${W}_{i}$ and ${W}_{j}$ such that $x\in{W}_{i}$ and $y\in{W}_{j}$. Pick the corresponding neighborhood in each set, then ${U}_{x}\times{V}_{y}\sub{W}_{i}\cup{W}_{j}\sub{\Un}_{i\in I}{W}_{i}$. For all $(x,y)\in{\In}_{i=1}^{n}{W}_{i}$, $(x,y)\in{W}_{i}$. For each ${W}_{i}$, we have a corresponding pair $({U}_{i,x},{V}_{i,y})$. Now consider $U={\In}_{i=1}^{n}{U}_{i,x}\in{\T}_{X}$ and $V={\In}_{i=1}^{n}{V}_{i,y}\in{\T}_{Y}$, we have $U\times V\sub{W}_{i}$, so $U\times V\sub{\In}_{i=1}^{n}{W}_{i}$. The standard topology on ${\R}^{n}$ is the product topology of $n$ copies of the standard topology on $\R$.
 \begin{theorem}[inverse function theorem]
     Let $F:{\R}^{n}\to{\R}^{n}$ be a mapping. If ${F}_{*p}$ is injective at some $p\in{\R}^{n}$, then there exists a neighborhood $U$ of $p$ such that $F{\vert}_{U}:U\to V$, where $V$ is open, is a diffeomorphism.
 \end{theorem}
@@ -386,7 +386,7 @@ It is trivial that $\times$ is linear and ${v}_{p}\times{w}_{p}=-{w}_{p}\times{v
     Let $\al:I\to{\R}^{3}$ be a regular curve, then there exists a reparametrization $\be$ of $\al$ such that $\norm{\be'}=1$.
 \end{proposition}
 \begin{proof}
-    Fix some $\al\in\R$ and consider the function $s(t)={\int}_{a}^{t}\norm{\al'(x)}\d x$. Since $\al$ is regular, $\norm{\al'(x)}>0$ for all $x$. By the inverse function theorem, $s(t)$ has an inverse $t(s)$. Define $\be(s)=\al(t(s))$, then $\norm{\be'}=\norm{(\d t/\d s)(s)\al'(t(s))}=(\d t/\d s)(s)\norm{\al'(t(s))}=(\d t/\d s)(s)\cdot(\d s/\d t)(t(s))=1$.
+    Fix some $\al\in\R$ and consider the function $s:\R\to\R$ defined by $s(t)={\int}_{a}^{t}\norm{\al'(x)}\d x$. Since $\al$ is regular, $\norm{\al'(x)}>0$ for all $x$. By the inverse function theorem, $s(t)$ has an inverse $t(s)$. Define $\be(s)=\al(t(s))$, then $\norm{\be'}=\norm{(\d t/\d s)(s)\al'(t(s))}=(\d t/\d s)(s)\norm{\al'(t(s))}=(\d t/\d s)(s)\cdot(\d s/\d t)(t(s))=1$.
 \end{proof}
 \par
 Such reparametrization $\be$ of $\al$ is called the \hdef{arc-length reparametrization} of $\al$.
@@ -397,13 +397,11 @@ Such reparametrization $\be$ of $\al$ is called the \hdef{arc-length reparametri
     A \hdef{vector field} $Y$ on a curve $\al:I\to{\R}^{3}$ is a function $Y:I\to{\Du}_{p\in\ran(\al)}{T}_{p}({\R}^{3})$ such that for all $t\in I$, $Y(t)\in{T}_{\al(t)}({\R}^{3})$.
 \end{definition}
 \par
-Rewrite $Y=({y}_{1},{y}_{2},{y}_{3})$
-
-We define the addition, scalar multiplication, dot multiplication, and cross product on vector fields pointwisely.
-
-
+Fix $t\in I$, then we can rewrite $Y(t)$ as $\sum{y}_{i}(t){U}_{i}(\al(t))$. The functions ${y}_{1}$, ${y}_{2}$, and ${y}_{3}$ are called the \hdef{Euclidean coordinate functions} on $Y$. 
+\par
+We define the addition, scalar multiplication, dot multiplication, and cross product on vector fields pointwisely. For a vector $Y=\sum{y}_{i}{U}_{i}$ on $\al$, the derivative of $Y$ is defined to be $Y'=\sum(\d{y}_{i}/\d t){U}_{i}$. Let $Y$ and $Z$ be vector fields on a curve $\al$. Fix $t$, rewrite $Y={({y}_{i}(t))}_{\al(t)}$ and $Z={({z}_{i}(t))}_{\al(t)}$. Consider $Y$ as a function ${Y}_{t}:I\to{T}_{\al(t)}({\R}^{3})\iso{\R}^{3}$, then for $a,b\in\R$, $(aY+bZ)'=aY'+bZ'$. We have $(Y\cdot Z)'=(\sum{y}_{i}(t){z}_{i}(t))'=\sum{y}_{i}(t){z}_{i}'(t)+\sum{y}_{i}'(t){z}_{i}(t)=Y\cdot Z'+Y'\cdot Z$ and $(fY)'(t)$
 \begin{definition}
-    
+    Let $Y$ be a vector field on a curve $\al:I\to{\R}^{3}$. We say $Y$ is \hdef{parallel} if for all $t\in I$, $Y(t)$ have the same vector part.
 \end{definition}
 \begin{proposition}
     A curve $\al$ is constant if and only if $\al'=0$. A nonconstant curve $\al$ is a straight line if and only if $\al''=0$. A vector field $Y$ on $\al$ is parallel if and only if $Y'=0$.

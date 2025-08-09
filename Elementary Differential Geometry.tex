@@ -399,7 +399,7 @@ Such reparametrization $\be$ of $\al$ is called the \hdef{arc-length reparametri
 \par
 Fix $t\in I$, then we can rewrite $Y(t)$ as $\sum{y}_{i}(t){U}_{i}(\al(t))$. The functions ${y}_{1}$, ${y}_{2}$, and ${y}_{3}$ are called the \hdef{Euclidean coordinate functions} on $Y$. 
 \par
-We define the addition, scalar multiplication, dot multiplication, and cross product on vector fields pointwisely. For a vector $Y=\sum{y}_{i}{U}_{i}$ on $\al$, the derivative of $Y$ is defined to be $Y'=\sum(\d{y}_{i}/\d t){U}_{i}$. Let $Y$ and $Z$ be vector fields on a curve $\al$. Fix $t$, rewrite $Y={({y}_{i}(t))}_{\al(t)}$ and $Z={({z}_{i}(t))}_{\al(t)}$. Consider $Y$ as a function ${Y}_{t}:I\to{T}_{\al(t)}({\R}^{3})\iso{\R}^{3}$, then for $a,b\in\R$, $(aY+bZ)'=aY'+bZ'$. We have $(Y\cdot Z)'=(\sum{y}_{i}(t){z}_{i}(t))'=\sum{y}_{i}(t){z}_{i}'(t)+\sum{y}_{i}'(t){z}_{i}(t)=Y\cdot Z'+Y'\cdot Z$ and $(fY)'(t)$
+We define the addition, scalar multiplication, dot multiplication, and cross product on vector fields pointwisely. For a vector $Y=\sum{y}_{i}{U}_{i}$ on $\al$, the derivative of $Y$ is defined to be $Y'=\sum(\d{y}_{i}/\d t){U}_{i}$. Let $Y$ and $Z$ be vector fields on a curve $\al$. Fix $t$, rewrite $Y={({y}_{1},{y}_{2},{y}_{3})}_{\al(t)}$ and $Z={({z}_{1},{z}_{2},{z}_{3})}_{\al(t)}$. Consider $Y$ as a function ${Y}_{t}:I\to{T}_{\al(t)}({\R}^{3})\iso{\R}^{3}$, then for $a,b\in\R$ and a differentiable $f:\R\to\R$, $(aY+bZ)'=aY'+bZ'$ and $(fY)'=(\d f/\d t)Y+Y'f$. We also have $(Y\cdot Z)'=(\sum{y}_{i}{z}_{i})'=\sum{y}_{i}{z}_{i}'+\sum{y}_{i}'{z}_{i}=Y\cdot Z'+Y'\cdot Z$.
 \begin{definition}
     Let $Y$ be a vector field on a curve $\al:I\to{\R}^{3}$. We say $Y$ is \hdef{parallel} if for all $t\in I$, $Y(t)$ have the same vector part.
 \end{definition}
@@ -407,7 +407,7 @@ We define the addition, scalar multiplication, dot multiplication, and cross pro
     A curve $\al$ is constant if and only if $\al'=0$. A nonconstant curve $\al$ is a straight line if and only if $\al''=0$. A vector field $Y$ on $\al$ is parallel if and only if $Y'=0$.
 \end{proposition}
 \begin{proof}
-
+    Rewrite $\al:I\to{\R}^{3}$ as $\al=({\al}_{1},{\al}_{2},{\al}_{3})$. (\rom1) The velocity $\al'=({\al}_{1}',{\al}_{2}',{\al}_{3}')$, then $\al'=0$ if and only if ${\al}_{i}'=0$. Hence $\al'=0$ if and only if ${\al}_{i}$ is a constant function. (\rom2) We have $\al''=({\al}_{1}'',{\al}_{2}'',{\al}_{3}'')$, so $\al''=0$ if and only if ${\al}_{i}={p}_{i}t+{q}_{i}$ for some ${p}_{i},{q}_{i}\in\R$. Hence $\al''=0$ if and only if $\al=pt+q$, where $p=({p}_{1},{p}_{2},{p}_{3})$ and $q=({q}_{1},{q}_{2},{q}_{3})$. (\rom3) Fix $t$ and let $Y={({y}_{1},{y}_{2},{y}_{3})}_{\al(t)}$, then $Y'=\sum{y}_{i}'{U}_{i}=0$, which means ${y}_{i}$ are constant functions. Hence $Y$ is parallel if and only if $Y'=0$.
 \end{proof}
 % 2.3 The Frenet Formulas
 \input{Ch3.tex}

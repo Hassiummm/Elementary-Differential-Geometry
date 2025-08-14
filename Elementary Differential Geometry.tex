@@ -407,7 +407,7 @@ We define the addition, scalar multiplication, dot multiplication, and cross pro
     A curve $\al$ is constant if and only if $\al'=0$. A nonconstant curve $\al$ is a straight line if and only if $\al''=0$. A vector field $Y$ on $\al$ is parallel if and only if $Y'=0$.
 \end{proposition}
 \begin{proof}
-    Rewrite $\al:I\to{\R}^{3}$ as $\al=({\al}_{1},{\al}_{2},{\al}_{3})$. (\rom1) The velocity $\al'=({\al}_{1}',{\al}_{2}',{\al}_{3}')$, then $\al'=0$ if and only if ${\al}_{i}'=0$. Hence $\al'=0$ if and only if ${\al}_{i}$ is a constant function. (\rom2) We have $\al''=({\al}_{1}'',{\al}_{2}'',{\al}_{3}'')$, so $\al''=0$ if and only if ${\al}_{i}={p}_{i}t+{q}_{i}$ for some ${p}_{i},{q}_{i}\in\R$. Hence $\al''=0$ if and only if $\al=pt+q$, where $p=({p}_{1},{p}_{2},{p}_{3})$ and $q=({q}_{1},{q}_{2},{q}_{3})$. (\rom3) Fix $t$ and let $Y={({y}_{1},{y}_{2},{y}_{3})}_{\al(t)}$, then $Y'=\sum{y}_{i}'{U}_{i}=0$, which means ${y}_{i}$ are constant functions. Hence $Y$ is parallel if and only if $Y'=0$.
+    Rewrite $\al:I\to{\R}^{3}$ as $\al=({\al}_{i})$. (\rom1) The velocity $\al'=({\al}_{i}')$, then $\al'=0$ if and only if ${\al}_{i}'=0$. Hence $\al'=0$ if and only if ${\al}_{i}$ is a constant function. (\rom2) We have $\al''=({\al}_{i}'')$, so $\al''=0$ if and only if ${\al}_{i}={p}_{i}t+{q}_{i}$ for some ${p}_{i},{q}_{i}\in\R$. Hence $\al''=0$ if and only if $\al=pt+q$, where $p=({p}_{i})$ and $q=({q}_{1})$. (\rom3) Fix $t$ and let $Y={({y}_{i})}_{\al(t)}$, then $Y'=\sum{y}_{i}'{U}_{i}=0$, which means ${y}_{i}$ are constant functions. Hence $Y$ is parallel if and only if $Y'=0$.
 \end{proof}
 % 2.3 The Frenet Formulas
 \begin{definition}
@@ -443,17 +443,25 @@ Now we claim that $B'$ can be written as a scalar multiple of $N$. Consider $B'=
     Consider the curve $\be:\R\to{\R}^{3}$ defined by $\be(s)=(a\cos(s/c),a\sin(s/c),bs/c)$, where $a>0$ and $c=\sqrt{{a}^{2}+{b}^{2}}$. It is trivial that $\norm{\be'}=1$. Here $T(s)=\be'(s)=(-a\sin(s/c)/c,a\cos(s/c)/c,b/c)$, then $T'(s)=(-a\cos(s/c)/{c}^{2},-a\sin(s/c)/{c}^{2},0)$, so $\ka(s)=\norm{T'(s)}=a/{c}^{2}>0$. We also have $N(s)=(-\cos(s/c),-\sin(s/c),0)$. Now $\be(s)=T(s)\times N(s)=(b\sin(s/c)/c,-b\cos(s/c)/c,a/c)$, then $B'(s)=(b/\cos(s/c)/{c}^{2},b\sin(s/c)/{c}^{2},0)$, so $\tau(s)=-B'(s)/N(s)=(-b/\cos(s/c)/{c}^{2},-b\sin(s/c)/{c}^{2},0)/(-\cos(s/c),-\sin(s/c),0)=b/{c}^{2}$.
 \end{example}
 \begin{definition}
-    Let $p,q\in{\R}^{3}$ with $q\ne 0$. The \hdef{plane} through $p$ orthogonal to $q$ is the set $\{r\in{\R}^{3}\mid(r-p)\cdot q\}=0$. A curve $\be:I\to{\R}^{3}$ is said to be a \hdef{plain curve} if $\ran(\be)\sub P$, where $P$ is a plane in ${\R}^{3}$.
+    Let $p,q\in{\R}^{3}$ with $q\ne 0$. The \hdef{plane} through $p$ orthogonal to $q$ is the set $\{r\in{\R}^{3}\mid(r-p)\cdot q=0\}$. A curve $\be:I\to{\R}^{3}$ is said to be a \hdef{plain curve} if $\ran(\be)\sub P$, where $P$ is a plane in ${\R}^{3}$.
 \end{definition}
 \begin{proposition}
     Let $\be:I\to{\R}^{3}$ be a curve with $\norm{\be'}=1$ and $\ka>0$. Then $\be$ is a plane curve if and only if $\tau=0$. 
 \end{proposition}
 \begin{proof}
-    $(\Ra)$ Let $\be$ be a plane curve, then there exists $p,q\in{\R}^{3}$ such that for all $s\in I$, $(\be(s)-p)\cdot q=0$. Consider $q$ as a constant vector field, so $((\be-p)\cdot q)'=(\be-p)'\cdot q+q'\cdot(\be-p)=\be'\cdot q-p'\cdot q=\be'\cdot q+q'\cdot\be=\be'\cdot q=\be''\cdot q=0$. Since 
+    $(\Ra)$ Let $\be$ be a plane curve, then there exists $p,q\in{\R}^{3}$ such that for all $s\in I$, $(\be(s)-p)\cdot q=0$. Consider $q$ as a constant vector field, so $((\be-p)\cdot q)'=(\be-p)'\cdot q+q'\cdot(\be-p)=\be'\cdot q-p'\cdot q=\be'\cdot q+q'\cdot\be=\be'\cdot q=\be''\cdot q=0$. Rewrite $q=q\cdot TT+q\cdot NN+q\cdot BB$, then $q=q\cdot BB$. We have $B=B\cdot BB=(B\cdot B)/(q\cdot B)q=(B\cdot B)/(q\cdot B)\norm{q}$. Since $\norm{B}=1$, $B=\pm q/\norm{q}$, which is a point, then $B'=0$, hence $\tau=0$. $(\La)$ Let $\tau=0$, then $B'=0$, so $B$ is constant. Define $f:I\to\R$ by $f(s)=(\be(s)-\be(0))\cdot B$, then $\d f/\d s=T(s)\cdot 0=0$ and $f(0)=0\cdot B=0$, so $f(s)=0$ for all $s$. Hence $\ran(\be)\sub\{r\mid(r-\be(0)\cdot B)\}$.
 \end{proof}
-
-
+\begin{proposition}
+    Let $\be$ be a curve in ${\R}^{3}$ with $\ka>0$, $\ka'=0$, $\norm{\be'}=1$, and $\tau=0$. Then $\be$ lies in a circle of radius $1/\ka$.
+\end{proposition}
+\begin{proof}
+    Define $\ga:I\to{\R}^{3}$ by $\ga(s)=\be(s)+N(s)/\ka$, then $\ga'=T+N'/\ka$. By the Fernet formula, $\ga'=T+(-\ka T+\tau B)/\ka=T-T=0$. Fix $t\in I$. For any $s\in I$, the distance $\norm{\be(s)-(\be(t)+N(t)/\ka)}=\norm{\be(s)-(\be(s)+N(s)/\ka)}=\norm{N(s)}/\ka=1/\ka$.
+\end{proof}
 % 2.4 Arbitraty-Speed Curves
+
+
+
+
 \input{Ch3.tex}
 \input{ExPf.tex}
 \hindex

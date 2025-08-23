@@ -455,7 +455,7 @@ Now we claim that $B'$ can be written as a scalar multiple of $N$. Consider $B'=
     Let $\be$ be a curve in ${\R}^{3}$ with $\ka>0$, $\ka'=0$, $\norm{\be'}=1$, and $\tau=0$. Then $\be$ lies in a circle of radius $1/\ka$.
 \end{proposition}
 \begin{proof}
-    Define $\ga:I\to{\R}^{3}$ by $\ga(s)=\be(s)+N(s)/\ka$, then $\ga'=T+N'/\ka$. By the Fernet formula, $\ga'=T+(-\ka T+\tau B)/\ka=T-T=0$. Fix $t\in I$. For any $s\in I$, the distance $\norm{\be(s)-(\be(t)+N(t)/\ka)}=\norm{\be(s)-(\be(s)+N(s)/\ka)}=\norm{N(s)}/\ka=1/\ka$.
+    Define $\ga:I\to{\R}^{3}$ by $\ga(s)=\be(s)+N(s)/\ka$, then $\ga'=T+N'/\ka$. By the Fernet formulas, $\ga'=T+(-\ka T+\tau B)/\ka=T-T=0$. Fix $t\in I$. For any $s\in I$, the distance $\norm{\be(s)-(\be(t)+N(t)/\ka)}=\norm{\be(s)-(\be(s)+N(s)/\ka)}=\norm{N(s)}/\ka=1/\ka$.
 \end{proof}
 % 2.4 Arbitraty-Speed Curves
 \par
@@ -476,12 +476,10 @@ We have shown the properties of curves with unit speed. Now given a curve $\al:I
     Let $\al:I\to{\R}^{3}$ be a regular curve. Then $T=\al'/\norm{\al'}$, $N=B\times T$, $B=\al'\times\al''/\norm{\al'\times\al''}$, $\ka=\norm{\al'\times\al''}/{\norm{\al'}}^{3}$, and $\tau=(\al'\times\al'')\cdot\al'''/{\norm{\al'\times\al''}}^{2}$.
 \end{proposition}
 \begin{proof}
-    Since $\norm{\al'}=v$, $\al'/\norm{\al'}=vT/v=T$. We have $\al'\times\al''=vT\times((\d v/\d t)T+\ka{v}^{2}N)=vT\times(\d v/\d t)T+vT\times\ka{v}^{2}N$, since $T\times T=0$, $\al'\times\al''=\ka{v}^{3}T\times N=\ka{v}^{3}B$. The norm $\norm{\al'\times\al''}=\norm{\ka{v}^{3}}=\ka{v}^{3}$, hence $B=\ka{v}^{3}B/\ka{v}^{3}=\al'\times\al''/\norm{\al'\times\al''}$. Consider a lemma: for ${w}_{p},{v}_{p},{u}_{p}\in{T}_{p}({\R}^{3})$, $(u\times v)\times w=(u\cdot w)v-(v\cdot w)u$. (lemma) Rewrite
-
-    By the lemma, $B\times T=T\times N\times T=(T\cdot T)N-(N\cdot T)T=N-0=N$. We have shown $\norm{\al'\times\al''}=\ka{v}^{3}$, so $\norm{\al'\times\al''}/{\norm{\al'}}^{3}=\ka{v}^{3}/{v}^{3}=\ka$. 
+    Since $\norm{\al'}=v$, $\al'/\norm{\al'}=vT/v=T$. We have $\al'\times\al''=vT\times((\d v/\d t)T+\ka{v}^{2}N)=vT\times(\d v/\d t)T+vT\times\ka{v}^{2}N$, since $T\times T=0$, $\al'\times\al''=\ka{v}^{3}T\times N=\ka{v}^{3}B$. The norm $\norm{\al'\times\al''}=\norm{\ka{v}^{3}}=\ka{v}^{3}$, hence $B=\ka{v}^{3}B/(\ka{v}^{3})=\al'\times\al''/\norm{\al'\times\al''}$. Consider a lemma: for ${w}_{p},{v}_{p},{u}_{p}\in{T}_{p}({\R}^{3})$, $(u\times v)\times w=(u\cdot w)v-(v\cdot w)u$. (lemma) Rewrite $u=\sum{u}_{i}$, $v=\sum{v}_{i}$, and $w=\sum{w}_{i}$, then $(u\cdot w)v-(v\cdot w)u=(\sum{u}_{i}{w}_{j})\sum{v}_{i}-(\sum{v}_{i}{w}_{j})\sum{u}_{i}=u\times v\times w$. $\mathghost$ By the lemma, $B\times T=T\times N\times T=(T\cdot T)N-(N\cdot T)T=N-0=N$. We have shown $\norm{\al'\times\al''}=\ka{v}^{3}$, so $\norm{\al'\times\al''}/{\norm{\al'}}^{3}=\ka{v}^{3}/{v}^{3}=\ka$. Differentiate $\al''$, then $\al'''=(\d v/\d t)T'+({\d}^{2}v/\d{t}^{2})T+2\ka(\d v/\d t)vN+N'\ka{v}^{2}$. Since $B\cdot T=B\cdot N=0$, $\ka{v}^{3}B\cdot\al'''=\ka{v}^{3}B\cdot((\d v/\d t)T'+N'\ka{v}^{2})$, by the Fernet formulas, $T'$ term becomes 0 and $N'$ term becomes $\tau vB$. Now $(\al'\times\al'')\cdot\al'''={\ka}^{2}{v}^{6}\tau B\cdot B={\ka}^{2}{v}^{6}\tau$. Hence $(\al'\times\al'')\cdot\al'''/{\norm{\al'\times\al''}}^{2}={\ka}^{2}{v}^{6}\tau/({\ka}^{2}{v}^{6})=\tau$.
 \end{proof}
 \begin{example}
-    Consider the curve $\al:\R\to{\R}^{3}$ defined by $\al(t)=(3t-{t}^{3},3{t}^{2},3t+{t}^{3})$.
+    Consider the curve $\al:\R\to{\R}^{3}$ defined by $\al(t)=(3t-{t}^{3},3{t}^{2},3t+{t}^{3})$, then $\al'=(3-3{t}^{2},6t,3+3{t}^{2})$, $\al''=(-6t,6,6t)$, and $\al'''=(-6,0,6)$. We have $\al'\cdot\al'=18{(1+{t}^{2})}^{2}$, so $\norm{\al'}=3\sqrt{2}(1+{t}^{2})$. 
 \end{example}
 \input{Ch3.tex}
 \input{ExPf.tex}

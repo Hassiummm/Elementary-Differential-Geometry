@@ -1,4 +1,4 @@
-% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
+% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 23 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
 \documentclass[10pt]{article}
 \input{/Users/mr.hassium/Desktop/Github/Hello-World/hassium.tex}
 \def\htitle{Elementary Differential Geometry}
@@ -459,12 +459,30 @@ Now we claim that $B'$ can be written as a scalar multiple of $N$. Consider $B'=
 \end{proof}
 % 2.4 Arbitraty-Speed Curves
 \par
-We have shown the properties of curves with unit speed. Now given a curve $\al:I\to{\R}^{3}$ with $\norm{\al'}\ne 1$, let $\wb{\al}$ be the arc-length reparametrization of $\al$, so $\norm{\wb{\al}'}=1$. Let $\wb{T}$, $\wb{k}$, $\wb{N}$, $\wb{B}$, and $\wb{\tau}$ be the corresponding functions of $\wb{\al}$. Define the $T$, $\la$, $N$, $B$, and $\tau$ of $\al$ to be those of $\wb{\al}$. We denote the speed of $\al$ is denoted by $v$.
+We have shown the properties of curves with unit speed. Now given a curve $\al:I\to{\R}^{3}$ with $\norm{\al'}\ne 1$, let $\wb{\al}$ be the arc-length reparametrization of $\al$, so $\norm{\wb{\al}'}=1$. Let $\wb{T}$, $\wb{k}$, $\wb{N}$, $\wb{B}$, and $\wb{\tau}$ be the corresponding functions of $\wb{\al}$. Define the $T$, $\la$, $N$, $B$, and $\tau$ of $\al$ to be those of $\wb{\al}$. We denote the speed of $\al$ by $v$.
 \begin{theorem}[Fernet formulas]
-    Let $\al$ be a regular curve on ${\R}^{3}$ with $\ka>0$, then $T'=\ka vN$,  
+    Let $\al$ be a regular curve on ${\R}^{3}$ with $\ka>0$, then $T'=\ka vN$, $N'=-\ka vT+\tau vB$, and $B'=-\tau vN$.
 \end{theorem}
+\begin{proof}
+    Apply the Fernet formulas on $\wb{\al}$, then $\wb{T}'=\wb{\ka}\wb{N}$. Since $T'=\wb{T}'\d s/\d t=\wb{T}'v$, $T'=\wb{\ka}v\wb{N}$. Similarly, $N'=-\ka vT+\tau vB$ and $B'=-\tau vN$.
+\end{proof}
+\begin{proposition}
+    Let $\al:I\to{\R}^{3}$ be regular. Then $\al'=vT$ and $\al''=(\d v/\d t)T+\ka{v}^{2}N$.
+\end{proposition}
+\begin{proof}
+    We have $\al'=\wb{\al}'\d s/\d t=v\wb{T}=vT$, then $\al''=(\d v/\d t)T+T'v=(\d v/\d t)T+(\ka vN)\ka=(\d v/\d t)T+{v}^{2}\ka N$.
+\end{proof}
+\begin{proposition}
+    Let $\al:I\to{\R}^{3}$ be a regular curve. Then $T=\al'/\norm{\al'}$, $N=B\times T$, $B=\al'\times\al''/\norm{\al'\times\al''}$, $\ka=\norm{\al'\times\al''}/{\norm{\al'}}^{3}$, and $\tau=(\al'\times\al'')\cdot\al'''/{\norm{\al'\times\al''}}^{2}$.
+\end{proposition}
+\begin{proof}
+    Since $\norm{\al'}=v$, $\al'/\norm{\al'}=vT/v=T$. We have $\al'\times\al''=vT\times((\d v/\d t)T+\ka{v}^{2}N)=vT\times(\d v/\d t)T+vT\times\ka{v}^{2}N$, since $T\times T=0$, $\al'\times\al''=\ka{v}^{3}T\times N=\ka{v}^{3}B$. The norm $\norm{\al'\times\al''}=\norm{\ka{v}^{3}}=\ka{v}^{3}$, hence $B=\ka{v}^{3}B/\ka{v}^{3}=\al'\times\al''/\norm{\al'\times\al''}$. Consider a lemma: for ${w}_{p},{v}_{p},{u}_{p}\in{T}_{p}({\R}^{3})$, $(u\times v)\times w=(u\cdot w)v-(v\cdot w)u$. (lemma) Rewrite
 
-
+    By the lemma, $B\times T=T\times N\times T=(T\cdot T)N-(N\cdot T)T=N-0=N$. We have shown $\norm{\al'\times\al''}=\ka{v}^{3}$, so $\norm{\al'\times\al''}/{\norm{\al'}}^{3}=\ka{v}^{3}/{v}^{3}=\ka$. 
+\end{proof}
+\begin{example}
+    Consider the curve $\al:\R\to{\R}^{3}$ defined by $\al(t)=(3t-{t}^{3},3{t}^{2},3t+{t}^{3})$.
+\end{example}
 \input{Ch3.tex}
 \input{ExPf.tex}
 \hindex

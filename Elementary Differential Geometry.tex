@@ -484,18 +484,39 @@ We have shown the properties of curves with unit speed. Now given a curve $\al:I
 \begin{definition}
     Let $\al:I\to{\R}^{3}$ be regular. We say $\al$ is a \hdef{cylindrical helix} if there exists $u\in{\R}^{3}$ such that for all $t\in I$, $T(t)\cdot u=\cos\theta$, where $\theta$ is a constant angle.
 \end{definition}
+\par
+If $\al$ has $\norm{\al'}\ne 1$, take the arc-length reparametrization $\wb{\al}$ of $\al$, by our definition, $(T,N,B)$, $\ka$, and $\tau$ are all invariant under this reparametrization, so it suffices to consider a curve with unit speed.
 \begin{proposition}
     A regular curve $\al$ on ${\R}^{3}$ with $\ka>0$ is a cylindrical helix if and only if $\tau/\ka$ is constant.
 \end{proposition}
 \begin{proof}
-    If $\al$ has $\norm{\al'}\ne 1$, take the arc-length reparametrization $\wb{\al}$ of $\al$, by our definition, $(T,N,B)$, $\ka$, and $\tau$ are all invariant under this reparametrization, so it suffices to set $\norm{\al'}=1$. $(\Ra)$ Let $\al$ be a cylindrical helix with unit vector $u$ and constant angle $\theta$, then $T\cdot u=\cos\theta$, so $0=(T\cdot u)'=T'\cdot u=\ka N\cdot u$. Since $\ka>0$, $u\cdot N=0$, then $u=(u\cdot T)T+(u\cdot B)B=\cos\theta T+(u\cdot B)B$. Since $\norm{u}=1$, $u\cdot B=\sin\theta$. Now $0=u'=\cos\theta\ka N-\sin\theta\tau N$, so $\cos\theta\ka=\sin\theta\tau$, which implies $\tau/\ka=\cot\theta$. $(\La)$ Let $\tau/\ka$ be a constant and let $\cot\theta=\tau/\ka$ for some angle $\theta$. Consider $U=\cos\theta T+\sin\theta B$, here $U'=\cos\theta T'+\sin\theta B'=(\cos\theta\ka-\sin\theta\tau)N$, since $\tau/\ka=\cot\theta$, $U'=0$. For all ${s}_{1},{s}_{2}\in I$, $U({s}_{1})=U({s}_{2})$, so pick $U(0)=u$. Now $T\cdot u=T\cdot U=T\cdot(\cos\theta T+\sin\theta B)=\cos\theta$.
+    Let $\al$ be a curve with $\norm{\al'}=1$. $(\Ra)$ Let $\al$ be a cylindrical helix with unit vector $u$ and constant angle $\theta$, then $T\cdot u=\cos\theta$, so $0=(T\cdot u)'=T'\cdot u=\ka N\cdot u$. Since $\ka>0$, $u\cdot N=0$, then $u=(u\cdot T)T+(u\cdot B)B=\cos\theta T+(u\cdot B)B$. Since $\norm{u}=1$, $u\cdot B=\sin\theta$. Now $0=u'=\cos\theta\ka N-\sin\theta\tau N$, so $\cos\theta\ka=\sin\theta\tau$, which implies $\tau/\ka=\cot\theta$. $(\La)$ Let $\tau/\ka$ be a constant and let $\cot\theta=\tau/\ka$ for some angle $\theta$. Consider $U=\cos\theta T+\sin\theta B$, here $U'=\cos\theta T'+\sin\theta B'=(\cos\theta\ka-\sin\theta\tau)N$, since $\tau/\ka=\cot\theta$, $U'=0$. For all ${s}_{1},{s}_{2}\in I$, $U({s}_{1})=U({s}_{2})$, so pick $U(0)=u$. Now $T\cdot u=T\cdot U=T\cdot(\cos\theta T+\sin\theta B)=\cos\theta$.
 \end{proof}
 % 2.5 Covariant Derivatives
-\par
 \begin{definition}
     Let $W$ be a vector field on ${\R}^{3}$ and let $v\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Then the \hdef{covariant derivative} of $W$ with respect to $v$ is the tangent vector ${\nabla}_{v}W=W(p+tv)'(0)$ at $p$.
 \end{definition}
+\begin{example}
+    Let $W={x}^{2}{U}_{1}+yz{U}_{3}$, $v=(-1,0,2)$, and $p=(2,1,0)$. Then $p+tv=(2-t,1,2t)$, so $W(p+tv)={(2-t)}^{2}{U}_{1}+2t{U}_{3}$. Hence ${\nabla}_{v}W=W(p+tv)'(0)=-4{U}_{1}(p)+2{U}_{3}(p)={(-4,0,2)}_{p}$.
+\end{example}
+\begin{proposition}
+    Let $W=\sum{w}_{i}{U}_{i}$ be a vector field on ${\R}^{3}$ and let $v\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Then ${\nabla}_{v}W=\sum v[{w}_{i}]{U}_{i}(p)$.
+\end{proposition}
+\begin{proof}
+    We have $W(p+tv)=\sum{w}_{i}(p+tv){U}_{i}$. Since $(\d/\d t){w}_{i}(p+tv)$ at $t=0$ is $v[f]$, ${\nabla}_{v}W=\sum v[{w}_{i}]{U}_{i}(p)$.
+\end{proof}
+\begin{proposition}
+    Let $v,w\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Let $Y$ and $Z$ be vector fields on ${\R}^{3}$. For any $a,b\in\R$ and $f:\R\to\R$, the following properties hold.
+    \begin{enumerate}
+        \item ${\nabla}_{av+bw}Y=a{\nabla}_{v}Y+b{\nabla}_{w}Y$.
+        \item ${\nabla}_{v}(aY+bZ)=a{\nabla}_{v}Y+b{\nabla}_{v}Z$.
+        \item ${\nabla}_{v}(fY)=v[f]Y(p)+f(p){\nabla}_{v}Y$.
+        \item $v[Y\cdot Z]={\nabla}_{v}Y\cdot Z(p)+Y(p)\cdot{\nabla}_{v}Z$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Rewrite $Y=\sum{y}_{i}{U}_{i}$ and $Z=\sum{z}_{i}{U}_{i}$. (\rom1) We have ${\nabla}_{av+bw}Y=\sum(av+bw)[{y}_{i}]{U}_{i}(p)=a\sum v[{y}_{i}]{U}_{i}+b\sum w[{y}_{i}]{U}_{i}=a{\nabla}_{v}Y+b{\nabla}_{w}Y$. (\rom2) Similarly, ${\nabla}_{v}(aY+bZ)=\sum v[a{y}_{i}+b{z}_{i}]{U}_{i}=a\sum v[{y}_{i}]{U}_{i}+b\sum v[{z}_{i}]{U}_{i}=a{\nabla}_{v}Y+b{\nabla}_{v}Z$. (\rom3) Similarly, ${\nabla}_{v}(fY)=\sum v[f{y}_{i}]{U}_{i}=\sum(v[f]{y}_{i}+fv[{y}_{i}]){U}_{i}=v[f]Y(p)+f(p){\nabla}_{v}Y$. (\rom4) We have $Y\cdot Z=\sum{y}_{i}{z}_{i}$, then $v[Y\cdot Z]=\sum v[{y}_{i}]{z}_{i}{U}_{i}+\sum v[{z}_{i}]{y}_{i}{U}_{i}={\nabla}_{v}Y\cdot Z+Y\cdot{\nabla}_{v}Z$.
+\end{proof}
 \input{Ch3.tex}
-\input{ExPf.tex}
 \hindex
 \end{document}

@@ -496,9 +496,6 @@ If $\al$ has $\norm{\al'}\ne 1$, take the arc-length reparametrization $\wb{\al}
 \begin{definition}
     Let $W$ be a vector field on ${\R}^{3}$ and let $v\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Then the \hdef{covariant derivative} of $W$ with respect to $v$ is the tangent vector ${\nabla}_{v}W=W(p+tv)'(0)$ at $p$.
 \end{definition}
-\begin{example}
-    Let $W={x}^{2}{U}_{1}+yz{U}_{3}$, $v=(-1,0,2)$, and $p=(2,1,0)$. Then $p+tv=(2-t,1,2t)$, so $W(p+tv)={(2-t)}^{2}{U}_{1}+2t{U}_{3}$. Hence ${\nabla}_{v}W=W(p+tv)'(0)=-4{U}_{1}(p)+2{U}_{3}(p)={(-4,0,2)}_{p}$.
-\end{example}
 \begin{proposition}
     Let $W=\sum{w}_{i}{U}_{i}$ be a vector field on ${\R}^{3}$ and let $v\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Then ${\nabla}_{v}W=\sum v[{w}_{i}]{U}_{i}(p)$.
 \end{proposition}
@@ -517,6 +514,21 @@ If $\al$ has $\norm{\al'}\ne 1$, take the arc-length reparametrization $\wb{\al}
 \begin{proof}
     Rewrite $Y=\sum{y}_{i}{U}_{i}$ and $Z=\sum{z}_{i}{U}_{i}$. (\rom1) We have ${\nabla}_{av+bw}Y=\sum(av+bw)[{y}_{i}]{U}_{i}(p)=a\sum v[{y}_{i}]{U}_{i}+b\sum w[{y}_{i}]{U}_{i}=a{\nabla}_{v}Y+b{\nabla}_{w}Y$. (\rom2) Similarly, ${\nabla}_{v}(aY+bZ)=\sum v[a{y}_{i}+b{z}_{i}]{U}_{i}=a\sum v[{y}_{i}]{U}_{i}+b\sum v[{z}_{i}]{U}_{i}=a{\nabla}_{v}Y+b{\nabla}_{v}Z$. (\rom3) Similarly, ${\nabla}_{v}(fY)=\sum v[f{y}_{i}]{U}_{i}=\sum(v[f]{y}_{i}+fv[{y}_{i}]){U}_{i}=v[f]Y(p)+f(p){\nabla}_{v}Y$. (\rom4) We have $Y\cdot Z=\sum{y}_{i}{z}_{i}$, then $v[Y\cdot Z]=\sum v[{y}_{i}]{z}_{i}{U}_{i}+\sum v[{z}_{i}]{y}_{i}{U}_{i}={\nabla}_{v}Y\cdot Z+Y\cdot{\nabla}_{v}Z$.
 \end{proof}
+\par
+Let $V$ and $W=\sum{w}_{i}$ be vector fields. We define ${\nabla}_{V}W$ at some $p\in{\R}^{3}$ to be ${\nabla}_{V(p)}W$, hence ${\nabla}_{V}W=\sum V[{w}_{i}]{U}_{i}$.
+\begin{proposition}
+    Let $V$, $W$, $Y$, and $Z$ be vector fields on ${\R}^{3}$. For all functions $f,g:\R\to\R$ and $a,b\in\R$. Then the following properties hold.
+    \begin{enumerate}
+        \item ${\nabla}_{fV+gW}Y=f{\nabla}_{V}Y+g{\nabla}_{W}Y$.
+        \item ${\nabla}_{V}(aY+bZ)=a{\nabla}_{V}Y+b{\nabla}_{V}Z$.
+        \item ${\nabla}_{V}(fY)=V[f]Y+f{\nabla}_{V}Y$.
+        \item $V[Y\cdot Z]={\nabla}_{V}Y\cdot Z+Y\cdot{\nabla}_{V}Z$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    Since ${\nabla}_{V}W(p)={\nabla}_{V(p)}W$, those properties are direct consequences of the previous proposition.
+\end{proof}
+% 2.6 Frame Fields
 \input{Ch3.tex}
 \hindex
 \end{document}

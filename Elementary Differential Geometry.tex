@@ -409,7 +409,7 @@ We define the addition, scalar multiplication, dot multiplication, and cross pro
 \begin{proof}
     Rewrite $\al:I\to{\R}^{3}$ as $\al=({\al}_{i})$. (\rom1) The velocity $\al'=({\al}_{i}')$, then $\al'=0$ if and only if ${\al}_{i}'=0$. Hence $\al'=0$ if and only if ${\al}_{i}$ is a constant function. (\rom2) We have $\al''=({\al}_{i}'')$, so $\al''=0$ if and only if ${\al}_{i}={p}_{i}t+{q}_{i}$ for some ${p}_{i},{q}_{i}\in\R$. Hence $\al''=0$ if and only if $\al=pt+q$, where $p=({p}_{i})$ and $q=({q}_{1})$. (\rom3) Fix $t$ and let $Y={({y}_{i})}_{\al(t)}$, then $Y'=\sum{y}_{i}'{U}_{i}=0$, which means ${y}_{i}$ are constant functions. Hence $Y$ is parallel if and only if $Y'=0$.
 \end{proof}
-% 2.3 The Frenet Formulas
+% 2.3 The Fernet Formulas
 \begin{definition}
     Let $\be:I\to{\R}^{3}$ be a curve. Then we call $T=\be'$ the \hdef{unit tangent field} of $\be$. The function $\ka(s)=\norm{T'(s)}$ is called the \hdef{curvature} of $\be$. 
 \end{definition}
@@ -492,6 +492,18 @@ If $\al$ has $\norm{\al'}\ne 1$, take the arc-length reparametrization $\wb{\al}
 \begin{proof}
     Let $\al$ be a curve with $\norm{\al'}=1$. $(\Ra)$ Let $\al$ be a cylindrical helix with unit vector $u$ and constant angle $\theta$, then $T\cdot u=\cos\theta$, so $0=(T\cdot u)'=T'\cdot u=\ka N\cdot u$. Since $\ka>0$, $u\cdot N=0$, then $u=(u\cdot T)T+(u\cdot B)B=\cos\theta T+(u\cdot B)B$. Since $\norm{u}=1$, $u\cdot B=\sin\theta$. Now $0=u'=\cos\theta\ka N-\sin\theta\tau N$, so $\cos\theta\ka=\sin\theta\tau$, which implies $\tau/\ka=\cot\theta$. $(\La)$ Let $\tau/\ka$ be a constant and let $\cot\theta=\tau/\ka$ for some angle $\theta$. Consider $U=\cos\theta T+\sin\theta B$, here $U'=\cos\theta T'+\sin\theta B'=(\cos\theta\ka-\sin\theta\tau)N$, since $\tau/\ka=\cot\theta$, $U'=0$. For all ${s}_{1},{s}_{2}\in I$, $U({s}_{1})=U({s}_{2})$, so pick $U(0)=u$. Now $T\cdot u=T\cdot U=T\cdot(\cos\theta T+\sin\theta B)=\cos\theta$.
 \end{proof}
+\par
+Let a regular curve $\al$ on ${\R}^{3}$ with $\norm{\al'}$ be a circle.
+
+
+Let $\tau=0$, $\ka>0$, and $\ka'=0$ for some $\al$ with $\norm{\al'}=1$. By the Fernet formulas, $B'=0$ and $N'=-\ka T$. Define $C(s)=\al(s)+N(s)/\ka$, then $C'(s)=T(s)+N'(s)/\ka=T(s)-\ka T(s)/\ka=0$, so $C$ is constant. Let $C$ be the center, then for all $s$, $\norm{\al(s)-C}=1/\ka$.
+\begin{definition}
+    Let $\al:I\to{\R}^{3}$ be a cylindrical helix. We say $\al$ is a \hdef{circular helix} if its projection onto any plane orthogonal to the axis direction $u$ is a circle.
+\end{definition}
+\par
+
+
+
 % 2.5 Covariant Derivatives
 \begin{definition}
     Let $W$ be a vector field on ${\R}^{3}$ and let $v\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Then the \hdef{covariant derivative} of $W$ with respect to $v$ is the tangent vector ${\nabla}_{v}W=W(p+tv)'(0)$ at $p$.
@@ -529,6 +541,26 @@ Let $V$ and $W=\sum{w}_{i}$ be vector fields. We define ${\nabla}_{V}W$ at some 
     Since ${\nabla}_{V}W(p)={\nabla}_{V(p)}W$, those properties are direct consequences of the previous proposition.
 \end{proof}
 % 2.6 Frame Fields
+\begin{definition}
+    Let ${E}_{1}$, ${E}_{2}$, and ${E}_{3}$ be vector fields on ${\R}^{3}$. We say $\{{E}_{1},{E}_{2},{E}_{3}\}$ is a \hdef{frame field} on ${\R}^{3}$ if ${E}_{i}\cdot{E}_{j}={\de}_{i,j}$.
+\end{definition}
+\par
+If $\{{E}_{1},{E}_{2},{E}_{3}\}$ is a frame field on ${\R}^{3}$, then for all $p\in{\R}^{3}$, $\{{E}_{1}(p),{E}_{2}(p),{E}_{3}(p)\}$ is trivially a frame at $p$.
+\begin{example}
+    Consider a cylindrical coordinate system with coordinates $(r,\theta,z)$. Define ${E}_{1}=\cos\theta{U}_{1}+\sin\theta{U}_{2}$, ${E}_{2}=-\sin\theta{U}_{1}+\cos\theta{U}_{2}$, and ${E}_{3}={U}_{3}$. For any $p$, ${E}_{1}(p)\cdot{E}_{2}(p)=-\cos\theta\sin\theta+\sin\theta\cos\theta=0$, ${E}_{1}(p)\cdot{E}_{3}(p)=0={E}_{2}(p)\cdot{E}_{3}(p)$, ${E}_{1}(p)\cdot{E}_{1}(p)={\cos}^{2}\theta+{\sin}^{2}\theta={E}_{2}(p)\cdot{E}_{2}(p)=1={E}_{3}(p)\cdot{E}_{3}(p)=1$. Hence $\{{E}_{1},{E}_{2},{E}_{3}\}$ is a frame field on ${\R}^{3}$, known as the \hdef{cylindrical frame field}.
+\end{example}
+\begin{example}
+    Consider a spherical coordinate system with coordinates $(\rho,\theta,\vp)$. Define ${F}_{1}=\cos\vp{E}_{1}+\sin\vp{E}_{3}$, ${F}_{2}={E}_{2}$, and ${F}_{3}=-\sin\vp{E}_{1}+\cos\vp{E}_{3}$, where $\{{E}_{1},{E}_{2},{E}_{3}\}$ is the cylindrical frame field. It is trivial that ${F}_{1}\cdot{F}_{1}={F}_{2}\cdot{F}_{2}={F}_{3}\cdot{F}_{3}=1$. We have 
+
+    Hence $\{{F}_{1},{F}_{2},{F}_{3}\}$ is a frame field on ${\R}^{3}$, called the \hdef{spherical frame field}.
+\end{example}
+\begin{proposition}
+    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field on ${\R}^{3}$. If $V$ is a vector field on ${\R}^{3}$, then $V=\sum{f}_{i}{E}_{i}$, where ${f}_{i}=V\cdot{E}_{i}$. If $V=\sum{f}_{i}{E}_{i}$ and $W={g}_{i}{E}_{i}$, then $V\cdot W=\sum{f}_{i}{g}_{i}$.
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+% 2.7 Connection Forms
 \input{Ch3.tex}
 \hindex
 \end{document}

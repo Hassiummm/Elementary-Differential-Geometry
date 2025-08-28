@@ -15,7 +15,7 @@ The original book has 8 sections.
 7. Riemannian Geometry
 8. Global Structure of Surfaces
 
-My plan is to include chapter 1-5. Ideally, I will do chapter 1-6. I may also write notes for chapter 7 and chapter 8, but this is not guaranteed.
+My plan is to include the first 5 chapters. I may write notes for other chapters, but this is not guaranteed. 
 
 # Current Stage #
 

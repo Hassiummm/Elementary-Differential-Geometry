@@ -448,7 +448,7 @@ Now we claim that $B'$ can be written as a scalar multiple of $N$. Consider $B'=
     Let $\be:I\to{\R}^{3}$ be a curve with $\norm{\be'}=1$ and $\ka>0$. Then $\be$ is a plane curve if and only if $\tau=0$. 
 \end{proposition}
 \begin{proof}
-    $(\Ra)$ Let $\be$ be a plane curve, then there exists $p,q\in{\R}^{3}$ such that for all $s\in I$, $(\be(s)-p)\cdot q=0$. Consider $q$ as a constant vector field, so $((\be-p)\cdot q)'=(\be-p)'\cdot q+q'\cdot(\be-p)=\be'\cdot q-p'\cdot q=\be'\cdot q+q'\cdot\be=\be'\cdot q=\be''\cdot q=0$. Rewrite $q=q\cdot TT+q\cdot NN+q\cdot BB$, then $q=q\cdot BB$. We have $B=B\cdot BB=(B\cdot B)/(q\cdot B)q=(B\cdot B)/(q\cdot B)\norm{q}$. Since $\norm{B}=1$, $B=\pm q/\norm{q}$, which is a point, then $B'=0$, hence $\tau=0$. $(\La)$ Let $\tau=0$, then $B'=0$, so $B$ is constant. Define $f:I\to\R$ by $f(s)=(\be(s)-\be(0))\cdot B$, then $\d f/\d s=T(s)\cdot 0=0$ and $f(0)=0\cdot B=0$, so $f(s)=0$ for all $s$. Hence $\ran(\be)\sub\{r\mid(r-\be(0)\cdot B)\}$.
+    $(\Ra)$ Let $\be$ be a plane curve, then there exists $p,q\in{\R}^{3}$ such that for all $s\in I$, $(\be(s)-p)\cdot q=0$. Consider $q$ as a constant vector field, so $((\be-p)\cdot q)'=(\be-p)'\cdot q+q'\cdot(\be-p)=\be'\cdot q-p'\cdot q=\be'\cdot q+q'\cdot\be=\be'\cdot q=\be''\cdot q=0$. Rewrite $q=q\cdot TT+q\cdot NN+q\cdot BB$, then $q=q\cdot BB$. We have $B=B\cdot BB=(B\cdot B)/(q\cdot B)q=(B\cdot B)/(q\cdot B)\norm{q}$. Since $\norm{B}=1$, $B=\pm q/\norm{q}$, which is a point, then $B'=0$, hence $\tau=0$. $(\La)$ Let $\tau=0$, then $B'=0$, so $B$ is constant. Define $f:I\to\R$ by $f(s)=(\be(s)-\be(0))\cdot B$, then $\d f/\d s=T(s)\cdot 0=0$ and $f(0)=0\cdot B=0$, so $f(s)=0$ for all $s$. Hence $\ran(\be)\sub\{r\mid(r-\be(0))\cdot B=0\}$.
 \end{proof}
 \begin{proposition}
     Let $\be$ be a curve in ${\R}^{3}$ with $\ka>0$, $\ka'=0$, $\norm{\be'}=1$, and $\tau=0$. Then $\be$ lies in a circle of radius $1/\ka$.
@@ -492,11 +492,12 @@ If $\al$ has $\norm{\al'}\ne 1$, take the arc-length reparametrization $\wb{\al}
     Let $\al$ be a curve with $\norm{\al'}=1$. $(\Ra)$ Let $\al$ be a cylindrical helix with unit vector $u$ and constant angle $\theta$, then $T\cdot u=\cos\theta$, so $0=(T\cdot u)'=T'\cdot u=\ka N\cdot u$. Since $\ka>0$, $u\cdot N=0$, then $u=(u\cdot T)T+(u\cdot B)B=\cos\theta T+(u\cdot B)B$. Since $\norm{u}=1$, $u\cdot B=\sin\theta$. Now $0=u'=\cos\theta\ka N-\sin\theta\tau N$, so $\cos\theta\ka=\sin\theta\tau$, which implies $\tau/\ka=\cot\theta$. $(\La)$ Let $\tau/\ka$ be a constant and let $\cot\theta=\tau/\ka$ for some angle $\theta$. Consider $U=\cos\theta T+\sin\theta B$, here $U'=\cos\theta T'+\sin\theta B'=(\cos\theta\ka-\sin\theta\tau)N$, since $\tau/\ka=\cot\theta$, $U'=0$. For all ${s}_{1},{s}_{2}\in I$, $U({s}_{1})=U({s}_{2})$, so pick $U(0)=u$. Now $T\cdot u=T\cdot U=T\cdot(\cos\theta T+\sin\theta B)=\cos\theta$.
 \end{proof}
 \par
-Let a regular curve $\al$ on ${\R}^{3}$ with $\norm{\al'}=1$ and $\ka>0$ be a circle. Let $c$ be the center and let $R:I\to{\R}^{3}$ be the function defined by $R(s)=\al(s)-c$. We have $(R\cdot R)'=2R\cdot R'=0$, so $R\cdot R'=R\cdot(\al-c)'=R\cdot T=0$. Differentiate $R\cdot T$, then $0=R\cdot T'+R'\cdot T=1+\ka(R\cdot N)$.
+Let $\tau=0$, $\ka>0$, and $\ka'=0$ for some $\al$ with $\norm{\al'}=1$, then $\al$ lies in a circle of radius $1/\ka$ as we proved before. Consider a circle $\al$ in ${\R}^{3}$, it lies in some ${T}_{p}({\R}^{2})$ by definition, so $\al$ is a plane curve and $\tau=0$. Take the constant $B(0)$ as $q$ in the plane, then 
 
-Let $\tau=0$, $\ka>0$, and $\ka'=0$ for some $\al$ with $\norm{\al'}=1$, then $\al$ lies in a circle of radius $1/\ka$ as we proved before.
+
+Define $R:I\to{\R}^{3}$ by $R(s)=\al(s)-c$, where $c$ is the center. We have $(R\cdot R)'=2R'\cdot R=2T\cdot R=0$.
 \begin{definition}
-    Let $\al:I\to{\R}^{3}$ be a cylindrical helix. We say $\al$ is a \hdef{circular helix} if its projection onto any plane orthogonal to the axis direction $u$ is a circle.
+    Let $\al:I\to{\R}^{3}$ be a cylindrical helix with the corresponding unit vector $u$. We say $\al$ is a \hdef{circular helix} if its projection onto any plane orthogonal to the axis direction $u$ is a circle.
 \end{definition}
 \par
 

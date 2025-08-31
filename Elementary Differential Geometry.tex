@@ -408,7 +408,7 @@ We define the addition, scalar multiplication, dot multiplication, and cross pro
 \begin{proof}
     Rewrite $\al:I\to{\R}^{3}$ as $\al=({\al}_{i})$. (\rom1) The velocity $\al'=({\al}_{i}')$, then $\al'=0$ if and only if ${\al}_{i}'=0$. Hence $\al'=0$ if and only if ${\al}_{i}$ is a constant function. (\rom2) We have $\al''=({\al}_{i}'')$, so $\al''=0$ if and only if ${\al}_{i}={p}_{i}t+{q}_{i}$ for some ${p}_{i},{q}_{i}\in\R$. Hence $\al''=0$ if and only if $\al=pt+q$, where $p=({p}_{i})$ and $q=({q}_{1})$. (\rom3) Fix $t$ and let $Y={({y}_{i})}_{\al(t)}$, then $Y'=\sum{y}_{i}'{U}_{i}=0$, which means ${y}_{i}$ are constant functions. Hence $Y$ is parallel if and only if $Y'=0$.
 \end{proof}
-% 2.3 The Fernet Formulas
+% 2.3 The Frenet Formulas
 \begin{definition}
     Let $\be:I\to{\R}^{3}$ be a curve. Then we call $T=\be'$ the \hdef{unit tangent field} of $\be$. The function $\ka(s)=\norm{T'(s)}$ is called the \hdef{curvature} of $\be$. 
 \end{definition}
@@ -425,14 +425,14 @@ We define the addition, scalar multiplication, dot multiplication, and cross pro
     Since $T=\be'$, $\norm{T}=\sqrt{T\cdot T}=1$, then $(T\cdot T)'=T\cdot T'+T'\cdot T=2T'\cdot T=0$, so $T\cdot T'=0$. For all $s\in\dom(\be)$, $\norm{N}=\norm{T'(s)}/\ka(s)=\norm{T'(s)}/\norm{T'(s)}=1$. Since $B=T\times N$, $B$ is orthogonal to $T$ and $N$. Moreover, ${\norm{B}}^{2}=\norm{T}\norm{N}-{(T\cdot N)}^{2}=1-0=1$.
 \end{proof}
 \begin{definition}
-    Let $\be$ be a curve in ${\R}^{3}$ with $\ka>0$ and $\norm{\be'}=1$. Then $(T,N,B)$ is called the \hdef{Fernet frame field} of $\be$.
+    Let $\be$ be a curve in ${\R}^{3}$ with $\ka>0$ and $\norm{\be'}=1$. Then $(T,N,B)$ is called the \hdef{Frenet frame field} of $\be$.
 \end{definition}
 \par
 Now we claim that $B'$ can be written as a scalar multiple of $N$. Consider $B'=B'\cdot NN+B'\cdot TT+B'\cdot BB$. Differentiate $B\cdot T$, $B'\cdot T+T'\cdot B=0$, then $B'\cdot T=-B\cdot T'=-B\cdot\ka N=0$. Similarly, $B\cdot B'=0$, so $B'=B'\cdot NN$.
 \begin{definition}
     Let $\be$ be a curve in ${\R}^{3}$ with $\ka>0$ and $\norm{\be'}=1$. Then the \hdef{torsion} of $\be$ is a function $\tau:I\to\R$ such that $B'=-\tau N$.
 \end{definition}
-\begin{theorem}[Fernet formulas]
+\begin{theorem}[Frenet formulas]
     Let $\be:I\to{\R}^{3}$ be a curve with $\ka>0$ and $\norm{\be'}=1$. Then $T'=\ka N$, $N'=-\ka T+\tau B$, and $B'=-\tau N$.
 \end{theorem}
 \begin{proof}
@@ -442,7 +442,7 @@ Now we claim that $B'$ can be written as a scalar multiple of $N$. Consider $B'=
     Consider the curve $\be:\R\to{\R}^{3}$ defined by $\be(s)=(a\cos(s/c),a\sin(s/c),bs/c)$, where $a>0$ and $c=\sqrt{{a}^{2}+{b}^{2}}$. It is trivial that $\norm{\be'}=1$. Here $T(s)=\be'(s)=(-a\sin(s/c)/c,a\cos(s/c)/c,b/c)$, then $T'(s)=(-a\cos(s/c)/{c}^{2},-a\sin(s/c)/{c}^{2},0)$, so $\ka(s)=\norm{T'(s)}=a/{c}^{2}>0$. We also have $N(s)=(-\cos(s/c),-\sin(s/c),0)$. Now $\be(s)=T(s)\times N(s)=(b\sin(s/c)/c,-b\cos(s/c)/c,a/c)$, then $B'(s)=(b/\cos(s/c)/{c}^{2},b\sin(s/c)/{c}^{2},0)$, so $\tau(s)=-B'(s)/N(s)=(-b/\cos(s/c)/{c}^{2},-b\sin(s/c)/{c}^{2},0)/(-\cos(s/c),-\sin(s/c),0)=b/{c}^{2}$.
 \end{example}
 \begin{definition}
-    Let $p,q\in{\R}^{3}$ with $q\ne 0$. The \hdef{plane} through $p$ orthogonal to $q$ is the set $\{r\in{\R}^{3}\mid(r-p)\cdot q=0\}$. A curve $\be:I\to{\R}^{3}$ is said to be a \hdef{plain curve} if $\ran(\be)\sub P$, where $P$ is a plane in ${\R}^{3}$.
+    Let $p,q\in{\R}^{3}$ with $q\ne 0$. The \hdef{plane} through $p$ orthogonal to $q$ is the set $\{r\in{\R}^{3}\mid(r-p)\cdot q=0\}$. A curve $\be:I\to{\R}^{3}$ is said to be a \hdef{plane curve} if $\ran(\be)\sub P$, where $P$ is a plane in ${\R}^{3}$.
 \end{definition}
 \begin{proposition}
     Let $\be:I\to{\R}^{3}$ be a curve with $\norm{\be'}=1$ and $\ka>0$. Then $\be$ is a plane curve if and only if $\tau=0$. 
@@ -454,16 +454,16 @@ Now we claim that $B'$ can be written as a scalar multiple of $N$. Consider $B'=
     Let $\be$ be a curve in ${\R}^{3}$ with $\ka>0$, $\ka'=0$, $\norm{\be'}=1$, and $\tau=0$. Then $\be$ lies in a circle of radius $1/\ka$.
 \end{proposition}
 \begin{proof}
-    Define $\ga:I\to{\R}^{3}$ by $\ga(s)=\be(s)+N(s)/\ka$, then $\ga'=T+N'/\ka$. By the Fernet formulas, $\ga'=T+(-\ka T+\tau B)/\ka=T-T=0$. Fix $t\in I$. For any $s\in I$, the distance $\norm{\be(s)-(\be(t)+N(t)/\ka)}=\norm{\be(s)-(\be(s)+N(s)/\ka)}=\norm{N(s)}/\ka=1/\ka$.
+    Define $\ga:I\to{\R}^{3}$ by $\ga(s)=\be(s)+N(s)/\ka$, then $\ga'=T+N'/\ka$. By the Frenet formulas, $\ga'=T+(-\ka T+\tau B)/\ka=T-T=0$. Fix $t\in I$. For any $s\in I$, the distance $\norm{\be(s)-(\be(t)+N(t)/\ka)}=\norm{\be(s)-(\be(s)+N(s)/\ka)}=\norm{N(s)}/\ka=1/\ka$.
 \end{proof}
 % 2.4 Arbitraty-Speed Curves
 \par
 We have shown the properties of curves with unit speed. Now given a curve $\al:I\to{\R}^{3}$ with $\norm{\al'}\ne 1$, let $\wb{\al}$ be the arc-length reparametrization of $\al$, so $\norm{\wb{\al}'}=1$. Let $\wb{T}$, $\wb{k}$, $\wb{N}$, $\wb{B}$, and $\wb{\tau}$ be the corresponding functions of $\wb{\al}$. Define the $T$, $\la$, $N$, $B$, and $\tau$ of $\al$ to be those of $\wb{\al}$. We denote the speed of $\al$ by $v$.
-\begin{theorem}[Fernet formulas]
+\begin{theorem}[Frenet formulas]
     Let $\al$ be a regular curve on ${\R}^{3}$ with $\ka>0$, then $T'=\ka vN$, $N'=-\ka vT+\tau vB$, and $B'=-\tau vN$.
 \end{theorem}
 \begin{proof}
-    Apply the Fernet formulas on $\wb{\al}$, then $\wb{T}'=\wb{\ka}\wb{N}$. Since $T'=\wb{T}'\d s/\d t=\wb{T}'v$, $T'=\wb{\ka}v\wb{N}$. Similarly, $N'=-\ka vT+\tau vB$ and $B'=-\tau vN$.
+    Apply the Frenet formulas on $\wb{\al}$, then $\wb{T}'=\wb{\ka}\wb{N}$. Since $T'=\wb{T}'\d s/\d t=\wb{T}'v$, $T'=\wb{\ka}v\wb{N}$. Similarly, $N'=-\ka vT+\tau vB$ and $B'=-\tau vN$.
 \end{proof}
 \begin{proposition}
     Let $\al:I\to{\R}^{3}$ be regular. Then $\al'=vT$ and $\al''=(\d v/\d t)T+\ka{v}^{2}N$.
@@ -475,7 +475,7 @@ We have shown the properties of curves with unit speed. Now given a curve $\al:I
     Let $\al:I\to{\R}^{3}$ be a regular curve. Then $T=\al'/\norm{\al'}$, $N=B\times T$, $B=\al'\times\al''/\norm{\al'\times\al''}$, $\ka=\norm{\al'\times\al''}/{\norm{\al'}}^{3}$, and $\tau=(\al'\times\al'')\cdot\al'''/{\norm{\al'\times\al''}}^{2}$.
 \end{proposition}
 \begin{proof}
-    Since $\norm{\al'}=v$, $\al'/\norm{\al'}=vT/v=T$. We have $\al'\times\al''=vT\times((\d v/\d t)T+\ka{v}^{2}N)=vT\times(\d v/\d t)T+vT\times\ka{v}^{2}N$, since $T\times T=0$, $\al'\times\al''=\ka{v}^{3}T\times N=\ka{v}^{3}B$. The norm $\norm{\al'\times\al''}=\norm{\ka{v}^{3}}=\ka{v}^{3}$, hence $B=\ka{v}^{3}B/(\ka{v}^{3})=\al'\times\al''/\norm{\al'\times\al''}$. Consider a lemma: for ${w}_{p},{v}_{p},{u}_{p}\in{T}_{p}({\R}^{3})$, $(u\times v)\times w=(u\cdot w)v-(v\cdot w)u$. (lemma) Rewrite $u=\sum{u}_{i}$, $v=\sum{v}_{i}$, and $w=\sum{w}_{i}$, then $(u\cdot w)v-(v\cdot w)u=(\sum{u}_{i}{w}_{j})\sum{v}_{i}-(\sum{v}_{i}{w}_{j})\sum{u}_{i}=u\times v\times w$. $\mathghost$ By the lemma, $B\times T=T\times N\times T=(T\cdot T)N-(N\cdot T)T=N-0=N$. We have shown $\norm{\al'\times\al''}=\ka{v}^{3}$, so $\norm{\al'\times\al''}/{\norm{\al'}}^{3}=\ka{v}^{3}/{v}^{3}=\ka$. Differentiate $\al''$, then $\al'''=(\d v/\d t)T'+({\d}^{2}v/\d{t}^{2})T+2\ka(\d v/\d t)vN+N'\ka{v}^{2}$. Since $B\cdot T=B\cdot N=0$, $\ka{v}^{3}B\cdot\al'''=\ka{v}^{3}B\cdot((\d v/\d t)T'+N'\ka{v}^{2})$, by the Fernet formulas, $T'$ term becomes 0 and $N'$ term becomes $\tau vB$. Now $(\al'\times\al'')\cdot\al'''={\ka}^{2}{v}^{6}\tau B\cdot B={\ka}^{2}{v}^{6}\tau$. Hence $(\al'\times\al'')\cdot\al'''/{\norm{\al'\times\al''}}^{2}={\ka}^{2}{v}^{6}\tau/({\ka}^{2}{v}^{6})=\tau$.
+    Since $\norm{\al'}=v$, $\al'/\norm{\al'}=vT/v=T$. We have $\al'\times\al''=vT\times((\d v/\d t)T+\ka{v}^{2}N)=vT\times(\d v/\d t)T+vT\times\ka{v}^{2}N$, since $T\times T=0$, $\al'\times\al''=\ka{v}^{3}T\times N=\ka{v}^{3}B$. The norm $\norm{\al'\times\al''}=\norm{\ka{v}^{3}}=\ka{v}^{3}$, hence $B=\ka{v}^{3}B/(\ka{v}^{3})=\al'\times\al''/\norm{\al'\times\al''}$. Consider a lemma: for ${w}_{p},{v}_{p},{u}_{p}\in{T}_{p}({\R}^{3})$, $(u\times v)\times w=(u\cdot w)v-(v\cdot w)u$. (lemma) Rewrite $u=\sum{u}_{i}$, $v=\sum{v}_{i}$, and $w=\sum{w}_{i}$, then $(u\cdot w)v-(v\cdot w)u=(\sum{u}_{i}{w}_{j})\sum{v}_{i}-(\sum{v}_{i}{w}_{j})\sum{u}_{i}=u\times v\times w$. $\mathghost$ By the lemma, $B\times T=T\times N\times T=(T\cdot T)N-(N\cdot T)T=N-0=N$. We have shown $\norm{\al'\times\al''}=\ka{v}^{3}$, so $\norm{\al'\times\al''}/{\norm{\al'}}^{3}=\ka{v}^{3}/{v}^{3}=\ka$. Differentiate $\al''$, then $\al'''=(\d v/\d t)T'+({\d}^{2}v/\d{t}^{2})T+2\ka(\d v/\d t)vN+N'\ka{v}^{2}$. Since $B\cdot T=B\cdot N=0$, $\ka{v}^{3}B\cdot\al'''=\ka{v}^{3}B\cdot((\d v/\d t)T'+N'\ka{v}^{2})$, by the Frenet formulas, $T'$ term becomes 0 and $N'$ term becomes $\tau vB$. Now $(\al'\times\al'')\cdot\al'''={\ka}^{2}{v}^{6}\tau B\cdot B={\ka}^{2}{v}^{6}\tau$. Hence $(\al'\times\al'')\cdot\al'''/{\norm{\al'\times\al''}}^{2}={\ka}^{2}{v}^{6}\tau/({\ka}^{2}{v}^{6})=\tau$.
 \end{proof}
 \begin{example}
     Consider the curve $\al:\R\to{\R}^{3}$ defined by $\al(t)=(3t-{t}^{3},3{t}^{2},3t+{t}^{3})$, then $\al'=(3-3{t}^{2},6t,3+3{t}^{2})$, $\al''=(-6t,6,6t)$, and $\al'''=(-6,0,6)$. We have $\al'\cdot\al'=18{(1+{t}^{2})}^{2}$, so $\norm{\al'}=3\sqrt{2}(1+{t}^{2})$ and $T=(1-{t}^{2},2t,1+{t}^{2})/(\sqrt{2}(1+{t}^{2}))$. The cross product $\al'\times\al''=(18{t}^{2}-18,-36t,18{t}^{2}+18)=18({t}^{2}-1,-2t,{t}^{2}+1)$ and its norm $\norm{\al'\times\al''}=18\sqrt{2}(1+{t}^{2})$, hence $B=({t}^{2}-1,-2t,{t}^{2}+1)/(\sqrt{2}(1+{t}^{2}))$. Now $N=B\times T=(-2t,1-{t}^{2},0)/(1+{t}^{2})$. By our computation, $\ka=\norm{\al'\times\al''}/{\norm{\al'}}^{3}=1/(3{(1+{t}^{2})}^{2})$ and $\tau=(\al'\times\al'')\cdot\al'''/{\norm{\al'\times\al''}}^{2}=18({t}^{2}-1,-2t,{t}^{2}+1)\cdot 6(-1,0,1)/{(18\sqrt{2}(1+{t}^{2}))}^{2}=216/(648{(1+{t}^{2})}^{2})=1/(3{(1+{t}^{2})}^{2})$.
@@ -492,14 +492,17 @@ If $\al$ has $\norm{\al'}\ne 1$, take the arc-length reparametrization $\wb{\al}
     Let $\al$ be a curve with $\norm{\al'}=1$. $(\Ra)$ Let $\al$ be a cylindrical helix with unit vector $u$ and constant angle $\theta$, then $T\cdot u=\cos\theta$, so $0=(T\cdot u)'=T'\cdot u=\ka N\cdot u$. Since $\ka>0$, $u\cdot N=0$, then $u=(u\cdot T)T+(u\cdot B)B=\cos\theta T+(u\cdot B)B$. Since $\norm{u}=1$, $u\cdot B=\sin\theta$. Now $0=u'=\cos\theta\ka N-\sin\theta\tau N$, so $\cos\theta\ka=\sin\theta\tau$, which implies $\tau/\ka=\cot\theta$. $(\La)$ Let $\tau/\ka$ be a constant and let $\cot\theta=\tau/\ka$ for some angle $\theta$. Consider $U=\cos\theta T+\sin\theta B$, here $U'=\cos\theta T'+\sin\theta B'=(\cos\theta\ka-\sin\theta\tau)N$, since $\tau/\ka=\cot\theta$, $U'=0$. For all ${s}_{1},{s}_{2}\in I$, $U({s}_{1})=U({s}_{2})$, so pick $U(0)=u$. Now $T\cdot u=T\cdot U=T\cdot(\cos\theta T+\sin\theta B)=\cos\theta$.
 \end{proof}
 \par
-Let $\tau=0$, $\ka>0$, and $\ka'=0$ for some $\al$ with $\norm{\al'}=1$, then $\al$ lies in a circle of radius $1/\ka$ as we proved before. Consider a circle $\al$ in ${\R}^{3}$, it lies in some ${T}_{p}({\R}^{2})$ by definition, so $\al$ is a plane curve and $\tau=0$. Take the constant $B(0)$ as $q$ in the plane, then 
-
-
-Define $R:I\to{\R}^{3}$ by $R(s)=\al(s)-c$, where $c$ is the center. We have $(R\cdot R)'=2R'\cdot R=2T\cdot R=0$.
+Let $\tau=0$, $\ka>0$, and $\ka'=0$ for some $\al$ with $\norm{\al'}=1$, then $\al$ lies in a circle of radius $1/\ka$ as we proved before. Consider a circle $\al$ in ${\R}^{3}$, define $R:I\to{\R}^{3}$ by $R(s)=\al(s)-c$, where $c$ is the center. We have $(R\cdot R)'=2R'\cdot R=2T\cdot R=0$. Since $T\cdot N=0$, $R=nN$. We have $T=R'=n'N+N'n=n'N+n(-\ka T+\tau B)$, then $(-\ka n-1)T+\tau nB+n'N=0$, so $-\ka n-1=\tau n=n'=0$. Since $n=-1/\ka$, $n\ne 0$, this implies $\tau=0$. Moreover, since $n'=0$, $n$ is a constant, then $\ka$ is a constant.
 \begin{definition}
-    Let $\al:I\to{\R}^{3}$ be a cylindrical helix with the corresponding unit vector $u$. We say $\al$ is a \hdef{circular helix} if its projection onto any plane orthogonal to the axis direction $u$ is a circle.
+    Let $u\in{\R}^{3}$ be a point with $\norm{u}=1$ and let $V$ be a plane orthogonal to $u$. The \hdef{projection map} of $p\in{\R}^{3}$ onto $V$ is a function $\proj:{\R}^{3}\to V$ defined by $\proj(p)=p-(p\cdot u)u$.
+\end{definition}
+Let $\al$ be a curve and let $u$ be a unit vector. Let $\be$ be the curve $\be=\proj\comp\al$. Then $\be'=\al'-(\al'\cdot u)u$, $\be''=\al''-(\al''\cdot u)u$, and $\be'''=\al'''-(\al'''\cdot u)u$. We have $\be'\cdot u=\al'\cdot u-(\al'\cdot u)(u\cdot u)=0$, similarly, $\be''\cdot u=0=\be'''\cdot u$, then $(\be'\times\be'')\cdot u=(\be'\cdot u)\be''-(\be''\cdot u)\be'=0$, it suffices to rewrite $\be'\times\be''=nu$ for some $n\in\R$. Now $(\be'\times\be'')\cdot\be'''=nu\cdot\be'''=0$. Hence every curve under a projection map has $\tau=0$.
+\begin{definition}
+    Let $\al:I\to{\R}^{3}$ be a cylindrical helix with axis direction given by the unit vector $u$. We call $\al$ a \hdef{circular helix} if for every plane orthogonal to $u$, the projection of $\al$ onto that plane is a circle.
 \end{definition}
 \par
+Let $\al$ be a circular helix, then $\tau/\ka=0$ and there exists a unit vector $u$ such that $T\cdot u=\cos\theta$. Consider the projection $\be=\proj\comp\al$ with $\be=\al-(\al\cdot u)\al$.
+
 
 
 % 2.5 Covariant Derivatives

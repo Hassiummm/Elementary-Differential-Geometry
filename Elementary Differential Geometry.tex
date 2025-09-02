@@ -548,15 +548,13 @@ If $\{{E}_{1},{E}_{2},{E}_{3}\}$ is a frame field on ${\R}^{3}$, then for all $p
     Consider a cylindrical coordinate system with coordinates $(r,\theta,z)$. Define ${E}_{1}=\cos\theta{U}_{1}+\sin\theta{U}_{2}$, ${E}_{2}=-\sin\theta{U}_{1}+\cos\theta{U}_{2}$, and ${E}_{3}={U}_{3}$. For any $p$, ${E}_{1}(p)\cdot{E}_{2}(p)=-\cos\theta\sin\theta+\sin\theta\cos\theta=0$, ${E}_{1}(p)\cdot{E}_{3}(p)=0={E}_{2}(p)\cdot{E}_{3}(p)$, ${E}_{1}(p)\cdot{E}_{1}(p)={\cos}^{2}\theta+{\sin}^{2}\theta={E}_{2}(p)\cdot{E}_{2}(p)=1={E}_{3}(p)\cdot{E}_{3}(p)=1$. Hence $\{{E}_{1},{E}_{2},{E}_{3}\}$ is a frame field on ${\R}^{3}$, known as the \hdef{cylindrical frame field}.
 \end{example}
 \begin{example}
-    Consider a spherical coordinate system with coordinates $(\rho,\theta,\vp)$. Define ${F}_{1}=\cos\vp{E}_{1}+\sin\vp{E}_{3}$, ${F}_{2}={E}_{2}$, and ${F}_{3}=-\sin\vp{E}_{1}+\cos\vp{E}_{3}$, where $\{{E}_{1},{E}_{2},{E}_{3}\}$ is the cylindrical frame field. It is trivial that ${F}_{1}\cdot{F}_{1}={F}_{2}\cdot{F}_{2}={F}_{3}\cdot{F}_{3}=1$. We have 
-
-    Hence $\{{F}_{1},{F}_{2},{F}_{3}\}$ is a frame field on ${\R}^{3}$, called the \hdef{spherical frame field}.
+    Consider a spherical coordinate system with coordinates $(\rho,\theta,\vp)$. Define ${F}_{1}=\cos\vp{E}_{1}+\sin\vp{E}_{3}$, ${F}_{2}={E}_{2}$, and ${F}_{3}=-\sin\vp{E}_{1}+\cos\vp{E}_{3}$, where $\{{E}_{1},{E}_{2},{E}_{3}\}$ is the cylindrical frame field. It is trivial that ${F}_{1}\cdot{F}_{1}={F}_{2}\cdot{F}_{2}={F}_{3}\cdot{F}_{3}=1$ and ${F}_{1}\cdot{F}_{2}=0={F}_{2}\cdot{F}_{3}$. Now ${F}_{1}\cdot{F}_{3}=\cos\vp{E}_{1}\cdot(-\sin\vp{E}_{1}+\cos\vp{E}_{3})+\sin\vp{E}_{3}\cdot(-\sin\vp{E}_{1}+\cos\vp{E}_{3})=-\cos\vp\sin\vp+\sin\vp\cos\vp=0$. Hence $\{{F}_{1},{F}_{2},{F}_{3}\}$ is a frame field on ${\R}^{3}$, called the \hdef{spherical frame field}.
 \end{example}
 \begin{proposition}
     Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field on ${\R}^{3}$. If $V$ is a vector field on ${\R}^{3}$, then $V=\sum{f}_{i}{E}_{i}$, where ${f}_{i}=V\cdot{E}_{i}$. If $V=\sum{f}_{i}{E}_{i}$ and $W={g}_{i}{E}_{i}$, then $V\cdot W=\sum{f}_{i}{g}_{i}$.
 \end{proposition}
 \begin{proof}
-    
+    (\rom1) For any point $p$, $\{{E}_{1}(p),{E}_{2}(p),{E}_{3}(p)\}$ is a frame at $p$, so $V(p)=\sum(V(p)\cdot{E}_{i}(p)){E}_{i}(p)$. (\rom2) For any $p$, $\{{E}_{1}(p),{E}_{2}(p),{E}_{3}(p)\}$ is a frame at $p$, so $V\cdot W=\sum{f}_{i}{g}_{i}$ as we shown before.
 \end{proof}
 % 2.7 Connection Forms
 \input{Ch3.tex}

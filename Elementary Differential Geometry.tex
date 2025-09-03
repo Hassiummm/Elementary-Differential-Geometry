@@ -501,7 +501,7 @@ Let $\al$ be a curve and let $u$ be a unit vector. Let $\be$ be the curve $\be=\
     Let $\al:I\to{\R}^{3}$ be a cylindrical helix with axis direction given by the unit vector $u$. We call $\al$ a \hdef{circular helix} if for every plane orthogonal to $u$, the projection of $\al$ onto that plane is a circle.
 \end{definition}
 \par
-Let $\al$ be a circular helix, then $\tau/\ka=0$ and there exists a unit vector $u$ such that $T\cdot u=\cos\theta$. Consider the projection $\be=\proj\comp\al$ with $\be=\al-(\al\cdot u)u$. We have $\be'=T-(T\cdot u)u=T-\cos\theta u$ and $\be''=T'-(T'\cdot u)u=\ka N-(\ka N\cdot u)u=\ka N$, then $\be'\times\be''=(T-\cos\theta u)\times\ka N=\ka(T-\cos\theta u)\times N=\ka(B-\cos\theta(u\times N))$. Since $u=\cos\theta T+\sin\theta B$, $u\times N=\cos\theta(T\times N)+\sin\theta(B\times N)=\cos\theta B-\sin\theta T$, then $\norm{\be'\times\be''}=\ka\sqrt{{\sin}^{4}\theta+{\cos}^{2}\theta{\sin}^{2}\theta}=\ka\sin\theta\sqrt{{\sin}^{2}\theta+{\cos}^{2}\theta}=\ka\sin\theta$. Similarly, $\norm{\be'}=\sqrt{{\sin}^{2}\theta T+\sin\theta\cos\theta B}=\sin\theta$. The curvature ${\ka}_{\be}=\ka/{\sin}^{2}\theta$, and ${\ka}_{\be}$ is a constant if and only if $\ka$ is a constant. Hence $\ka,\tau>0$ and $\ka'=0=\tau'$ if and only if $\al$ is a circular helix.
+Let $\al$ be a circular helix, then $\tau/\ka=0$ and there exists a unit vector $u$ such that $T\cdot u=\cos\theta$. Consider the projection $\be=\proj\comp\al$ with $\be=\al-(\al\cdot u)u$. We have $\be'=T-(T\cdot u)u=T-\cos\theta u$ and $\be''=T'-(T'\cdot u)u=\ka N-(\ka N\cdot u)u=\ka N$, then $\be'\times\be''=(T-\cos\theta u)\times\ka N=\ka(T-\cos\theta u)\times N=\ka(B-\cos\theta(u\times N))$. Since $u=\cos\theta T+\sin\theta B$, $u\times N=\cos\theta(T\times N)+\sin\theta(B\times N)=\cos\theta B-\sin\theta T$, then $\norm{\be'\times\be''}=\ka\sqrt{{\sin}^{4}\theta+{\cos}^{2}\theta{\sin}^{2}\theta}=\ka\sin\theta\sqrt{{\sin}^{2}\theta+{\cos}^{2}\theta}=\ka\sin\theta$. Similarly, $\norm{\be'}=\sin\theta$. The curvature ${\ka}_{\be}=\ka/{\sin}^{2}\theta$, and ${\ka}_{\be}$ is a constant if and only if $\ka$ is a constant. Hence $\ka,\tau>0$ and $\ka'=0=\tau'$ if and only if $\al$ is a circular helix.
 % 2.5 Covariant Derivatives
 \begin{definition}
     Let $W$ be a vector field on ${\R}^{3}$ and let $v\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Then the \hdef{covariant derivative} of $W$ with respect to $v$ is the tangent vector ${\nabla}_{v}W=W(p+tv)'(0)$ at $p$.
@@ -556,7 +556,32 @@ If $\{{E}_{1},{E}_{2},{E}_{3}\}$ is a frame field on ${\R}^{3}$, then for all $p
 \begin{proof}
     (\rom1) For any point $p$, $\{{E}_{1}(p),{E}_{2}(p),{E}_{3}(p)\}$ is a frame at $p$, so $V(p)=\sum(V(p)\cdot{E}_{i}(p)){E}_{i}(p)$. (\rom2) For any $p$, $\{{E}_{1}(p),{E}_{2}(p),{E}_{3}(p)\}$ is a frame at $p$, so $V\cdot W=\sum{f}_{i}{g}_{i}$ as we shown before.
 \end{proof}
+\begin{definition}
+    Let $V$ be a vector field on ${\R}^{3}$ and let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field on ${\R}^{3}$. The functions ${f}_{i}=V\cdot{E}_{i}$ are called the \hdef{coordinate functions} of $V$ with respect to the frame field.
+\end{definition}
 % 2.7 Connection Forms
+\begin{definition}
+    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field. For any ${v}_{p}\in{T}_{p}({\R}^{3})$, ${\nabla}_{v}{E}_{i}=\sum{\om}_{i,j}{E}_{i}(p)$, where ${\om}_{i,j}(v)={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)$. These ${\om}_{i,j}$ are called the \hdef{connection forms} of the frame field.
+\end{definition}
+\begin{proposition}
+    Each connected form is a 1-form and ${\om}_{i,j}=-{\om}_{j,i}$.
+\end{proposition}
+\begin{proof}
+    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field on ${\R}^{3}$, for any ${v}_{p},{w}_{p}\in{T}_{p}({\R}^{3})$ and $a,b\in\R$, ${\om}_{i,j}(av+bw)={\nabla}_{av+bw}{E}_{i}\cdot{E}_{j}(p)=a{\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)+b{\nabla}_{w}{E}_{i}\cdot{E}_{j}(p)$, so ${\om}_{i,j}$ is a 1-form. Moreover, $0=v[{E}_{i}\cdot{E}_{j}]={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)+{E}_{i}(p)\cdot{\nabla}_{v}{E}_{j}={\om}_{i,j}(v)+{\om}_{j,i}(v)$, hence ${\om}_{i,j}={\om}_{j,i}$.
+\end{proof}
+\par
+Let $i=j$, then ${\om}_{i,i}=-{\om}_{i,i}$, so ${\om}_{i,i}=0$.
+\begin{proposition}
+    Let ${\om}_{i,j}$ be connection forms of a frame field $\{{E}_{1},{E}_{2},{E}_{3}\}$. For any vector field $V$ on ${\R}^{3}$, ${\nabla}_{V}{E}_{i}={\sum}_{j}{\om}_{i,j}(V){E}_{j}$.
+\end{proposition}
+\begin{proof}
+    Fix the index $i$. For all $p\in{\R}^{3}$, $V(p)\in{T}_{p}({\R}^{3})$, then the equation is a direct consequence of the definition.
+\end{proof}
+\par
+Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field. Rewrite the 
+\begin{proposition}
+    If 
+\end{proposition}
 \input{Ch3.tex}
 \hindex
 \end{document}

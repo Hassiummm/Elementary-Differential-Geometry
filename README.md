@@ -1,6 +1,6 @@
 # Basic Information #
 
-This is a note for *Elementary Differential Geometry* by O'Neil. I will summarize the contents with corrections to typos and supplementary materials if needed.
+This is a note for *Elementary Differential Geometry* by O'Neil. I will summarize the contents with corrections to typos. I might also write supplementary materials for clarifications if needed.
 
 # Plans #
 
@@ -20,3 +20,4 @@ My plan is to include the first 5 chapters. I may write notes for other chapters
 # Current Stage #
 
 Chapter 1 finished.
+Chapter 2 finished

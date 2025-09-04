@@ -561,13 +561,13 @@ If $\{{E}_{1},{E}_{2},{E}_{3}\}$ is a frame field on ${\R}^{3}$, then for all $p
 \end{definition}
 % 2.7 Connection Forms
 \begin{definition}
-    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field. For any ${v}_{p}\in{T}_{p}({\R}^{3})$, ${\nabla}_{v}{E}_{i}=\sum{\om}_{i,j}{E}_{i}(p)$, where ${\om}_{i,j}(v)={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)$. These ${\om}_{i,j}$ are called the \hdef{connection forms} of the frame field.
+    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field. For any ${v}_{p}\in{T}_{p}({\R}^{3})$, ${\nabla}_{v}{E}_{i}=\sum{\om}_{i,j}{E}_{j}(p)$, where ${\om}_{i,j}(v)={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)$. These ${\om}_{i,j}$ are called the \hdef{connection forms} of the frame field.
 \end{definition}
 \begin{proposition}
     Each connected form is a 1-form and ${\om}_{i,j}=-{\om}_{j,i}$.
 \end{proposition}
 \begin{proof}
-    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field on ${\R}^{3}$, for any ${v}_{p},{w}_{p}\in{T}_{p}({\R}^{3})$ and $a,b\in\R$, ${\om}_{i,j}(av+bw)={\nabla}_{av+bw}{E}_{i}\cdot{E}_{j}(p)=a{\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)+b{\nabla}_{w}{E}_{i}\cdot{E}_{j}(p)$, so ${\om}_{i,j}$ is a 1-form. Moreover, $0=v[{E}_{i}\cdot{E}_{j}]={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)+{E}_{i}(p)\cdot{\nabla}_{v}{E}_{j}={\om}_{i,j}(v)+{\om}_{j,i}(v)$, hence ${\om}_{i,j}={\om}_{j,i}$.
+    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field on ${\R}^{3}$, for any ${v}_{p},{w}_{p}\in{T}_{p}({\R}^{3})$ and $a,b\in\R$, ${\om}_{i,j}(av+bw)={\nabla}_{av+bw}{E}_{i}\cdot{E}_{j}(p)=a{\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)+b{\nabla}_{w}{E}_{i}\cdot{E}_{j}(p)$, so ${\om}_{i,j}$ is a 1-form. Moreover, $0=v[{E}_{i}\cdot{E}_{j}]={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)+{E}_{i}(p)\cdot{\nabla}_{v}{E}_{j}={\om}_{i,j}(v)+{\om}_{j,i}(v)$, hence ${\om}_{i,j}=-{\om}_{j,i}$.
 \end{proof}
 \par
 Let $i=j$, then ${\om}_{i,i}=-{\om}_{i,i}$, so ${\om}_{i,i}=0$.
@@ -578,10 +578,20 @@ Let $i=j$, then ${\om}_{i,i}=-{\om}_{i,i}$, so ${\om}_{i,i}=0$.
     Fix the index $i$. For all $p\in{\R}^{3}$, $V(p)\in{T}_{p}({\R}^{3})$, then the equation is a direct consequence of the definition.
 \end{proof}
 \par
-Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field. Rewrite the 
+Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field, ${E}_{i}$ can be rewriten by the natural frame field ${E}_{i}={a}_{i,1}{U}_{1}+{a}_{i,2}{U}_{2}+{a}_{i,3}{U}_{3}$.
 \begin{proposition}
-    If 
+    Let $A$ be the attitude matrix of the frame field $\{{E}_{1},{E}_{2},{E}_{3}\}$. Let $\om=({\om}_{i,j})$ be a matrix of the connected forms. Then $\om=\d{A}^{\top}A$, where $\d A$ is the matrix $(\d{a}_{i,j})$.
 \end{proposition}
+\begin{proof}
+    Equivalently, we shall show ${\om}_{i,j}={\sum}_{k}(\d{a}_{i,k}){a}_{j,k}$. For all ${v}_{p}\in{T}_{p}({\R}^{3})$, ${\nabla}_{v}{E}_{i}=\sum v[{a}_{i,k}]{U}_{i}(p)$ and ${E}_{j}(p)=\sum{a}_{j,k}{U}_{i}(p)$, so ${\om}_{i,j}={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)={\sum}_{k}(\d{a}_{i,k}){a}_{j,k}$.
+\end{proof}
+\begin{example}
+    
+\end{example}
+% 2.8 The Structural Equations
+\begin{definition}
+    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field. Then the \hdef{dual 1-forms} 
+\end{definition}
 \input{Ch3.tex}
 \hindex
 \end{document}

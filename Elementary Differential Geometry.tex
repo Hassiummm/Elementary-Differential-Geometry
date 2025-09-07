@@ -580,10 +580,10 @@ Let $i=j$, then ${\om}_{i,i}=-{\om}_{i,i}$, so ${\om}_{i,i}=0$.
 \par
 Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field, ${E}_{i}$ can be rewriten by the natural frame field ${E}_{i}={a}_{i,1}{U}_{1}+{a}_{i,2}{U}_{2}+{a}_{i,3}{U}_{3}$.
 \begin{proposition}
-    Let $A$ be the attitude matrix of the frame field $\{{E}_{1},{E}_{2},{E}_{3}\}$. Let $\om=({\om}_{i,j})$ be a matrix of the connected forms. Then $\om=\d{A}^{\top}A$, where $\d A$ is the matrix $(\d{a}_{i,j})$.
+    Let $A$ be the attitude matrix of the frame field $\{{E}_{1},{E}_{2},{E}_{3}\}$. Let $\om=({\om}_{i,j})$ be a matrix of the connected forms. Then $\om=\d A{A}^{\top}$, where $\d A$ is the matrix $(\d{a}_{i,j})$.
 \end{proposition}
 \begin{proof}
-    Equivalently, we shall show ${\om}_{i,j}={\sum}_{k}(\d{a}_{i,k}){a}_{j,k}$. For all ${v}_{p}\in{T}_{p}({\R}^{3})$, ${\nabla}_{v}{E}_{i}=\sum v[{a}_{i,k}]{U}_{i}(p)$ and ${E}_{j}(p)=\sum{a}_{j,k}{U}_{i}(p)$, so ${\om}_{i,j}={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)={\sum}_{k}(\d{a}_{i,k}){a}_{j,k}$.
+    Equivalently, we shall show ${\om}_{i,j}={\sum}_{k}(\d{a}_{i,k}){a}_{j,k}$. For all ${v}_{p}\in{T}_{p}({\R}^{3})$, ${\nabla}_{v}{E}_{i}=\sum v[{a}_{i,k}]{U}_{k}(p)$ and ${E}_{j}(p)=\sum{a}_{j,k}{U}_{i}(p)$, so ${\om}_{i,j}={\nabla}_{v}{E}_{i}\cdot{E}_{j}(p)={\sum}_{k}(\d{a}_{i,k}){a}_{j,k}$.
 \end{proof}
 % 2.8 The Structural Equations
 \begin{definition}
@@ -595,7 +595,15 @@ For some ${v}_{p},{w}_{p}\in{T}_{p}({\R}^{3})$, ${\theta}_{i}(av+bw)=(av+bw)\cdo
     Let ${\theta}_{1}$, ${\theta}_{2}$, and ${\theta}_{3}$ be dual 1-forms of a frame field $\{{E}_{1},{E}_{2},{E}_{3}\}$. For any 1-form $\vp$ on ${\R}^{3}$, $\vp=\sum\vp({E}_{i}){\theta}_{i}$.
 \end{proposition}
 \begin{proof}
-    Let $V$ be any vector field on ${\R}^{3}$, then $\vp(V)=\sum$
+    Let $V$ be a vector field on ${\R}^{3}$. Then we have $\vp(V)=\vp(\sum V\cdot{E}_{i}{E}_{i})=\sum\vp({\theta}_{i}(V){E}_{i})=\sum\vp({E}_{i}){\theta}_{i}(V)=(\sum\vp({E}_{i}){\theta}_{i})(V)$, hence $\vp=\sum\vp({E}_{i}){\theta}_{i}$.
+\end{proof}
+\par
+If $\{{E}_{i}\}$ is a frame field on the natural frame field for any ${v}_{p}\in{T}_{p}({\R}^{3})$, $\d{x}_{i}(v)={v}_{i}=v\cdot{U}_{i}(p)={\theta}_{i}$. By the previous proposition, ${\theta}_{i}={\sum}_{j}{\theta}_{i}({U}_{j})\d{x}_{j}=\sum{E}_{i}\cdot{U}_{j}=\sum{a}_{i,j}\d{x}_{j}$.
+\begin{theorem}[Cartan structural equartions]
+    Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field on ${\R}^{3}$ with dual forms ${\theta}_{i}$ and connected forms ${\om}_{i,j}$. The exterior derivatives of these forms satisfy $\d{\theta}_{i}={\sum}_{j}{\om}_{i,j}\wedge{\theta}_{j}$ and $\d{\om}_{i,j}={\sum}_{k}{\om}_{i,k}\wedge{\om}_{k,j}$.
+\end{theorem}
+\begin{proof}
+    Consider $\om$ and $\theta$ as matrices of connection forms and dual forms. We define the wedge product of two matrices as their matrix product, except that the multiplication of entries is replaced by the wedge product. This wedge product follows the following lemma: let $M$ and $N$ be matrices, if the entries of $M$ and $N$ are functions, then $\d(M\wedge N)=\d M\wedge N+M\wedge\d N$, if the entries are 1-forms, then $\d(M\wedge N)=\d M\wedge N-M\wedge\d N$. (lemma) We have ${(\d(M\wedge N))}_{i,j}=\d{(M\wedge N)}_{i,j}={\sum}_{k}\d{M}_{i,k}\wedge{N}_{k,j}+{\sum}_{k}{M}_{i,k}\wedge\d{N}_{k,j}$. Similarly, we can prove the case of 1-forms. $\mathghost$ (\rom1) Let ${x}_{i}$ be the natural coordinates of ${\R}^{3}$ and define $\xi$ to be the matrix $({x}_{i,1})$. Here $\xi$ is a 0-form, so $\d(\d\xi)=0$, then $\d\theta=\d(A\wedge\d\xi)=\d A\wedge\d\xi=\d A\wedge({A}^{\top}A\wedge)\d\xi=(\d A{A}^{\top})\wedge(A\d\xi)=\om\wedge\theta$. (\rom2) We have $\d\om=\d(\d A{A}^{\top})=\d(\d A)\wedge{A}^{\top}-\d A\wedge\d{A}^{\top}=-\d A\wedge\d{A}^{\top}$. Notice that $0=\d({A}^{\top}A)=\d{A}^{\top}\wedge A+{A}^{\top}\wedge\d A$, then $\d{A}^{\top}=-{A}^{\top}\wedge\d A\wedge{A}^{\top}$, which implies $\d\om=-\d A\wedge(-{A}^{\top}\wedge\d A\wedge{A}^{\top})=(\d A{A}^{\top})\wedge(\d A{A}^{\top})=\om\wedge\om$.
 \end{proof}
 \input{Ch3.tex}
 \hindex

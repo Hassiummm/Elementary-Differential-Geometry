@@ -612,7 +612,7 @@ If $\{{E}_{i}\}$ is a frame field on the natural frame field for any ${v}_{p}\in
     Let $T:{\R}^{3}\to{\R}^{3}$ defined by $T(p)=p+a$ for a fixed $a\in{\R}^{3}$. For all $p,q\in{\R}^{3}$, $d(T(p),T(q))=\norm{p+a-(q-a)}=\norm{p-q}=d(p,q)$. Hence $T$ is an isometry, called the \hdef{translation} by $a$.
 \end{example}
 \begin{example}
-    Fix an angle $\theta$. For all $p=({p}_{1},{p}_{2},{p}_{3})\in{\R}^{3}$, the \hdef{rotation} of ${\R}^{3}$ around $z$-axis is the map $C:{\R}^{3}\to{\R}^{3}$ defined by $C(p)=({p}_{1}\cos\theta-{p}_{2}\sin\theta,{p}_{1}\sin\theta+{p}_{2}\cos\theta,{p}_{3})$.
+    Fix an angle $\theta$. For all $p=({p}_{1},{p}_{2},{p}_{3})\in{\R}^{3}$, the \hdef{rotation} of ${\R}^{3}$ around $z$-axis is the map $C:{\R}^{3}\to{\R}^{3}$ defined by $C(p)=({p}_{1}\cos\theta-{p}_{2}\sin\theta,{p}_{1}\sin\theta+{p}_{2}\cos\theta,{p}_{3})$. Now 
 \end{example}
 \begin{proposition}
     If $F$ and $G$ are isometries on ${\R}^{3}$, then $G\comp F$ is an isometry.
@@ -624,14 +624,23 @@ If $\{{E}_{i}\}$ is a frame field on the natural frame field for any ${v}_{p}\in
     If $T$ and $S$ are translations, then $T\comp S=S\comp T$ is a translation. Every translation has an inverse translation. Given two points $p,q\in{\R}^{3}$, there exists a unique translation $T$ such that $T(p)=q$.
 \end{proposition}
 \begin{proof}
-    
+    For all $p\in{\R}^{3}$, let $T(p)=p+a$ and let $S(p)=p+b$. Then $(TS)(p)=T(p+b)=p+b+a=S(p+a)=(ST)(p)$. Define $\inv{T}:{\R}^{3}\to{\R}^{3}$ to be $\inv{T}(p)=p-a$, then $\inv{T}$ is the inverse of $T$. Define $T(p)=p+(q-p)$, here $q-p$ is a fixed point, so $T(p)=q$.
 \end{proof}
 \begin{definition}
-    An \hdef{orthogonal transformation} $C:{\R}^{3}\to{\R}^{3}$ is a map such that for all $p,q\in{\R}^{3}$, $C(p)\cdot C(q)=p\cdot q$.
+    An \hdef{orthogonal transformation} $C:{\R}^{3}\to{\R}^{3}$ is a linear map such that for all $p,q\in{\R}^{3}$, $C(p)\cdot C(q)=p\cdot q$.
 \end{definition}
 \begin{proposition}
     Any orthogonal transformation is an isometry.
 \end{proposition}
+\begin{proof}
+    Let $C$ be an orthogonal transformation. For all $p\in{\R}^{3}$, $\norm{C(p)}=\sqrt{C(p)\cdot C(p)}=\sqrt{p\cdot p}=\norm{p}$. For all $a,b\in{\R}^{3}$, $d(C(a),C(b))=\norm{C(a)-C(b)}=\norm{C(a-b)}=\norm{a-b}=d(a,b)$.
+\end{proof}
+\begin{proposition}
+    If $F$ is an isometry of ${\R}^{3}$ with $F(0)=0$, then $F$ is an orthogonal transformation.
+\end{proposition}
+\begin{proof}
+    For all $p\in{\R}^{3}$, $\norm{p}=d(0,p)=d(F(0),F(p))=d(0,F(p))=\norm{F(p)}$. Let $q\in{\R}^{3}$, now $\norm{F(p)-F(q)}=\norm{p-q}$, this implies $(F(p)-F(q))\cdot(F(p)-F(q))=(p-q)\cdot(p-q)$. Simplify the equation, we obtain ${\norm{F(p)}}^{2}-2F(p)\cdot F(q)+{\norm{F(q)}}^{2}={\norm{p}}^{2}-2p\cdot q+{\norm{q}}^{2}$, hence $p\cdot q=F(p)\cdot F(q)$.
+\end{proof}
 \input{Ch4.tex}
 \hindex
 \end{document}

@@ -66,7 +66,7 @@ The functions ${v}_{1}$, ${v}_{2}$, and ${v}_{3}$ are called the \hdef{Euclidean
     Let ${v}_{p}={({v}_{1},{v}_{2},{v}_{3})}_{p}$ be a tangent vector, then ${v}_{p}[f]=\sum{v}_{i}(\pa f/\pa{x}_{i})(p)$.
 \end{proposition}
 \begin{proof}
-    Let $p=({p}_{1},{p}_{2},{p}_{3})$. Then ${v}_{p}[f]=(\d/\d t)f(p+tv){\vert}_{t=0}=\sum(\pa f/\pa z)(p)\cdot(\d/\d t)({p}_{i}+t{v}_{i})=\sum(\pa f/\pa{x}_{i})(p){v}_{i}$.
+    Let $p=({p}_{i})$. Then ${v}_{p}[f]=(\d/\d t)f(p+tv){\vert}_{t=0}=\sum(\pa f/\pa z)(p)\cdot(\d/\d t)({p}_{i}+t{v}_{i})=\sum(\pa f/\pa{x}_{i})(p){v}_{i}$.
 \end{proof}
 \begin{example}
     Consider $f={x}^{2}yz$ with $p=(1,1,0)$ and $v=(1,0,-3)$. By the definition, $p+tv=(1+t,1,-3t)$, so ${v}_{p}[f]=(\d/\d t)(-3{t}^{3}-6{t}^{2}-3t)=-3$. Since $(\pa f/\pa x)=2xyz$, $(\pa f/\pa y)={x}^{2}z$, and $(\pa f/\pa z)={x}^{2}y$, we have $(\pa f/\pa x)(p)=(\pa f/\pa y)(p)=0$ and $(\pa f/\pa z)(p)=1$, so ${v}_{p}[f]=-3$.
@@ -240,8 +240,6 @@ Let $a,b\in\R$. Let $\vp=\sum{f}_{i}\d{x}_{i}$ and $\psi=\sum{g}_{i}\d{x}_{i}$ b
 \begin{definition}
     Let $\al:I\to{\R}^{n}$ be a curve and let $F:{\R}^{n}\to{\R}^{m}$ be a mapping. Then the composite function $\be=F(\al):I\to{\R}^{m}$ is a curve in ${\R}^{m}$ called the \hdef{image} of $\al$ under $F$.
 \end{definition}
-\par
-To examine the effect of a mapping, it suffices to take a proper $\al$ and check the image of it.
 \begin{example}
     The function $F:{\R}^{3}\to{\R}^{3}$ defined by $F=(x-y,x+y,2z)$ is a mapping. Trivially, $F$ is a linear map, so $F$ is determined by $F({u}_{i})$.
 \end{example}
@@ -396,7 +394,7 @@ Such reparametrization $\be$ of $\al$ is called the \hdef{arc-length reparametri
     A \hdef{vector field} $Y$ on a curve $\al:I\to{\R}^{3}$ is a function $Y:I\to{\Du}_{p\in\ran(\al)}{T}_{p}({\R}^{3})$ such that for all $t\in I$, $Y(t)\in{T}_{\al(t)}({\R}^{3})$.
 \end{definition}
 \par
-Fix $t\in I$, then we can rewrite $Y(t)$ as $\sum{y}_{i}(t){U}_{i}(\al(t))$. The functions ${y}_{1}$, ${y}_{2}$, and ${y}_{3}$ are called the \hdef{Euclidean coordinate functions} on $Y$. 
+Fix $t\in I$, then we can rewrite $Y(t)$ as $\sum{y}_{i}(t){U}_{i}(\al(t))$. The functions ${y}_{1}$, ${y}_{2}$, and ${y}_{3}$ are called the \hdef{Euclidean coordinate functions} on $Y$.
 \par
 We define the addition, scalar multiplication, dot multiplication, and cross product on vector fields pointwisely. For a vector $Y=\sum{y}_{i}{U}_{i}$ on $\al$, the derivative of $Y$ is defined to be $Y'=\sum(\d{y}_{i}/\d t){U}_{i}$. Let $Y$ and $Z$ be vector fields on a curve $\al$. Fix $t$, rewrite $Y={({y}_{1},{y}_{2},{y}_{3})}_{\al(t)}$ and $Z={({z}_{1},{z}_{2},{z}_{3})}_{\al(t)}$. Consider $Y$ as a function ${Y}_{t}:I\to{T}_{\al(t)}({\R}^{3})\iso{\R}^{3}$, then for $a,b\in\R$ and a differentiable $f:\R\to\R$, $(aY+bZ)'=aY'+bZ'$ and $(fY)'=(\d f/\d t)Y+Y'f$. We also have $(Y\cdot Z)'=(\sum{y}_{i}{z}_{i})'=\sum{y}_{i}{z}_{i}'+\sum{y}_{i}'{z}_{i}=Y\cdot Z'+Y'\cdot Z$.
 \begin{definition}
@@ -492,7 +490,7 @@ If $\al$ has $\norm{\al'}\ne 1$, take the arc-length reparametrization $\wb{\al}
     Let $\al$ be a curve with $\norm{\al'}=1$. $(\Ra)$ Let $\al$ be a cylindrical helix with unit vector $u$ and constant angle $\theta$, then $T\cdot u=\cos\theta$, so $0=(T\cdot u)'=T'\cdot u=\ka N\cdot u$. Since $\ka>0$, $u\cdot N=0$, then $u=(u\cdot T)T+(u\cdot B)B=\cos\theta T+(u\cdot B)B$. Since $\norm{u}=1$, $u\cdot B=\sin\theta$. Now $0=u'=\cos\theta\ka N-\sin\theta\tau N$, so $\cos\theta\ka=\sin\theta\tau$, which implies $\tau/\ka=\cot\theta$. $(\La)$ Let $\tau/\ka$ be a constant and let $\cot\theta=\tau/\ka$ for some angle $\theta$. Consider $U=\cos\theta T+\sin\theta B$, here $U'=\cos\theta T'+\sin\theta B'=(\cos\theta\ka-\sin\theta\tau)N$, since $\tau/\ka=\cot\theta$, $U'=0$. For all ${s}_{1},{s}_{2}\in I$, $U({s}_{1})=U({s}_{2})$, so pick $U(0)=u$. Now $T\cdot u=T\cdot U=T\cdot(\cos\theta T+\sin\theta B)=\cos\theta$.
 \end{proof}
 \par
-Let $\tau=0$, $\ka>0$, and $\ka'=0$ for some $\al$ with $\norm{\al'}=1$, then $\al$ lies in a circle of radius $1/\ka$ as we proved before. Consider a circle $\al$ in ${\R}^{3}$, define $R:I\to{\R}^{3}$ by $R(s)=\al(s)-c$, where $c$ is the center. We have $(R\cdot R)'=2R'\cdot R=2T\cdot R=0$. Since $T\cdot N=0$, $R=nN$. We have $T=R'=n'N+N'n=n'N+n(-\ka T+\tau B)$, then $(-\ka n-1)T+\tau nB+n'N=0$, so $-\ka n-1=\tau n=n'=0$. Since $n=-1/\ka$, $n\ne 0$, this implies $\tau=0$. Moreover, since $n'=0$, $n$ is a constant, then $\ka$ is a constant.
+Let $\tau=0$, $\ka>0$, and $\ka'=0$ for some $\al$ with $\norm{\al'}=1$, then $\al$ lies in a circle of radius $1/\ka$. Consider a circle $\al$ in ${\R}^{3}$, define $R:I\to{\R}^{3}$ by $R(s)=\al(s)-c$, where $c$ is the center. We have $(R\cdot R)'=2R'\cdot R=2T\cdot R=0$. Since $T\cdot N=0$, $R=nN$. We have $T=R'=n'N+N'n=n'N+n(-\ka T+\tau B)$, then $(-\ka n-1)T+\tau nB+n'N=0$, so $-\ka n-1=\tau n=n'=0$. Since $n=-1/\ka$, $n\ne 0$, then $\tau=0$. Since $n'=0$, $n$ is a constant, then $\ka$ is a constant.
 \begin{definition}
     Let $u\in{\R}^{3}$ be a point with $\norm{u}=1$ and let $V$ be a plane orthogonal to $u$. The \hdef{projection map} of $p\in{\R}^{3}$ onto $V$ is a function $\proj:{\R}^{3}\to V$ defined by $\proj(p)=p-(p\cdot u)u$.
 \end{definition}
@@ -513,7 +511,7 @@ Let $\al$ be a circular helix, then $\tau/\ka=0$ and there exists a unit vector 
     We have $W(p+tv)=\sum{w}_{i}(p+tv){U}_{i}$. Since $(\d/\d t){w}_{i}(p+tv)$ at $t=0$ is $v[f]$, ${\nabla}_{v}W=\sum v[{w}_{i}]{U}_{i}(p)$.
 \end{proof}
 \begin{proposition}
-    Let $v,w\in{T}_{p}({\R}^{3})$ for some $p\in{\R}^{3}$. Let $Y$ and $Z$ be vector fields on ${\R}^{3}$. For any $a,b\in\R$ and $f:\R\to\R$, the following properties hold.
+    Let $v,w\in{T}_{p}({\R}^{3})$. Let $Y$ and $Z$ be vector fields on ${\R}^{3}$. For any $f:\R\to\R$, the following holds.
     \begin{enumerate}
         \item ${\nabla}_{av+bw}Y=a{\nabla}_{v}Y+b{\nabla}_{w}Y$.
         \item ${\nabla}_{v}(aY+bZ)=a{\nabla}_{v}Y+b{\nabla}_{v}Z$.
@@ -575,7 +573,7 @@ Let $i=j$, then ${\om}_{i,i}=-{\om}_{i,i}$, so ${\om}_{i,i}=0$.
     Let ${\om}_{i,j}$ be connection forms of a frame field $\{{E}_{1},{E}_{2},{E}_{3}\}$. For any vector field $V$ on ${\R}^{3}$, ${\nabla}_{V}{E}_{i}={\sum}_{j}{\om}_{i,j}(V){E}_{j}$.
 \end{proposition}
 \begin{proof}
-    Fix the index $i$. For all $p\in{\R}^{3}$, $V(p)\in{T}_{p}({\R}^{3})$, then the equation is a direct consequence of the definition.
+    Fix $i$. For all $p\in{\R}^{3}$, $V(p)\in{T}_{p}({\R}^{3})$, then the equation is a direct consequence of the definition.
 \end{proof}
 \par
 Let $\{{E}_{1},{E}_{2},{E}_{3}\}$ be a frame field, ${E}_{i}$ can be rewriten by the natural frame field ${E}_{i}={a}_{i,1}{U}_{1}+{a}_{i,2}{U}_{2}+{a}_{i,3}{U}_{3}$.
@@ -605,6 +603,13 @@ If $\{{E}_{i}\}$ is a frame field on the natural frame field for any ${v}_{p}\in
 \begin{proof}
     Consider $\om$ and $\theta$ as matrices of connection forms and dual forms. We define the wedge product of two matrices as their matrix product, except that the multiplication of entries is replaced by the wedge product. This wedge product follows the following lemma: let $M$ and $N$ be matrices, if the entries of $M$ and $N$ are functions, then $\d(M\wedge N)=\d M\wedge N+M\wedge\d N$, if the entries are 1-forms, then $\d(M\wedge N)=\d M\wedge N-M\wedge\d N$. (lemma) We have ${(\d(M\wedge N))}_{i,j}=\d{(M\wedge N)}_{i,j}={\sum}_{k}\d{M}_{i,k}\wedge{N}_{k,j}+{\sum}_{k}{M}_{i,k}\wedge\d{N}_{k,j}$. Similarly, we can prove the case of 1-forms. $\mathghost$ (\rom1) Let ${x}_{i}$ be the natural coordinates of ${\R}^{3}$ and define $\xi$ to be the matrix $({x}_{i,1})$. Here $\xi$ is a 0-form, so $\d(\d\xi)=0$, then $\d\theta=\d(A\wedge\d\xi)=\d A\wedge\d\xi=\d A\wedge({A}^{\top}A\wedge)\d\xi=(\d A{A}^{\top})\wedge(A\d\xi)=\om\wedge\theta$. (\rom2) We have $\d\om=\d(\d A{A}^{\top})=\d(\d A)\wedge{A}^{\top}-\d A\wedge\d{A}^{\top}=-\d A\wedge\d{A}^{\top}$. Notice that $0=\d({A}^{\top}A)=\d{A}^{\top}\wedge A+{A}^{\top}\wedge\d A$, then $\d{A}^{\top}=-{A}^{\top}\wedge\d A\wedge{A}^{\top}$, which implies $\d\om=-\d A\wedge(-{A}^{\top}\wedge\d A\wedge{A}^{\top})=(\d A{A}^{\top})\wedge(\d A{A}^{\top})=\om\wedge\om$.
 \end{proof}
-\input{Ch3.tex}
+\section{Euclidean Geometry}
+\begin{definition}
+    A mapping $F:{\R}^{3}\to{\R}^{3}$ is an \hdef{isometry}
+\end{definition}
+
+
+
+\input{Ch4.tex}
 \hindex
 \end{document}

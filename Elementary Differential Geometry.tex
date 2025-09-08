@@ -604,14 +604,34 @@ If $\{{E}_{i}\}$ is a frame field on the natural frame field for any ${v}_{p}\in
     Consider $\om$ and $\theta$ as matrices of connection forms and dual forms. We define the wedge product of two matrices as their matrix product, except that the multiplication of entries is replaced by the wedge product. This wedge product follows the following lemma: let $M$ and $N$ be matrices, if the entries of $M$ and $N$ are functions, then $\d(M\wedge N)=\d M\wedge N+M\wedge\d N$, if the entries are 1-forms, then $\d(M\wedge N)=\d M\wedge N-M\wedge\d N$. (lemma) We have ${(\d(M\wedge N))}_{i,j}=\d{(M\wedge N)}_{i,j}={\sum}_{k}\d{M}_{i,k}\wedge{N}_{k,j}+{\sum}_{k}{M}_{i,k}\wedge\d{N}_{k,j}$. Similarly, we can prove the case of 1-forms. $\mathghost$ (\rom1) Let ${x}_{i}$ be the natural coordinates of ${\R}^{3}$ and define $\xi$ to be the matrix $({x}_{i,1})$. Here $\xi$ is a 0-form, so $\d(\d\xi)=0$, then $\d\theta=\d(A\wedge\d\xi)=\d A\wedge\d\xi=\d A\wedge({A}^{\top}A\wedge)\d\xi=(\d A{A}^{\top})\wedge(A\d\xi)=\om\wedge\theta$. (\rom2) We have $\d\om=\d(\d A{A}^{\top})=\d(\d A)\wedge{A}^{\top}-\d A\wedge\d{A}^{\top}=-\d A\wedge\d{A}^{\top}$. Notice that $0=\d({A}^{\top}A)=\d{A}^{\top}\wedge A+{A}^{\top}\wedge\d A$, then $\d{A}^{\top}=-{A}^{\top}\wedge\d A\wedge{A}^{\top}$, which implies $\d\om=-\d A\wedge(-{A}^{\top}\wedge\d A\wedge{A}^{\top})=(\d A{A}^{\top})\wedge(\d A{A}^{\top})=\om\wedge\om$.
 \end{proof}
 \section{Euclidean Geometry}
+% 3.1 Isometries of {\R}^{3}
 \begin{definition}
     A mapping $F:{\R}^{3}\to{\R}^{3}$ is an \hdef{isometry} of ${\R}^{3}$ if for all $p,q\in{\R}^{3}$, $d(F(p),F(q))=d(p,q)$.
 \end{definition}
 \begin{example}
-    
+    Let $T:{\R}^{3}\to{\R}^{3}$ defined by $T(p)=p+a$ for a fixed $a\in{\R}^{3}$. For all $p,q\in{\R}^{3}$, $d(T(p),T(q))=\norm{p+a-(q-a)}=\norm{p-q}=d(p,q)$. Hence $T$ is an isometry, called the \hdef{translation} by $a$.
 \end{example}
-
-
+\begin{example}
+    Fix an angle $\theta$. For all $p=({p}_{1},{p}_{2},{p}_{3})\in{\R}^{3}$, the \hdef{rotation} of ${\R}^{3}$ around $z$-axis is the map $C:{\R}^{3}\to{\R}^{3}$ defined by $C(p)=({p}_{1}\cos\theta-{p}_{2}\sin\theta,{p}_{1}\sin\theta+{p}_{2}\cos\theta,{p}_{3})$.
+\end{example}
+\begin{proposition}
+    If $F$ and $G$ are isometries on ${\R}^{3}$, then $G\comp F$ is an isometry.
+\end{proposition}
+\begin{proof}
+    For all $p,q\in{\R}^{3}$, $d(G\comp F(p),G\comp F(q))=d(F(p),F(q))=d(p,q)$.
+\end{proof}
+\begin{proposition}
+    If $T$ and $S$ are translations, then $T\comp S=S\comp T$ is a translation. Every translation has an inverse translation. Given two points $p,q\in{\R}^{3}$, there exists a unique translation $T$ such that $T(p)=q$.
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+\begin{definition}
+    An \hdef{orthogonal transformation} $C:{\R}^{3}\to{\R}^{3}$ is a map such that for all $p,q\in{\R}^{3}$, $C(p)\cdot C(q)=p\cdot q$.
+\end{definition}
+\begin{proposition}
+    Any orthogonal transformation is an isometry.
+\end{proposition}
 \input{Ch4.tex}
 \hindex
 \end{document}
